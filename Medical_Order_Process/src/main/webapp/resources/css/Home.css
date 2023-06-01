@@ -155,27 +155,81 @@ a {
     font-size: 0.8rem;
   }
   
-/* 물품 슬라이드 css */
+button {
+  background: #ddd;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+
+/* banner slider css */
 .slider {
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
+    width: 1020px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
 }
 
 .slide {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+/*     transition: opacity 1s;	슬라이드 이미지가 바뀔 때 희미하게 바뀌는 효과  */
+    opacity: 0;
 }
 
-.slide img {
-  width: 100%;
-  height: auto;
+.slide:first-child {
+    opacity: 1;
 }
 
-/* css */
+.slide-button {
+    position: absolute;
+    right: 60px; /* 고정값으로 오른쪽 위치를 지정 */
+   	width: 180px; /* 버튼의 너비를 180px로 고정 */
+    height: 60px; /* 버튼의 높이를 60px로 고정 */
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0px;
+    margin-bottom: 2px; /* 버튼들 사이에 여백 추가 */
+/*     border: 1px solid #666666; active-button 클래스가 적용된 요소에 테두리 추가 */
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.3);
+    /* 위 오른쪽 아래 왼쪽*/ 
+}
+
+/* 마우스 올리면 색상 변경*/
+.slide-button:hover {
+    border: 3px solid #0099FF;  /* 빨간색으로 변경, 원하는 색상으로 수정 가능 */
+}
+
+.slide-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-button[data-slide="0"] {
+    top: 60px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="1"] {
+    top: 120px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="2"] {
+    top: 180px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="3"] {
+    top: 240px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="4"] {
+    top: 300px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
 /*footer css*/
 
 footer {

@@ -60,26 +60,99 @@
 
 <body>
 
+<!-- banner slider -->
+<h4 class="banner_slider">banner slider Test</h4>
 <div class="slider">
-  <div class="slide" id="slide1">
-    <img src="resources/img/home/item/disinfectant.png" alt="Image 1">
-  </div>
-  <div class="slide" id="slide2">
-    <img src="resources/img/home/item/gloves.png" alt="Image 2">
-  </div>
-  <div class="slide" id="slide3">
-    <img src="resources/img/home/item/hand_sanitizer.png" alt="Image 3">
-  </div>
-  <div class="slide" id="slide4">
-    <img src="resources/img/home/item/hazmat_suit.png" alt="Image 4">
-  </div>
-  <div class="slide" id="slide5">
-    <img src="resources/img/home/item/mask.png" alt="Image 5">
-  </div>
-  <div class="slide" id="slide6">
-    <img src="resources/img/home/item/syringe.png" alt="Image 6">
-  </div>
+    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner1_n.png');">
+    	<span class="slide-button" data-slide="0">
+        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+	    </span>
+	    <span class="slide-button" data-slide="1">
+	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+	    </span>
+	    <span class="slide-button" data-slide="2">
+	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+	    </span>
+	    <span class="slide-button" data-slide="3">
+	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+	    </span>
+	    <span class="slide-button" data-slide="4">
+	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+	    </span>
+    </div>
+    	
+    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner2_n.png');">
+    	<span class="slide-button" data-slide="0">
+        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+	    </span>
+	    <span class="slide-button" data-slide="1">
+	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+	    </span>
+	    <span class="slide-button" data-slide="2">
+	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+	    </span>
+	    <span class="slide-button" data-slide="3">
+	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+	    </span>
+	    <span class="slide-button" data-slide="4">
+	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+	    </span>
+    </div>
+    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner3_n.png');">
+    	<span class="slide-button" data-slide="0">
+        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+	    </span>
+	    <span class="slide-button" data-slide="1">
+	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+	    </span>
+	    <span class="slide-button" data-slide="2">
+	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+	    </span>
+	    <span class="slide-button" data-slide="3">
+	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+	    </span>
+	    <span class="slide-button" data-slide="4">
+	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+	    </span>
+    </div>
+    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner4_n.png');">
+    	<span class="slide-button" data-slide="0">
+        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+	    </span>
+	    <span class="slide-button" data-slide="1">
+	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+	    </span>
+	    <span class="slide-button" data-slide="2">
+	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+	    </span>
+	    <span class="slide-button" data-slide="3">
+	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+	    </span>
+	    <span class="slide-button" data-slide="4">
+	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+	    </span>
+    </div>
+    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner5_n.png');">
+    	<span class="slide-button" data-slide="0">
+        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+	    </span>
+	    <span class="slide-button" data-slide="1">
+	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+	    </span>
+	    <span class="slide-button" data-slide="2">
+	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+	    </span>
+	    <span class="slide-button" data-slide="3">
+	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+	    </span>
+	    <span class="slide-button" data-slide="4">
+	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+	    </span>
+    </div>
 </div>
+
+<!-- group slider -->
+<h4 class="group_slider">오늘의 판매자 특가</h4>
 
 </body>
 
