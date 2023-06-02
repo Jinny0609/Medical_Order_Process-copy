@@ -16,5 +16,10 @@ public class HomeController {
 	public String Product_details() {
 		return "Product_details";
 	}
+	
+	@RequestMapping(value = "/User_info", method = RequestMethod.GET)
+	public String User_info() {
+		return "User_info";
+	}
 }
 
