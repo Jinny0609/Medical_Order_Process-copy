@@ -55,6 +55,7 @@ a {
     margin: auto;
     padding-top: 32px;
     background-color: #fff;
+   	min-width:900px;
   }
 
   .H_ikon{
@@ -122,6 +123,7 @@ a {
     right: 0px;
     left: 0px;
     background-color: #bbb;
+    min-width:800px;
   }
   
   .M_box{
@@ -153,63 +155,204 @@ a {
     font-size: 0.8rem;
   }
   
-/* 물품 레이아웃 css */
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.product {
-  width: 200px;
-  margin: 10px;
+button {
+  background: #ddd;
+  border: none;
   padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
+  margin: 10px;
+  cursor: pointer;
 }
 
-.product img {
-  width: 100%;
-  height: auto;
+
+/* banner slider css */
+.slider {
+    width: 1020px;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
 }
 
-.product-name {
-  font-size: 16px;
-  margin-top: 10px;
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+/*     transition: opacity 1s;	슬라이드 이미지가 바뀔 때 희미하게 바뀌는 효과  */
+    opacity: 0;
 }
 
-.product-price {
-  font-size: 14px;
-  color: #888;
+.slide:first-child {
+    opacity: 1;
 }
+
+.slide-button {
+    position: absolute;
+    right: 0px;
+    width: 180px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+    margin-bottom: 2px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* 마우스 올리면 색상 변경*/
+.slide-button:hover {
+    border: 3px solid #0099FF;  /* 빨간색으로 변경, 원하는 색상으로 수정 가능 */
+}
+
+.slide-button img {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-button[data-slide="0"] {
+    top: 60px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="1"] {
+    top: 120px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="2"] {
+    top: 180px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="3"] {
+    top: 240px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+.slide-button[data-slide="4"] {
+    top: 300px;  /* 고정값으로 위에서의 위치를 지정 */
+}
+
+/* 그룹 슬라이더 시작*/
+.group_h4 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+    
+.group_h4_red{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #cb1400;
+} 
+.discount{
+	font-family: sans-serif;
+	font-size: 12px;
+}
+.price{
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+.discount, .price{
+	font-weight: bold;
+	color: #cb1400;
+}
+
+.group_slide .discount img{
+	width: 15px;
+    height: 15px;
+    margin-right:3px;
+    margin-bottom:3px;
+}
+
+/* 글자수 넘어갈떄 처리 해주는 부분*/
+.name {
+  font-size: 13px;
+  display: block;
+  width: 204px;
+  word-wrap: break-word;
+  white-space: normal; /* 줄 바꿈을 허용 */
+}
+
+.group_slider {
+   width : 1020px;
+   overflow: hidden;
+   white-space: nowrap;
+   margin: 0 auto;
+   position: relative;
+ }
+
+ .slide-groups {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.5s ease-in-out;
+}
+
+.group_slide {
+    display: inline-block;
+    width: 20%;
+    padding: 0px;
+    text-align: center;
+  }
+
+.group_slide img {
+  width: 204px;
+  height: 204px;
+}
+
+
+/* 좌우 이동 버튼 스타일링 */
+.prev-button,
+.next-button {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 1; 
+  opacity: 0.5;  /* 기본적으로 흐린 상태로 만듭니다. */
+  transition: opacity 0.8s ease-in-out;  /* opacity의 변화에 대한 transition을 적용합니다. */
+}
+
+.prev-button:hover,
+.next-button:hover {
+  opacity: 1;  /* 마우스를 올리면 천천히 원래의 색상으로 변하게 됩니다. */
+}
+
+  .prev-button {
+    left: 0px; 
+  }
+
+  .next-button {
+    right: 0px; 
+  }
+
 
 /*footer css*/
+
 footer {
-  background-color: #333;
-  color: #fff;
-  padding: 40px 0;
+  background-color: #F3F3F3;
+  font-family: 'Arial', sans-serif;
+  color: #666;
 }
 
 .footer-container {
+  min-width: 1020px;
+  width: 50%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px 0;
 }
 
 .footer-section {
-  flex-basis: 25%;
-}
-
-.footer-section p {
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.5;
+  width: 30%;
 }
 
 .footer-heading {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
 }
 
 .footer-links li {
@@ -217,20 +360,42 @@ footer {
 }
 
 .footer-links a {
-  color: #fff;
+  color: #666;
   text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
 }
 
 .footer-social li {
-  display: inline-block;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .footer-social a {
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
+  color: #666;
 }
 
+.footer-bottom {
+  background-color:#000000;
+  text-align: center;
+  border-top: 1px solid #CCC;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.footer-bottom p{
+	color:#ffffff;
+	margin:0;
+	padding-bottom:20px;
+	width: 1020px;
+  	margin: 0 auto; /* 이 속성은 .footer-container를 페이지 중앙에 위치시킵니다 */
+}
 
 
