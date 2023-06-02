@@ -61,98 +61,176 @@
 <body>
 
 <!-- banner slider -->
-<h4 class="banner_slider">banner slider Test</h4>
 <div class="slider">
-    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner1_n.png');">
-    	<span class="slide-button" data-slide="0">
-        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
-	    </span>
-	    <span class="slide-button" data-slide="1">
-	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
-	    </span>
-	    <span class="slide-button" data-slide="2">
-	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
-	    </span>
-	    <span class="slide-button" data-slide="3">
-	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
-	    </span>
-	    <span class="slide-button" data-slide="4">
-	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
-	    </span>
-    </div>
-    	
-    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner2_n.png');">
-    	<span class="slide-button" data-slide="0">
-        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
-	    </span>
-	    <span class="slide-button" data-slide="1">
-	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
-	    </span>
-	    <span class="slide-button" data-slide="2">
-	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
-	    </span>
-	    <span class="slide-button" data-slide="3">
-	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
-	    </span>
-	    <span class="slide-button" data-slide="4">
-	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
-	    </span>
-    </div>
-    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner3_n.png');">
-    	<span class="slide-button" data-slide="0">
-        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
-	    </span>
-	    <span class="slide-button" data-slide="1">
-	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
-	    </span>
-	    <span class="slide-button" data-slide="2">
-	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
-	    </span>
-	    <span class="slide-button" data-slide="3">
-	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
-	    </span>
-	    <span class="slide-button" data-slide="4">
-	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
-	    </span>
-    </div>
-    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner4_n.png');">
-    	<span class="slide-button" data-slide="0">
-        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
-	    </span>
-	    <span class="slide-button" data-slide="1">
-	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
-	    </span>
-	    <span class="slide-button" data-slide="2">
-	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
-	    </span>
-	    <span class="slide-button" data-slide="3">
-	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
-	    </span>
-	    <span class="slide-button" data-slide="4">
-	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
-	    </span>
-    </div>
-    <div class="slide" style="background-image: url('resources/img/home/item/banner/banner5_n.png');">
-    	<span class="slide-button" data-slide="0">
-        	<img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
-	    </span>
-	    <span class="slide-button" data-slide="1">
-	        <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
-	    </span>
-	    <span class="slide-button" data-slide="2">
-	        <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
-	    </span>
-	    <span class="slide-button" data-slide="3">
-	        <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
-	    </span>
-	    <span class="slide-button" data-slide="4">
-	        <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
-	    </span>
-    </div>
+  <div class="slide" style="background-image: url('resources/img/home/item/banner/banner1_n.png');"></div>
+  <div class="slide" style="background-image: url('resources/img/home/item/banner/banner2_n.png');"></div>
+  <div class="slide" style="background-image: url('resources/img/home/item/banner/banner3_n.png');"></div>
+  <div class="slide" style="background-image: url('resources/img/home/item/banner/banner4_n.png');"></div>
+  <div class="slide" style="background-image: url('resources/img/home/item/banner/banner5_n.png');"></div>
+
+  <div class="slide-buttons">
+    <span class="slide-button" data-slide="0">
+      <img src="resources/img/home/item/btn/banner_btn1.png" alt="Button 1">
+    </span>
+    <span class="slide-button" data-slide="1">
+      <img src="resources/img/home/item/btn/banner_btn2.png" alt="Button 2">
+    </span>
+    <span class="slide-button" data-slide="2">
+      <img src="resources/img/home/item/btn/banner_btn3.png" alt="Button 3">
+    </span>
+    <span class="slide-button" data-slide="3">
+      <img src="resources/img/home/item/btn/banner_btn4.png" alt="Button 4">
+    </span>
+    <span class="slide-button" data-slide="4">
+      <img src="resources/img/home/item/btn/banner_btn5.png" alt="Button 5">
+    </span>
+  </div>
 </div>
 
+
+
 <!-- group slider -->
-<h4 class="group_slider">오늘의 판매자 특가</h4>
+<h4>오늘의 판매자 특가</h4>
+<div class="group_slider">
+  <div class="slide-groups">
+    <!-- 슬라이드 1 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/1.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 슬라이드 2 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/2.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 슬라이드 3 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/3.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 슬라이드 4 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/4.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 슬라이드 5 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/5.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 6 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/6.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 7 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/7.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 8 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/8.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 9 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/9.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 10 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/10.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+    
+    <!-- 추가 슬라이드 11 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/11.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 추가 슬라이드 12 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/12.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 추가 슬라이드 13 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/13.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 추가 슬라이드 14 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/14.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+
+    <!-- 추가 슬라이드 15 -->
+    <div class="group_slide">
+      <img src="resources/img/home/item/group_banner/15.jpg" alt="1">
+      <div class="discount">할인률</div>
+      <div class="name">상품 이름</div>
+      <div class="price">가격</div>
+      <div class="rating">평점</div>
+    </div>
+  </div>
+  <div class="prev-button">이전</div>
+  <div class="next-button">다음</div>
+</div>
 
 </body>
 
