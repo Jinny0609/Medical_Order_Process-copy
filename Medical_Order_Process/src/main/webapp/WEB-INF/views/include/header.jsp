@@ -4,12 +4,12 @@
 <html>
 <head>
 <title>제품 상세 페이지</title>
-<link href="resources/css/Product_details/style.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<link href="resources/css/Product_details/style.css" rel="stylesheet">
 </head>
 <header>
 	<div class="dropdown">
@@ -54,7 +54,7 @@
 	</div>
 </article>
 <body>
-
+	<!-- header.jsp의 내용 -->
 
 	<!-- jQuery 라이브러리 추가 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
