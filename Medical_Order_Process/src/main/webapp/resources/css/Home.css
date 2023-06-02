@@ -394,6 +394,8 @@ footer {
 	color:#ffffff;
 	margin:0;
 	padding-bottom:20px;
+	width: 1020px;
+  	margin: 0 auto; /* 이 속성은 .footer-container를 페이지 중앙에 위치시킵니다 */
 }
 
 
