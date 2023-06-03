@@ -83,6 +83,7 @@ a {
   .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 2;
   }
 
   .dropdown-content {
@@ -179,12 +180,7 @@ button {
     position: absolute;
     background-size: cover;
     background-position: center;
-/*     transition: opacity 1s;	슬라이드 이미지가 바뀔 때 희미하게 바뀌는 효과  */
-    opacity: 0;
-}
-
-.slide:first-child {
-    opacity: 1;
+    cursor: pointer;
 }
 
 .slide-button {
@@ -196,11 +192,7 @@ button {
     border-radius: 0px;
     margin-bottom: 2px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-}
-
-/* 마우스 올리면 색상 변경*/
-.slide-button:hover {
-    border: 3px solid #0099FF;  /* 빨간색으로 변경, 원하는 색상으로 수정 가능 */
+    cursor: pointer;
 }
 
 .slide-button img {
