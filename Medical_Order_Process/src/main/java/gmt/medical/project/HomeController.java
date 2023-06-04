@@ -21,5 +21,11 @@ public class HomeController {
 	public String User_info() {
 		return "User_info";
 	}
+	
+	// 주문 완료시 나타나는 페이지
+	@RequestMapping(value = "/Order_complete", method = RequestMethod.GET)
+	public String Order_complete() {
+		return "Order_complete";
+	}
 }
 

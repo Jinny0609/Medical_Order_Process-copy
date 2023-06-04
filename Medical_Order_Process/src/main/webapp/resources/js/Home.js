@@ -25,7 +25,7 @@ $(document).ready(function() {
     $('.slide').hide();
     $('.slide-button').css('border', 'none');
     $('.slide').eq(n).show();
-    $('.slide-button').eq(n).css('border', '3px solid #0099FF');
+    $('.slide-button').eq(n).css('border', '2px solid #0099FF');
   }
 
   // 슬라이드 쇼 시작 시 첫 번째 슬라이드 표시
