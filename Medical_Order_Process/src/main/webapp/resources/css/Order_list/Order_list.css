@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol {
+    list-style: none;
+    padding-left:0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: rgb(62, 65, 231);
+}
+
+.h3, h3 {
+    font-size: initial !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.MY_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.MY_nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.H_nav{
+    width: 144px;
+    height: 122px;
+    background-color: rgb(80, 69, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.M_nav{
+    font-size: 0.8rem;
+    width: 144px;
+    height: 400px;
+    background-color: #eee;
+}
+
+.M_nav h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.M_nav ul{
+    margin-left: 10px;
+}
+
+.M_nav ul li{
+    margin-top: 9px;
+}
+
+.MY_privacy{
+    display: flex;
+    flex-direction: column;
+}
+
+.MY_navcontainer{
+    display: flex;
+}
+
+.MY_navbox{
+    background-color: rgb(155, 201, 232);
+    width: 140px;
+    height: 122px;
+    border-left: 1px solid rgb(155, 201, 232);
+    border-right: 1px solid rgb(120, 173, 208);
+}
+
+.MY_navbox p {
+    color: #fff;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 400;    
+}
+
+.MY_navbox span{
+    color: #fff;
+    margin-left: 30px;
+    font-size: 35px;
+}
+
+.MY_delivery{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.MY_delivery strong{
+    font-size: 20px;
+}
+
+.MY_search {
+    position: relative;
+    width: 300px;
+    margin-top: 15px;
+  }
+  
+  .MY_search input {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .MY_search img {
+    position : absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+  }
+
+  .MY_deliverypage{
+    margin-top: 20px;
+  }
+
+  .MY_deliveryheader{
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    background-color: #eee;
+  }
+
+  .MY_deliverylistbox{
+    border-radius: 12px;
+    width: 800px;
+    box-shadow: rgba(0,0,0.08) 0px 2px 4px 0px,rgba(0,0,0.16) 0px 0px 1px 0px;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 24px 24px 16px;
+  }
+
+  .MY_deliverylist{
+    border: 1px solid rgb(238, 238, 238);
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .MY_delivery_BTBOX{
+    border-left: 1px solid rgb(238, 238, 238);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .MY_delivery_BT1{
+    width: 150px;
+    height: 40px;
+    margin: 12px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 8px;
+  }
+
+  .MY_delivery_BT2{
+    width: 150px;
+    height: 40px;
+    margin: 12px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 8px;
+  }
+
+  .MY_deliveryGoodsbox{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .MY_deliveryGoods1{
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+
+  .MY_deliveryGoods1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .MY_deliveryGoods3{
+    margin-top: 20px;
+    display: flex;
+  }
+
+  
+  .MY_deliveryGoods3 span{
+    color: gray;
+    font-size: 20px;
+  }
+
+  .MY_deliveryGoods3 button{
+    margin-left: 50px;
+    width: 150px;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 8px;
+  }
+
+  
