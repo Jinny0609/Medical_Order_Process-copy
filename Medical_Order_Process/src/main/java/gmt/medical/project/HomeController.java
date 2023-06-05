@@ -12,20 +12,20 @@ public class HomeController {
 		return "Home";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/Product_details", method = RequestMethod.GET)
 	public String Product_details() {
 		return "Product_details";
 	}
 	
-	@RequestMapping(value = "/User_info", method = RequestMethod.GET)
-	public String User_info() {
-		return "User_info";
+	@RequestMapping(value = "/Order_list", method = RequestMethod.GET)
+	public String Order_list() {
+		return "Order_list";
 	}
 	
-	// Order_complete page
-	@RequestMapping(value = "/Order_complete", method = RequestMethod.GET)
-	public String Order_complete() {
-		return "Order_complete";
+	@RequestMapping(value = "/Shipping_address", method = RequestMethod.GET)
+	public String Shipping_address() {
+		return "Shipping_address";
 	}
+	
 }
 

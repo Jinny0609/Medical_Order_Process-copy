@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
 <%@ include file="include/header.jsp" %> 
-<link href="resources/css/User_info/User_css.css" rel="stylesheet">
+<link href="resources/css/Order_list/Order_list.css" rel="stylesheet">
 </head>
 <body>
     <div class="MY_container">
@@ -24,7 +24,17 @@
         <div class="MY_privacy">
             <div class="MY_navcontainer">
             <div class="MY_navbox"><p>배송 준비</p><span>0건</span></div>
+            <div>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            <i class="bi bi-caret-right-fill fs-3 text-white"></i>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            </div>
             <div class="MY_navbox"><p>배송 중</p><span>1건</span></div>
+            <div>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            <i class="bi bi-caret-right-fill fs-3 text-white"></i>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+			</div>
             <div class="MY_navbox"><p>배송 완료</p><span>0건</span></div>
             </div>
         <!-- 여기서부터 바꿀 내용 들어갑니다.-->
@@ -43,7 +53,7 @@
                         <div style="margin-top: 15px; margin-left:15px;">
                             <strong>배송중</strong>
                             <div class="MY_deliveryGoodsbox">
-                                <div class="MY_deliveryGoods1"><img src="img/Jsagi.jpg"></div>
+                                <div class="MY_deliveryGoods1"><img src="resources/img/Order_list/Jsagi.jpg"></div>
                                 <div class="MY_deliveryGoods2">
                                     <a>일회용주사기</a>
                                     <div class="MY_deliveryGoods3"><span>5,010원</span><button>장바구니 담기</button></div>

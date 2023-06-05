@@ -35,6 +35,9 @@ window.onload = function() {
                 <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
             </ul>
         </div>
+        <div>
+        	<img class="Cartimg" src="resources/img/Cart/Cart.png">
+        </div>
         <table class="Cart_list">
             <form>
                 <thead>
@@ -49,7 +52,7 @@ window.onload = function() {
                 <tbody>
                     <tr class="Cart_list_detail">
                         <td><input type="checkbox"></td>
-                        <td><img src="resources/img/medical.png"alt="magic keyboard"></td>
+                        <td><img class="Goods" src="resources/img/Cart/medical.png"alt="magic keyboard"></td>
                         <td><a href="#">그린몰 공식 스토어</a><span class="Cart_list_smartstore"> 그린몰</span>
                             <p>마법의 종아리 마사지</p>
                             <span class="Price">11,660원</span>
@@ -57,7 +60,7 @@ window.onload = function() {
                         <td>
                         	 <div class="Cart_modify">
                              	<p>모델명 : MK2A3KH/A</p>
-                             	<input type="number" placeholder="수량" min="10" max="40" step="1" /> <br />
+                             	<input type="number" placeholder="수량" min="1" max="40" step="1" /> <br />
                              </div>
                         </td>
                         <td><span class="Price">11,660원</span><br>
@@ -67,7 +70,7 @@ window.onload = function() {
                     <tr class="Cart_list_detail">
                         <td style="width: 2%;"><input type="checkbox"></td>
                         <td style="width: 13%;">
-                            <img src="resources/img/medical1.png" alt="magic mouse">
+                            <img class="Goods" src="resources/img/Cart/medical1.png" alt="magic mouse">
                         </td>
                         <td style="width: 27%;"><a href="#">그린몰 공식 스토어</a><span class="Cart_list_smartstore"> 그린몰</span>
                             <p>울트라 목 거치대</p>
