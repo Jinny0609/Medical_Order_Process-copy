@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
 <%@ include file="include/header.jsp" %> 
-<link href="resources/css/Order_list/User_css.css" rel="stylesheet">
+<link href="resources/css/Order_list/Order_list.css" rel="stylesheet">
 </head>
 <body>
     <div class="MY_container">

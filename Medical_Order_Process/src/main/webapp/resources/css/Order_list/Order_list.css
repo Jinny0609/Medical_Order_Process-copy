@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .MY_container{
     display: flex;
-    margin-left: 500px;
+    justify-content: center;
     margin-top: 50px;
 }
 
