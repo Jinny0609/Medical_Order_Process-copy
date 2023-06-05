@@ -24,7 +24,17 @@
         <div class="MY_privacy">
             <div class="MY_navcontainer">
             <div class="MY_navbox"><p>배송 준비</p><span>0건</span></div>
+            <div>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            <i class="bi bi-caret-right-fill fs-3 text-white"></i>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            </div>
             <div class="MY_navbox"><p>배송 중</p><span>1건</span></div>
+            <div>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+            <i class="bi bi-caret-right-fill fs-3 text-white"></i>
+            <i class="bi bi-caret-right fs-3 text-white"></i>
+			</div>
             <div class="MY_navbox"><p>배송 완료</p><span>0건</span></div>
             </div>
         <!-- 여기서부터 바꿀 내용 들어갑니다.-->

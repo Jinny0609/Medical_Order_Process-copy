@@ -18,8 +18,14 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/Order_list", method = RequestMethod.GET)
-	public String User_info() {
+	public String Order_list() {
 		return "Order_list";
 	}
+	
+	@RequestMapping(value = "/Shipping_address", method = RequestMethod.GET)
+	public String Shipping_address() {
+		return "Shipping_address";
+	}
+	
 }
 

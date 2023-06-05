@@ -1,0 +1,56 @@
+.MY_jeongbo_BOX{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.MY_jeongbo_INPUT{
+	border: 1px solid rgb(184, 184, 184);
+	width:500px;
+    height: 55px;
+    padding-left: 5px;
+    display:flex;
+}
+
+
+.MY_jeongbo_IKON{
+	border: 1px solid rgb(184, 184, 184);
+	border-right:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee9d;
+    width:50px
+}
+
+.MY_jeongbo_BT{
+	width: 150px;
+	height: 40px;
+	border:none;
+	border-radius: 10px;
+	background-color: #7777779d;
+	color: #fff;
+	margin:10px
+}
+
+.MY_jeongbo_SAVE{
+	width:550px;
+	height:45px;
+	border:none;
+	border-radius: 10px;
+	background-color: #3527fa9d;
+}
+
+#address-1{
+	border-top:none;
+	border-bottom:none;
+}
+
+#zip-code{
+	border:none;
+	width:330px;
+}
+
+#MY_jeongbo_UPAN{
+	display: flex;
+	align-items: center;
+}
