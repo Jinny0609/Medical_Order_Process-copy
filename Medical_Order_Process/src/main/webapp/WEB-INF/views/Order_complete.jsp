@@ -15,7 +15,7 @@
 		<div class="hr_blue"></div>
 		<span class="group_h4_blue">주문이 완료</span><span class="group_h4">되었습니다. 감사합니다!</span><br>
 		<span>주문일 2023-06-04</span>	<span>주문번호 1234567890</span><br>
-		<img src="" class="continue_shopping"alt="계속 쇼핑하기>">
+		<img src="resources/img/Order_complete/continue_shopping.png" class="continue_shopping" alt="계속 쇼핑하기>">
 		<div class="hr_gray"></div>
 		
 		<div class="info_container">
@@ -23,16 +23,16 @@
 				<h3>받는사람 정보</h3>
 				<div class="info-content-wrapper">
 					<div class="info-content">
-						<span class="info-label">이름:</span> <span class="info-value">John Doe</span>
+						<span class="info-label">이름:</span> <span class="info-value">진호준</span>
 					</div>
 					<div class="info-content">
 						<span class="info-label">휴대폰 번호:</span> <span class="info-value">010-1234-5678</span>
 					</div>
 					<div class="info-content">
-						<span class="info-label">연락처:</span> <span class="info-value">john.doe@example.com</span>
+						<span class="info-label">연락처:</span> <span class="info-value">wlsghwns1@example.com</span>
 					</div>
 					<div class="info-content">
-						<span class="info-label">배송 주소:</span> <span class="info-value">서울시 강남구 123번지</span>
+						<span class="info-label">배송 주소:</span> <span class="info-value">울산시 남구 삼산중로 100번길</span>
 					</div>
 					<div class="info-content">
 						<span class="info-label">배송 요청 사항:</span> <span class="info-value">문 앞에 두고 가주세요</span>

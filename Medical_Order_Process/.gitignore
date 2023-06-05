@@ -1,4 +1,4 @@
-/.classpath
+﻿/.classpath
 /.project
 /.springBeans
 # Created by https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
@@ -124,7 +124,7 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
 
-# pem ������Ƽ
+# pom.properties
 pom.properties
 
 # Eclipse Core
