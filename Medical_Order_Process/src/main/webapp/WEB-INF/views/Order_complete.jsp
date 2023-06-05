@@ -14,7 +14,8 @@
 		<h3 class="Order_complete_h3">주문완료</h3>
 		<div class="hr_blue"></div>
 		<span class="group_h4_blue">주문이 완료</span><span class="group_h4">되었습니다. 감사합니다!</span><br>
-		<span>주문일 2023-06-04</span>	<span>주문번호 1234567890</span><br>
+		<div class="spacer"></div>
+		<span  class="vertical-line">주문일 2023-06-04</span> <span>주문번호 1234567890</span><br>
 		<img src="resources/img/Order_complete/continue_shopping.png" class="continue_shopping" alt="계속 쇼핑하기>">
 		<div class="hr_gray"></div>
 		
