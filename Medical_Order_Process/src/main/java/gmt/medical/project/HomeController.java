@@ -12,7 +12,7 @@ public class HomeController {
 		return "Home";
 	}
 
-	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/Product_details", method = RequestMethod.GET)
 	public String Product_details() {
 		return "Product_details";
 	}

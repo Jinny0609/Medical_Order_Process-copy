@@ -53,7 +53,7 @@
                         <div style="margin-top: 15px; margin-left:15px;">
                             <strong>배송중</strong>
                             <div class="MY_deliveryGoodsbox">
-                                <div class="MY_deliveryGoods1"><img src="img/Jsagi.jpg"></div>
+                                <div class="MY_deliveryGoods1"><img src="resources/img/Order_list/Jsagi.jpg"></div>
                                 <div class="MY_deliveryGoods2">
                                     <a>일회용주사기</a>
                                     <div class="MY_deliveryGoods3"><span>5,010원</span><button>장바구니 담기</button></div>

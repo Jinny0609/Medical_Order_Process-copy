@@ -24,7 +24,7 @@
 	<section>
 		<div class="I_BOX">
 			<h1 class="I_logo">
-				<a> <img src="resources/img/Product_details/coupang.png"
+				<a> <img src="resources/img/MarshLogo.png"
 					alt="쿠팡로고" width="174" height="39">
 				</a>
 			</h1>

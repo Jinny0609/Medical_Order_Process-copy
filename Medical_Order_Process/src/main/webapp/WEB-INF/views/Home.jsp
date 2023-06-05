@@ -30,7 +30,7 @@
     <div class="I_BOX">
       <h1 class="I_logo">
         <a>
-          <img src="resources/img/home/coupang.png" alt="쿠팡로고" width="174" height="39">
+          <img src="resources/img/MarshLogo.png" alt="쿠팡로고" width="174" height="39">
         </a>
       </h1>
       <div class="search">
