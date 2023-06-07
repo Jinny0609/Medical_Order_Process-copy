@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.product_container{
+	width:1020px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.product_add{
+	font-weight: bold;
+	font-size: 26px;
+}
+
+#toggleBtn{
+	width:30px;
+}
+
+.help{
+	color:#0099FF;
+	font-size: 14px;
+}
+
+
+#categoryList{
+	display: none;	
+}
+
+.selected {
+    color: #0099FF;
+    font-weight: bold;
+}
