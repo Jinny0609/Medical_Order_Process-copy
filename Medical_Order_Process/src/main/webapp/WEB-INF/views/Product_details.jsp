@@ -34,7 +34,7 @@
 					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
 			</div>
 			<ul class="H_ikon">
-				<li><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
+				<li onclick="redirectMYpage()"><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
 				<li><a><i class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
 			</ul>
 		</div>
