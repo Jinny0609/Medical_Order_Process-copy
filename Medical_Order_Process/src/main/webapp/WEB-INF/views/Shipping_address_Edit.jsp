@@ -19,10 +19,10 @@
 			<div class="M_nav">
 				<h3>MY 정보</h3>
 				<ul>
-					<li><a href="#">주문목록/배송조회<br>취소/환불
+					<li><a href="/Order_list">주문목록/배송조회<br>취소/환불
 					</a></li>
-					<li><a href="#">개인정보확인/수정</a></li>
-					<li><a href="#">배송지 관리</a></li>
+					<li><a href="/Info_edit">개인정보확인/수정</a></li>
+					<li><a href="/Shipping_address_List">배송지 관리</a></li>
 				</ul>
 			</div>
 		</div>
@@ -98,7 +98,8 @@
 							placeholder="배송시 요청 사항">
 					</div>
 				</div>
-				<button class="MY_jeongbo_SAVE">저장</button><br>
+				<button class="MY_jeongbo_SAVE">저장</button>
+				<br>
 				<button class="MY_jeongbo_DELETE">삭제</button>
 			</div>
 		</div>

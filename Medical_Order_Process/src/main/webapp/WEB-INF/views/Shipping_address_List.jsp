@@ -19,10 +19,10 @@
 			<div class="M_nav">
 				<h3>MY 정보</h3>
 				<ul>
-					<li><a href="#">주문목록/배송조회<br>취소/환불
+					<li><a href="/Order_list">주문목록/배송조회<br>취소/환불
 					</a></li>
-					<li><a href="#">개인정보확인/수정</a></li>
-					<li><a href="#">배송지 관리</a></li>
+					<li><a href="/Info_edit">개인정보확인/수정</a></li>
+					<li><a href="/Shipping_address_List">배송지 관리</a></li>
 				</ul>
 			</div>
 		</div>
@@ -60,10 +60,10 @@
 				<div>제주특별자치도 어쩌구 저쩌구</div>
 				<div>010-1111-2222</div>
 				<div>문 앞</div>
-				<button class="Shipping_Card_BT">수정</button>
+				<button class="Shipping_Card_BT" onclick="redirectToPage()">수정</button>
 				</div>
 				</div>
-				<div class="Shipping_BT"><i class="bi bi-plus-lg fs-5"></i>배송지 추가 버튼</div>
+				<div class="Shipping_BT" onclick="redirectToJSP()"><i class="bi bi-plus-lg fs-5"></i>배송지 추가 버튼</div>
 				</div>
 			</div>
 		</div>
