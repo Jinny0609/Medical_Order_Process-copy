@@ -18,7 +18,7 @@ a {
 
 img {
   display: block;
-  width: 80%;
+  width: 90%;
   height: 80px;
   margin: auto;
 }
@@ -26,6 +26,16 @@ img {
 	margin-top:20px;
 	width:175px;
 	height:39px;
+}
+.Goods{
+	display: block;
+	width: 71%;
+	height: 85px;
+	margin: auto;
+}
+.Cartimg{
+	margin:0px;
+	width:100%;
 }
 .Cart {
   width: 80%;
