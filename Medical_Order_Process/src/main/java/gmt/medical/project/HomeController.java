@@ -27,5 +27,9 @@ public class HomeController {
 		return "Shipping_address_New";
 	}
 	
+	@RequestMapping(value = "/Order_complete", method = RequestMethod.GET)
+	public String Order_complete() {
+		return "Order_complete";
+	}
+	
 }
-
