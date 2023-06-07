@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 * {
     margin: 0px;
@@ -22,6 +22,7 @@ body{
 
 .Order_complete_h3{
 	text-align: left;
+	font-weight: bold;
 }
 
 .vertical-line {
