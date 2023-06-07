@@ -7,7 +7,7 @@
 <title>Document</title>
 <%@ include file="include/header.jsp"%>
 <link href="resources/css/Order_list/Order_list.css" rel="stylesheet">
-<link href="resources/css/Shipping_address/Shipping_address.css"
+<link href="resources/css/Shipping_address/Shipping_address_New.css"
 	rel="stylesheet">
 </head>
 <body>
