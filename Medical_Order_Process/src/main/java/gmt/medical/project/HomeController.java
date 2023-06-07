@@ -22,9 +22,9 @@ public class HomeController {
 		return "Order_list";
 	}
 	
-	@RequestMapping(value = "/Shipping_address", method = RequestMethod.GET)
+	@RequestMapping(value = "/Shipping_address_New", method = RequestMethod.GET)
 	public String Shipping_address() {
-		return "Shipping_address";
+		return "Shipping_address_New";
 	}
 	
 }
