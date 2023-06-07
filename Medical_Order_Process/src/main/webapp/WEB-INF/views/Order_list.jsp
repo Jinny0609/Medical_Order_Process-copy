@@ -15,9 +15,9 @@
             <div class="M_nav">
                 <h3>MY 정보</h3>
                 <ul>
-                    <li><a href="#">주문목록/배송조회<br>취소/환불</a></li>
-                    <li><a href="#">개인정보확인/수정</a></li>
-                    <li><a href="#">배송지 관리</a></li>
+                    <li><a href="/Order_list">주문목록/배송조회<br>취소/환불</a></li>
+                    <li><a href="/Info_edit">개인정보확인/수정</a></li>
+                    <li><a href="/Shipping_address_List">배송지 관리</a></li>
                 </ul>
             </div>
         </div>
@@ -53,7 +53,7 @@
                         <div style="margin-top: 15px; margin-left:15px;">
                             <strong>배송중</strong>
                             <div class="MY_deliveryGoodsbox">
-                                <div class="MY_deliveryGoods1"><img src="img/Jsagi.jpg"></div>
+                                <div class="MY_deliveryGoods1"><img src="resources/img/Order_list/Jsagi.jpg"></div>
                                 <div class="MY_deliveryGoods2">
                                     <a>일회용주사기</a>
                                     <div class="MY_deliveryGoods3"><span>5,010원</span><button>장바구니 담기</button></div>

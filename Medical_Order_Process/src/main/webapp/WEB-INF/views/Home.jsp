@@ -7,8 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/Home.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"><!-- 헤더  -->
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"><!-- 헤더  --> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<script src="resources/js/Home.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><!-- footer -->
 </head>
 
 <header>
@@ -18,19 +17,19 @@
       카테고리
     </button>
     <div class="dropdown-content">
-      <a href="#">패션의류</a>
-      <a href="#">뷰티</a>
-      <a href="#">디지털/가전</a>
-      <a href="#">식품</a>
-      <a href="#">도서</a>
-      <a href="#">스포츠/레저</a>
+      <a href="#">의료소모품</a>
+      <a href="#">수술기구</a>
+      <a href="#">의료기기</a>
+      <a href="#">건강용품</a>
+      <a href="#">사무용품</a>
+      <a href="#">이벤트</a>
     </div>
   </div>
   <section>
     <div class="I_BOX">
       <h1 class="I_logo">
         <a>
-          <img src="resources/img/home/coupang.png" alt="쿠팡로고" width="174" height="39">
+          <img src="resources/img/MarshLogo.png" alt="로고" width="174" height="39">
         </a>
       </h1>
       <div class="search">
@@ -218,6 +217,10 @@
 </div>
 
 </body>
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>	<!-- banner slide jQuery -->
+<script src="resources/js/Home.js"></script>
+<!-- script -->
 
 <!-- footer -->
 <footer>

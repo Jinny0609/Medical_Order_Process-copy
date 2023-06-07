@@ -38,6 +38,17 @@
 	border:none;
 	border-radius: 10px;
 	background-color: #3527fa9d;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.MY_jeongbo_DELETE{
+	width:550px;
+	height:45px;
+	border:1px solid #bbb;
+	border-radius: 10px;
+	background-color: #fff;
+	margin-top:15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #address-1{

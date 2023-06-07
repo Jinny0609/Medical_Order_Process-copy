@@ -24,7 +24,7 @@
 	<section>
 		<div class="I_BOX">
 			<h1 class="I_logo">
-				<a> <img src="resources/img/Product_details/coupang.png"
+				<a> <img src="resources/img/MarshLogo.png"
 					alt="쿠팡로고" width="174" height="39">
 				</a>
 			</h1>
@@ -34,7 +34,7 @@
 					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
 			</div>
 			<ul class="H_ikon">
-				<li><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
+				<li onclick="redirectMYpage()"><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
 				<li><a><i class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
 			</ul>
 		</div>

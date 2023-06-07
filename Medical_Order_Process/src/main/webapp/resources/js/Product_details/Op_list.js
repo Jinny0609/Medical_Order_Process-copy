@@ -104,3 +104,8 @@ closeButton.addEventListener('click', () => {
   tableBody.innerHTML = '';
   currentTableRows = [];
 });
+
+// 마이정보 이동
+function redirectMYpage() {
+	window.location.href = '/Shipping_address_List';
+}
