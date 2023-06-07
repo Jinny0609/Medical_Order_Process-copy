@@ -1,20 +1,33 @@
 @charset "UTF-8";
 
 .product_container{
-	width:1020px;
-	display: flex;
-	justify-content: center;
-    align-items: center;
-    height: 100vh;
+	width : 1020px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.category_container{
+	height:600px;
+}
+
+
+.category_container select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+#toggleBtn{
+	background-color:#6b6b6b;
+	color:#FFFFFF;
+	margin-bottom: 15px;
+	width:180px;
+	height:25px;
+	border:none;
 }
 
 .product_add{
 	font-weight: bold;
 	font-size: 26px;
-}
-
-#toggleBtn{
-	width:30px;
 }
 
 .help{
@@ -24,10 +37,20 @@
 
 
 #categoryList{
-	display: none;	
+	display: none;
+	border: 1px solid black;
+	padding: 5px;
+	width: 200px;
+	overflow: auto;
 }
 
 .selected {
     color: #0099FF;
     font-weight: bold;
+}
+
+#imageInput,
+#nameInput,
+#priceInput {
+  margin-bottom: 10px;
 }

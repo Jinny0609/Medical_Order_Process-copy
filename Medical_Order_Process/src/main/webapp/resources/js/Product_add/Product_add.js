@@ -1,28 +1,3 @@
-function toggleSelect() {
-    var toggleBtn = document.getElementById('toggleBtn');
-    var categoryList = document.getElementById('categoryList');
-
-    if (toggleBtn.style.backgroundColor === '#0099FF') {
-      toggleBtn.style.backgroundColor = ''; // 기본 색상으로 변경
-      categoryList.style.display = 'none'; // 숨김
-    } else {
-      toggleBtn.style.backgroundColor = '#0099FF'; // 하늘색으로 변경
-      categoryList.style.display = 'block'; // 보이기
-    }
-  }
-
-  function selectCategoryItem(category) {
-    var categoryList = document.getElementById('categoryList');
-    var items = categoryList.getElementsByTagName('li');
-
-    for (var i = 0; i < items.length; i++) {
-      items[i].classList.remove('selected'); // 모든 항목에서 선택된 스타일 제거
-    }
-
-    var selectedItem = event.target;
-    selectedItem.classList.add('selected'); // 선택된 항목에 스타일 추가
-  }
-  
   // 이미지 미리보기
   function previewImage(event) {
 	    var imageInput = event.target;
@@ -48,8 +23,8 @@ function toggleSelect() {
 	    }
 	  }
   
-  // 전송버튼 이벤트
-  function submitForm(event) {
+// 전송버튼 이벤트
+function submitForm(event) {
 	  event.preventDefault(); // 폼의 기본 동작인 페이지 새로고침을 방지합니다.
 
 	  var imageInput = document.getElementById('imageInput');
@@ -66,8 +41,22 @@ function toggleSelect() {
 	  
 	  // 전송 후에 필요한 동작을 수행할 수 있습니다.
 	  alert('제품이 등록되었습니다.');
-	  document.getElementById('imageInput').value = '';
-	  document.getElementById('nameInput').value = '';
-	  document.getElementById('priceInput').value = '';
-	  document.querySelector('#categoryList .selected').classList.remove('selected');
+	  
+	  // 전체 폼 초기화
+	  event.target.reset();
+	  document.getElementById('imagePreviewContainer').innerHTML = '';
 }
+  
+//취소 누를때 이미지 초기화 시키는 함수
+function resetForm() {
+  document.getElementById("imageInput").value = "";
+  document.getElementById("imagePreviewContainer").innerHTML = "";
+}
+
+// 취소 버튼 클릭 시 form을 초기화하고 이미지 미리보기 초기화
+document.getElementById("resetBtn").addEventListener("click", function() {
+  resetForm(); // 이미지 미리보기 초기화
+  document.getElementById("imageInput").onchange(); // 이미지 input 값 초기화
+});
+
+
