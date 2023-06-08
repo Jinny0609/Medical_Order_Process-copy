@@ -6,25 +6,6 @@
 	position: relative;
 }
 
-.category_container{
-	height:600px;
-}
-
-
-.category_container select{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-#toggleBtn{
-	background-color:#6b6b6b;
-	color:#FFFFFF;
-	margin-bottom: 15px;
-	width:180px;
-	height:25px;
-	border:none;
-}
-
 .product_add{
 	font-weight: bold;
 	font-size: 26px;
@@ -35,22 +16,96 @@
 	font-size: 14px;
 }
 
-
-#categoryList{
-	display: none;
-	border: 1px solid black;
-	padding: 5px;
-	width: 200px;
-	overflow: auto;
+.category_container{
+	height:600px;
 }
+/* select */
+.option-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;  /* 리스트 스타일 제거 */
+    padding: 0;  /* 패딩 제거 */
+}
+
+.option-select li {
+    margin: 10px 0;
+}
+
+.option-select input[type="radio"] {
+    display: none;  /* 라디오 버튼 숨기기 */
+}
+
+.option-select label {
+    padding: 10px;
+    border: 2px solid #ccc;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.option-select input[type="radio"]:checked + label {
+    background-color: #0099FF;  /* 선택된 라디오 버튼의 라벨 배경 색상 */
+    color: #fff;  /* 선택된 라디오 버튼의 라벨 텍스트 색상 */
+}
+
+/* 개별 카테고리 색상 지정 */
+#category_1 + label {
+    color: #4CAF50;  /* 의료소모품 */
+}
+
+#category_2 + label {
+    color: #FF5722;  /* 수술기구 */
+}
+
+#category_3 + label {
+    color: #9C27B0;  /* 의료기기 */
+}
+
+#category_4 + label {
+    color: #E91E63;  /* 건강용품 */
+}
+
+#category_5 + label {
+    color: #3F51B5;  /* 사무용품 */
+}
+
+/* select */
+
+
+.option-select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
 .selected {
     color: #0099FF;
     font-weight: bold;
 }
 
-#imageInput,
-#nameInput,
-#priceInput {
+/* input style */
+input {
+  font-size: 15px;
+  color: #222222;
+  width: 300px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
   margin-bottom: 10px;
+  position: relative;
+  background: none;
+  z-index: 5;
+}
+
+#nameInput{
+	
+}
+
+#priceInput{
+	
+}
+
+/*등록 취소 css*/
+#regi,
+#resetBtn{
+	width:50px;
+	height:30px;
 }
