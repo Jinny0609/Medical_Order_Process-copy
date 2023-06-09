@@ -22,7 +22,6 @@
       <a href="#">의료기기</a>
       <a href="#">건강용품</a>
       <a href="#">사무용품</a>
-      <a href="#">이벤트</a>
     </div>
   </div>
   <section>

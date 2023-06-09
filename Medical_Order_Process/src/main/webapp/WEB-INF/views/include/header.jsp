@@ -17,8 +17,8 @@
 			<i class="bi bi-justify fs-2"></i><br> 카테고리
 		</button>
 		<div class="dropdown-content">
-			<a href="#">패션의류</a> <a href="#">뷰티</a> <a href="#">디지털/가전</a> <a
-				href="#">식품</a> <a href="#">도서</a> <a href="#">스포츠/레저</a>
+			<a href="#">의료소모품</a> <a href="#">수술기구</a> <a href="#">의료기기</a> <a
+				href="#">건강용품</a> <a href="#">사무용품</a>
 		</div>
 	</div>
 	<section>
