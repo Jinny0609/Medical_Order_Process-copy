@@ -55,4 +55,9 @@ public class HomeController {
 	public String Categorie() {
 		return "Categorie";
 	}
+	
+	@RequestMapping(value = "/Checkout", method = RequestMethod.GET)
+	public String Checkout() {
+		return "Checkout";
+	}
 }
