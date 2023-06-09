@@ -51,4 +51,8 @@ public class HomeController {
 	public String Info_edit_Form() {
 		return "Info_edit_Form";
 	}
+	@RequestMapping(value = "/Categorie", method = RequestMethod.GET)
+	public String Categorie() {
+		return "Categorie";
+	}
 }
