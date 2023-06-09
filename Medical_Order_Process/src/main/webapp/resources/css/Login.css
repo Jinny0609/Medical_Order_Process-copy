@@ -14,7 +14,32 @@ a:visited {
     color: unset;
     text-decoration: unset;
 }
+.ErrorMsg {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.ErrorMsg {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+}
 
+.Input-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.ErrorMsg {
+    margin-left:0px;
+    margin-bottom:-2px;
+    position: absolute;
+    bottom: -20px; /* 원하는 위치로 조정 */
+    left: 0;
+    width: 100%;
+    margin-top: 100px; /* 오류 메시지와 입력 필드 사이의 간격 조정 */
+}
 body {
     width: 100%;
     min-height: 100%;
@@ -80,6 +105,11 @@ body > .Login-form > .Input-container {
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 0.75rem;
+    margin-top: 30px; /* 원하는 간격으로 조정 */
+}
+body > .Login-form > .Input-container > .ErrorMsg {
+    /* 기존 스타일 유지 */
+    margin-top: 10px; /* 오류 메시지와 입력 필드 사이의 간격 조정 */
 }
 
 body > .Login-form > .Input-container:focus-within {
@@ -122,6 +152,7 @@ body > .Login-form > .Sub > .Autosign-container {
     justify-content: flex-start;
     user-select: none;
     width: 12rem;
+    margin-top: 15px; /* 원하는 간격으로 조정 */
 }
 
 body > .Login-form > .Sub > .Autosign-container > .Checkbox {
@@ -163,6 +194,7 @@ body > .Login-form > .Sub > .Autosign-container > .Text {
 body > .Login-form > .Sub > .Link {
     color: rgb(66, 132, 243);
     text-decoration: none;
+    margin-top: 9px; /* 원하는 간격으로 조정 */
 }
 
 body > .Login-form > .Button {
