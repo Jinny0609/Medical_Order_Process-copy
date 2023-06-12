@@ -52,6 +52,12 @@
             <input type="text" id="priceInput" oninput="formatPrice()">
           </div>
           
+          <div class="count_field">
+			    <label for="countInput">수량 : </label>
+			    <input type="number" id="countInput" min="0" max="30" onchange="checkCount(event)">
+			    <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
+		  </div>
+          
           <div class="optionContainer">
 			  <label class="option-label">옵션 : </label>
 			  <input type="text" id="option" class="option-input">

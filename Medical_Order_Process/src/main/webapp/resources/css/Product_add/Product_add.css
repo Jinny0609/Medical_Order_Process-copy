@@ -135,10 +135,16 @@ input {
 }
 
 .price_field,
+.count_field,
 .optionContainer{
 	margin-bottom: 20px;
 	margin-left: 16px;
 }
+
+/* 내부 텍스트 위치 조절을 위한 css */
+.count_field input[type="number"] {
+    padding-left: 260px;
+  }
 
 
 #nameInput {
@@ -147,7 +153,8 @@ input {
 }
 
 #priceInput,
-.option-input {
+#countInput,
+.option-input{
 	width: 300px;
 	margin-left: 5px;
 }

@@ -50,6 +50,23 @@ function formatPrice() {
 	  input.value = formattedPrice;
 	}
 
+// 최대 수량에 대한 함수
+window.checkCount = function(event) {
+    var countInput = event.target;
+    var count = parseInt(countInput.value);
+
+    if (isNaN(count)) {
+        countInput.value = '';
+    } else if (count > 30) {
+        countInput.value = 30;
+        var errorMessage = document.getElementById('countErrorMessage');
+        errorMessage.style.display = 'inline';
+        setTimeout(function() {
+            errorMessage.style.display = 'none';
+        }, 2000);
+    }
+};
+
 //옵션에 대한 함수 시작
 let optionCounter = 0; // 옵션 카운터 변수
 
