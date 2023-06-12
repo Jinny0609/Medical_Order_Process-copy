@@ -1,41 +1,45 @@
-function Validation() {
+function validateForm() {
     // 변수에 저장
-    var mail = document.getElementById("Email");
-    var pw = document.getElementById("Password");
+    var emailInput = document.getElementById("Email");
+    var passwordInput = document.getElementById("Password");
 
     // 정규식
-    // pw
     var regIdPw = /^[a-zA-Z0-9]{4,12}$/;
-    // 이메일(아이디)
     var regMail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-    
-    //메일주소 확인
-    if (mail.value.length == 0) {
-        document.getElementById("emailErrorMsg").innerText = "메일주소를 입력하세요.";
-        mail.focus();
+
+      // 이메일 주소 확인
+      if (emailInput.value === "") {
+        showError("emailErrorMsg", "메일주소를 입력하세요.");
+        emailInput.focus();
         return false;
-    } else if (!regMail.test(mail.value)) {
-        document.getElementById("emailErrorMsg").innerText = "잘못된 이메일 형식입니다.";
-        mail.focus();
+    } else if (!regMail.test(emailInput.value)) {
+        showError("emailErrorMsg", "잘못된 이메일 형식입니다.");
+        emailInput.focus();
         return false;
     } else {
         document.getElementById("emailErrorMsg").innerText = "";
     }
 
-    //비밀번호 확인
-    if (pw.value == "") {
-        document.getElementById("passwordErrorMsg").innerText = "비밀번호를 입력하세요.";
-        pw.focus();
+    // 비밀번호 확인
+    if (passwordInput.value === "") {
+        showError("passwordErrorMsg", "비밀번호를 입력하세요.");
+        passwordInput.focus();
         return false;
-    } else if (!regIdPw.test(pw.value)) {
-        document.getElementById("passwordErrorMsg").innerText = "4~12자 영문 대소문자, 숫자만 입력하세요.";
-        pw.focus();
+    } else if (!regIdPw.test(passwordInput.value)) {
+        showError("passwordErrorMsg", "4~12자 영문 대소문자, 숫자만 입력하세요.");
+        passwordInput.focus();
         return false;
     } else {
-        document.getElementById("passwordErrorMsg").innerText = "";
+        document.getElementById("emailErrorMsg").innerText = "";
     }
 
-    // 포커스 해제
-    pw.blur();
-    mail.blur();
+    // 유효성 검사 통과
+    passwordInput.blur();
+    emailInput.blur();
+    return true;
+}
+
+function showError(elementId, message) {
+    var errorElement = document.getElementById(elementId);
+    errorElement.textContent = message;
 }
