@@ -25,12 +25,10 @@
 						<li><a href="#">의료기기</a></li>
 						<li><a href="#">건강용품</a></li>
 						<li><a href="#">사무용품</a></li>
-						<li><a href="#">이벤트</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		
 		<!-- 상품 배열 구간 -->
 		<div class="Product_Info">
 			<div class="Product_Info2">
