@@ -1,7 +1,11 @@
 package gmt.medical.service;
 
-import gmt.medical.model.Product_add;
+import java.util.List;
+
+import gmt.medical.model.ProductImage;
+import gmt.medical.model.ProductInfo;
+import gmt.medical.model.ProductOption;
 
 public interface Product_add_Service {
-	public void saveProduct(Product_add Product);
+	public void saveProduct(ProductInfo productInfo, List<ProductOption> productOptions, List<ProductImage> productImages);
 }

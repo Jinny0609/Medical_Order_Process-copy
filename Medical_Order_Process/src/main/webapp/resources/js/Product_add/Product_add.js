@@ -120,38 +120,60 @@ function removeOption(optionId) {
 
 //전송버튼 이벤트
 function submitForm(event) {
-	  event.preventDefault(); // 폼의 기본 동작인 페이지 새로고침을 방지합니다.
+    event.preventDefault(); // 폼의 기본 동작인 페이지 새로고침을 방지합니다.
 
-	  var imageInput = document.getElementById('imageInput');
-	  var nameInput = document.getElementById('nameInput').value;
-	  var priceInput = document.getElementById('priceInput').value;
-	  var countInput = document.getElementById('countInput').value;
+    var imageInput = document.getElementById('imageInput');
+    var nameInput = document.getElementById('nameInput').value;
+    var priceInput = document.getElementById('priceInput').value;
+    var countInput = document.getElementById('countInput').value;
 
-	  var formData = new FormData();
-	  formData.append('image', imageInput.files[0]);
-	  formData.append('name', nameInput);
-	  formData.append('price', priceInput);
-	  formData.append('count', countInput); 
-	  
-	  // 옵션 데이터를 배열로 저장
-	  let options = [];
-	  for(let i = 1; i <= optionCounter; i++) {
-	    let optionValue = document.getElementById('option_' + i).value;
-	    options.push(optionValue);
-	  }
-	  // 옵션 데이터를 JSON 문자열로 변환하여 폼 데이터에 추가
-	  formData.append('options', JSON.stringify(options));
-	  
-	  // 서버로 이미지 파일과 함께 데이터를 전송합니다.
-	  // AJAX 또는 폼 전송 방식을 사용하여 서버에 전송할 수 있습니다.
+    var formData = new FormData();
+    formData.append('product_image', imageInput.files[0]);
+    formData.append('product_name', nameInput);
+    formData.append('product_price', priceInput);
+    formData.append('product_count', countInput); 
+    
+    // 옵션 데이터를 배열로 저장
+    let options = [];
+    for(let i = 1; i <= optionCounter; i++) {
+      let optionValue = document.getElementById('option_' + i).value;
+      options.push(optionValue);
+    }
+    // 옵션 데이터를 JSON 문자열로 변환하여 폼 데이터에 추가
+    formData.append('product_option', JSON.stringify(options));
+    formData.append('options', JSON.stringify(options));
+    
+    var url = "/Product_add";  // 요청을 보낼 URL
+    
+    fetch(url, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        // 서버 응답을 텍스트로 파싱하고 콘솔에 출력합니다.
+    	response.json().then(data => {
+            try {
+                // 응답 텍스트를 JSON으로 변환하려고 시도합니다.
+                return JSON.parse(text);
+            } catch (error) {
+                // 응답 텍스트를 JSON으로 변환하는데 실패하면 오류와 응답 텍스트를 콘솔에 출력합니다.
+                console.error('Parsing error:', error, 'Response text:', text);
+                throw error;
+            }
+        });
+    })
+    .then(data => console.log(data))   // 파싱된 데이터를 콘솔에 출력합니다.
+    .catch(error => console.error('Error:', error)); // 에러가 발생하면 에러를 콘솔에 출력합니다.
+  
+    alert('제품이 등록되었습니다.');
 
-	  // 전송 후에 필요한 동작을 수행할 수 있습니다.
-	  alert('제품이 등록되었습니다.');
+    // 전송 후 전체 폼 초기화 -> 사실 다른페이지로 이동하면 필요없음 나중에 처리
+    event.target.reset();
+    document.getElementById('imagePreviewContainer').innerHTML = '';
+}
 
-	  // 전송 후 전체 폼 초기화 -> 사실 다른페이지로 이동하면 필요없음 나중에 처리
-	  event.target.reset();
-	  document.getElementById('imagePreviewContainer').innerHTML = '';
-	}
+
+// 
 
 //취소 누를때 이미지 + 옵션 초기화 시키는 함수
 function resetForm() {
