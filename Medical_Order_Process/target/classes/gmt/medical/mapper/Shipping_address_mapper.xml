@@ -5,10 +5,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="gmt.medical.mapper.Shipping_address_mapper">
+	<!-- 배송지 정보 저장 -->
 	<insert id="saveAddress"
 		parameterType="gmt.medical.model.Shipping_address">
 		insert into delivery
 		(recive, pscode, address_road, address_detail, phonenum, request)
 		values (#{recive}, #{pscode}, #{address_road}, #{address_detail}, #{phonenum}, #{request});
 	</insert>
+	<!-- 배송지 리스트 갖고오기 -->
+	<select id="getAllAddresses" resultType="gmt.medical.model.Shipping_address">
+        SELECT * FROM delivery;
+    </select>
 </mapper>

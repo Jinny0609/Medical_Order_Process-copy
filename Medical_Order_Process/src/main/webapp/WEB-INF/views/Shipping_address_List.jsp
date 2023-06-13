@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,17 +55,23 @@
 			<!-- 여기서부터 바꿀 내용 들어갑니다.-->
 			<div class="MY_delivery">
 				<div class="Shipping_Card_Box">
-				<!-- 반복문 시작하는 부분 -->
-				<div class="Shipping_Card_Solid">
-				<div class="Shipping_Card_Text">
-				<div class="Shipping_Card_Title"><strong>김주윤</strong></div>
-				<div>제주특별자치도 어쩌구 저쩌구</div>
-				<div>010-1111-2222</div>
-				<div>문 앞</div>
-				<button class="Shipping_Card_BT" onclick="redirectToPage()">수정</button>
-				</div>
-				</div>
-				<div class="Shipping_BT" onclick="redirectToJSP()"><i class="bi bi-plus-lg fs-5"></i>배송지 추가 버튼</div>
+				<c:forEach items="${addresses}" var="address">
+					<div class="Shipping_Card_Solid">
+						<div class="Shipping_Card_Text">
+							<div class="Shipping_Card_Title">
+								<strong>${address.recive}</strong>
+							</div>
+							<div>${address.address_road}</div>
+							<div>${address.address_detail}</div>
+							<div>${address.phonenum}</div>
+							<div>${address.request}</div>
+							<button class="Shipping_Card_BT" onclick="redirectToPage()">수정</button>
+						</div>
+					</div>
+					</c:forEach>
+					<div class="Shipping_BT" onclick="redirectToJSP()">
+						<i class="bi bi-plus-lg fs-5"></i>배송지 추가 버튼
+					</div>
 				</div>
 			</div>
 		</div>

@@ -87,5 +87,5 @@ function calculatePrice() {
 
 // 마이정보 이동
 function redirectMYpage() {
-	window.location.href = '/Shipping_address_List';
+	window.location.href = '/Order_list';
 }
