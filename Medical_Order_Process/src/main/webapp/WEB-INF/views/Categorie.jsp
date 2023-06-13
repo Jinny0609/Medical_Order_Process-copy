@@ -30,7 +30,6 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- 상품 배열 구간 -->
 		<div class="Product_Info">
 			<div class="Product_Info2">
@@ -49,60 +48,102 @@
 
 				<!--상품 전체-->
 				<ul>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
-					<li class="Products">
-					<a> 
-					<div><img src="resources/img/home/item/group_banner/7.jpg"></div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
 							<div class="Products_Text">
-								<div>A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
 								<div>47,900원</div>
 							</div>
-					</a>
-					</li>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
+							<div class="Products_Text">
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div>47,900원</div>
+							</div>
+						</div>	
+					</a></li>
+					<li class="Products"><a>
+							<div>
+								<img src="resources/img/home/item/group_banner/7.jpg">
+							</div>
+						<div class="Texts">	
+							<div class="discount"><img src="resources/img/home/item/group_banner/per.png">지금 20% 할인 중</div>
+							<div class="Products_Text">
+								<div class="Products_font">A-01 고급스판 롱가운 빅사이즈 의사가운 / 남여~140</div>
+								<div>47,900원</div>
+							</div>
+						</div>	
+					</a></li>
 				</ul>
 			</div>
 		</div>

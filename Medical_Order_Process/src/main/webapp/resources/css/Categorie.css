@@ -64,19 +64,26 @@ a{
 	margin-right:10px;
 	
 }
-.Products{
-    float: left;
-    border-bottom: 1px solid #ddd;
-    width: 280px;
-    padding: 40px;
-    overflow: hidden;
+.Products {
+	float: left;
+	border-bottom: 1px solid #ddd;
+	width: 25%; /* 4개의 상품이 한 줄에 배치되도록 25%로 설정 */
+	padding: 20px;
+	overflow: hidden;
+	box-sizing: border-box;
 }
 
+.Texts{
+	text-align:center;	
+	
+}
+.discount{
+	font-family: sans-serif;
+	font-size: 15px;
+}
 .Serch-sorting{
 	padding:5px;
 	min-width: 1100px;
 }
 
-.Products_Text{
-	text-align:center;
-}
+
