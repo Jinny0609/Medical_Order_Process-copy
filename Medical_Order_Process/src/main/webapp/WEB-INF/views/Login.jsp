@@ -15,14 +15,14 @@
 </head>
 <body>
 
-<form class="Login-form" method="post" onsubmit="return Validation()">
+<form action="/Login" class="Login-form" method="post" onsubmit="return Validation()">
     <div class="Logo-container">
         <img class="Logo" src="resources/img/MarshLogo.png">
     </div>
     <div class="Input-container">
         <i class="icon fa-solid fa-envelope"></i>
         <span hidden>이메일</span>
-        <input id="Email" class="Input" maxlength="50" name="email" placeholder="아이디(이메일)" type="email">
+        <input id="Email" class="Input" maxlength="50" name="email_id" placeholder="아이디(이메일)" type="email">
         <div id="emailErrorMsg" class="ErrorMsg"></div>
     </div>
     <div class="Input-container">
