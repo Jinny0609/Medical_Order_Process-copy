@@ -21,4 +21,22 @@ public class InfoController {
 		System.out.println(address);
 		return "redirect:/Shipping_address_List";
 	}
+	
+	// 배송지 정보 작성 페이지 이동
+	@RequestMapping(value = "/Shipping_address_New", method = RequestMethod.GET)
+	public String Shipping_address_New() {
+		return "Shipping_address_New";
+	}
+	
+	// 배송지 리스트 페이지 이동
+	@RequestMapping(value = "/Shipping_address_List", method = RequestMethod.GET)
+	public String Shipping_address_List() {
+		return "Shipping_address_List";
+	}
+	
+	// 배송지 수정 페이지 이동
+	@RequestMapping(value = "/Shipping_address_Edit", method = RequestMethod.GET)
+	public String Shipping_address_Edit() {
+		return "Shipping_address_Edit";
+	}
 }
