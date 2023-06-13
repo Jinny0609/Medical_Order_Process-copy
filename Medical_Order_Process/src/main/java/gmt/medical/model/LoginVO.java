@@ -1,17 +1,17 @@
 package gmt.medical.model;
 
 public class LoginVO {
-	private String user_id;
+	private int user_id;
 	private String email_id;
 	private String password;
 	private String name;
 	private String phonenum;
 	private String hcode;
 	
-	public String getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 	public String getEmail_id() {

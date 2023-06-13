@@ -8,11 +8,11 @@
 	<!-- 배송지 정보 저장 -->
 	<insert id="saveAddress"
 		parameterType="gmt.medical.model.Shipping_address">
-		insert into delivery
+		INSERT INTO delivery
 		(recive, pscode, address_road,
-		address_detail, phonenum, request)
-		values (#{recive}, #{pscode},
-		#{address_road}, #{address_detail}, #{phonenum}, #{request});
+		address_detail, phonenum, request, user_id)
+		VALUES (#{recive}, #{pscode},
+		#{address_road}, #{address_detail}, #{phonenum}, #{request}, #{user_id});
 	</insert>
 
 	<!-- 배송지 리스트 갖고오기 -->

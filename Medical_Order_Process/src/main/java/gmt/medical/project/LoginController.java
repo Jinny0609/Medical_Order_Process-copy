@@ -28,7 +28,7 @@ public class LoginController {
 	public String login_Success(LoginVO loginVO, HttpSession session) {
 		LoginVO result = loginservice.login_Success(loginVO);
 		if (result != null) {
-			session.setAttribute("user_form", result);
+			session.setAttribute("user_id", result.getUser_id()); // 세션에 사용자 키(user_id) 설정
 	        return "redirect:/"; // Replace "success-page" with the actual URL of the success page
 	    } else {
 	        return "redirect:/Login"; // Replace "failure-page" with the actual URL of the failure page

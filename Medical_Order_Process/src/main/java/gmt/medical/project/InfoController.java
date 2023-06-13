@@ -2,6 +2,8 @@ package gmt.medical.project;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +22,14 @@ public class InfoController {
 
 	// 배송지주소 DB에 저장
 	@RequestMapping(value = "/saveAddress", method = RequestMethod.GET)
-	public String saveAddress(Shipping_address address) {
-		addressService.saveAddress(address);
+	public String saveAddress(Shipping_address address, HttpSession session) {
+	    // 세션에서 사용자 고유 키(user_id) 가져오기
+	    int user_id = (int) session.getAttribute("user_id");
+	    
+	    // Shipping_address 모델에 사용자 고유 키 설정
+	    address.setUser_id(user_id);
+
+	    addressService.saveAddress(address);
 		return "redirect:/Shipping_address_List";
 	}
 
