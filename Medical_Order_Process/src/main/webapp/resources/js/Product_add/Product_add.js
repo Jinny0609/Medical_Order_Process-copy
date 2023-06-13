@@ -51,21 +51,24 @@ function formatPrice() {
 	}
 
 // 최대 수량에 대한 함수
-window.checkCount = function(event) {
-    var countInput = event.target;
+window.checkCount = function() {
+    var countInput = document.getElementById('countInput');
     var count = parseInt(countInput.value);
 
     if (isNaN(count)) {
         countInput.value = '';
     } else if (count > 30) {
-        countInput.value = 30;
         var errorMessage = document.getElementById('countErrorMessage');
         errorMessage.style.display = 'inline';
         setTimeout(function() {
             errorMessage.style.display = 'none';
-        }, 2000);
+            countInput.value = 30;
+        }, 1000);
     }
 };
+
+//Check the input field every 100 milliseconds
+setInterval(checkCount, 100);
 
 //옵션에 대한 함수 시작
 let optionCounter = 0; // 옵션 카운터 변수
@@ -122,19 +125,30 @@ function submitForm(event) {
 	  var imageInput = document.getElementById('imageInput');
 	  var nameInput = document.getElementById('nameInput').value;
 	  var priceInput = document.getElementById('priceInput').value;
+	  var countInput = document.getElementById('countInput').value;
 
 	  var formData = new FormData();
 	  formData.append('image', imageInput.files[0]);
 	  formData.append('name', nameInput);
 	  formData.append('price', priceInput);
-
+	  formData.append('count', countInput); 
+	  
+	  // 옵션 데이터를 배열로 저장
+	  let options = [];
+	  for(let i = 1; i <= optionCounter; i++) {
+	    let optionValue = document.getElementById('option_' + i).value;
+	    options.push(optionValue);
+	  }
+	  // 옵션 데이터를 JSON 문자열로 변환하여 폼 데이터에 추가
+	  formData.append('options', JSON.stringify(options));
+	  
 	  // 서버로 이미지 파일과 함께 데이터를 전송합니다.
 	  // AJAX 또는 폼 전송 방식을 사용하여 서버에 전송할 수 있습니다.
 
 	  // 전송 후에 필요한 동작을 수행할 수 있습니다.
 	  alert('제품이 등록되었습니다.');
 
-	  // 전체 폼 초기화
+	  // 전송 후 전체 폼 초기화 -> 사실 다른페이지로 이동하면 필요없음 나중에 처리
 	  event.target.reset();
 	  document.getElementById('imagePreviewContainer').innerHTML = '';
 	}
