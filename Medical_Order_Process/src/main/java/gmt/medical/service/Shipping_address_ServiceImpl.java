@@ -20,4 +20,16 @@ public class Shipping_address_ServiceImpl implements Shipping_address_Service {
     public List<Shipping_address> getAllAddresses(){
     	return addressRepository.getAllAddresses();
     }
+    // 배송지 정보 수정 데이터 가져오기
+    public Shipping_address getAddressById(int address_id) {
+    	return addressRepository.getAddressById(address_id);
+    }
+    // 배송지 정보 수정 후 저장
+ 	public void updateAddress(Shipping_address address) {
+ 		addressRepository.updateAddress(address);
+ 	}
+ 	// 배송지 정보 삭제
+ 	public void deleteAddress(int address_id) {
+ 		addressRepository.deleteAddress(address_id);
+ 	}
 }

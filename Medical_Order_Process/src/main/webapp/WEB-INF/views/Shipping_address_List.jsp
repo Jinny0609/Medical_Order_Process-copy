@@ -61,11 +61,12 @@
 							<div class="Shipping_Card_Title">
 								<strong>${address.recive}</strong>
 							</div>
+							<div>${address.pscode}</div>
 							<div>${address.address_road}</div>
 							<div>${address.address_detail}</div>
 							<div>${address.phonenum}</div>
 							<div>${address.request}</div>
-							<button class="Shipping_Card_BT" onclick="redirectToPage()">수정</button>
+							<button class="Shipping_Card_BT" onclick="redirectToPage('${address.address_id}')">수정</button>
 						</div>
 					</div>
 					</c:forEach>
