@@ -52,13 +52,15 @@
 				</div>
 			</div>
 			<!-- 여기서부터 바꿀 내용 들어갑니다.-->
+			<form method="post">
+			<input type=hidden name="address_id" value="${address.address_id}">
 			<div class="MY_delivery">
 				<div class="MY_jeongbo_BOX">
 					<div class="MY_jeongbo_IKON">
 						<i class="bi bi-person-circle fs-3"></i>
 					</div>
 					<div>
-						<input type="text" class="MY_jeongbo_INPUT" placeholder="받는 사람">
+						<input type="text" class="MY_jeongbo_INPUT" placeholder="받는 사람" name="recive" value="${address.recive}">
 					</div>
 				</div>
 				<div class="MY_jeongbo_BOX">
@@ -67,17 +69,17 @@
 					</div>
 					<div>
 						<div class="MY_jeongbo_INPUT" id="MY_jeongbo_UPAN">
-							<input type="text" id="zip-code" placeholder="우편번호"> <input
+							<input type="text" id="zip-code" placeholder="우편번호" name="pscode" value="${address.pscode}"> <input
 								type="button" class="MY_jeongbo_BT" onclick="execDaumPostcode()"
 								value="우편번호 찾기">
 						</div>
 						<div>
-							<input type="text" class="MY_jeongbo_INPUT" id="address-1"
-								placeholder="도로명주소">
+							<input type="text" name="address_road" class="MY_jeongbo_INPUT" id="address-1"
+								placeholder="도로명주소" value="${address.address_road}">
 						</div>
 						<div>
-							<input type="text" class="MY_jeongbo_INPUT" id="address-2"
-								placeholder="상세주소">
+							<input type="text" name="address_detail" class="MY_jeongbo_INPUT" id="address-2"
+								placeholder="상세주소" value="${address.address_detail}">
 						</div>
 					</div>
 				</div>
@@ -86,7 +88,7 @@
 						<i class="bi bi-telephone fs-3"></i>
 					</div>
 					<div>
-						<input type="text" class="MY_jeongbo_INPUT" placeholder="휴대폰 번호">
+						<input type="text" name="phonenum" class="MY_jeongbo_INPUT" placeholder="휴대폰 번호" value="${address.phonenum}">
 					</div>
 				</div>
 				<div class="MY_jeongbo_BOX">
@@ -94,14 +96,15 @@
 						<i class="bi bi-chat-left-dots fs-3"></i>
 					</div>
 					<div>
-						<input type="text" class="MY_jeongbo_INPUT"
-							placeholder="배송시 요청 사항">
+						<input type="text" name="request" class="MY_jeongbo_INPUT"
+							placeholder="배송시 요청 사항" value="${address.request}">
 					</div>
 				</div>
-				<button class="MY_jeongbo_SAVE">저장</button>
+				<button type="submit" formaction="/updateAddress" class="MY_jeongbo_SAVE">저장</button>
 				<br>
-				<button class="MY_jeongbo_DELETE">삭제</button>
+				<button type="submit" formaction="/deleteAddress" class="MY_jeongbo_DELETE">삭제</button>
 			</div>
+			</form>
 		</div>
 	</div>
 	<script

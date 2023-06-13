@@ -12,6 +12,6 @@ function redirectToJSP() {
 	window.location.href = '/Shipping_address_New';
 }
 
-function redirectToPage() {
-	window.location.href = '/Shipping_address_Edit';
+function redirectToPage(address_id) {
+	  window.location.href = '/Shipping_address_Edit?key=' + address_id;
 }
