@@ -48,4 +48,10 @@ public class LoginController {
 		System.out.println(loginVO);
 		return "redirect:/Login";
 	}
+	/*비밀번호 찾기*/
+	@RequestMapping(value = "/Findpassword", method = RequestMethod.GET)
+	public String findpassword() {
+		return "/Findpassword";
+	}
+	
 }

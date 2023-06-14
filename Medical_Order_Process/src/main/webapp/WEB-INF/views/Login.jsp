@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,14 +7,34 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>로그인</title>
-    <link href= "resources/css/Login.css"rel="stylesheet">
+    <link href="resources/css/Login.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0d51ab0f86.js" crossorigin="anonymous"></script>
     <script src="resources/js/Login.js"></script>
+    <script>
+        window.onload = function() {
+            // 아이디 기억하기 체크박스 요소
+            var rememberMeCheckbox = document.getElementById('RememberMe');
+            // 이전에 저장된 아이디 가져오기
+            var savedId = localStorage.getItem('rememberedId');
+            if (savedId) {
+                rememberMeCheckbox.checked = true;
+                document.getElementById('Email').value = savedId;
+            }
 
+            // 폼 전송 이벤트 처리
+            document.getElementById('LoginForm').addEventListener('submit', function() {
+                if (rememberMeCheckbox.checked) {
+                    var enteredId = document.getElementById('Email').value;
+                    localStorage.setItem('rememberedId', enteredId);
+                } else {//체크박스 헤제시 아이디값 제거
+                    localStorage.removeItem('rememberedId');
+                }
+            });
+        };
+    </script>
 </head>
 <body>
-
-<form action="/Login" class="Login-form" method="post" onsubmit="return Validation()">
+<form id="LoginForm" class="Login-form" method="post" onsubmit="return Validation()">
     <div class="Logo-container">
         <img class="Logo" src="resources/img/MarshLogo.png">
     </div>
@@ -33,13 +52,13 @@
     </div>
     <div class="Sub">
         <label class="Autosign-container">
-            <input class="Checkbox" name="autosign" type="checkbox">
+            <input id="RememberMe" class="Checkbox" name="rememberMe" type="checkbox">
             <span class="Checker">
                 <i class="icon fa-solid fa-check"></i>
             </span>
-            <span class="Text">아이디기억하기</span>
+            <span class="Text">아이디 기억하기</span>
         </label>
-        <a class="Link" href="user/recove">아이디(이메일)/비밀번호 찾기</a>
+        <a class="Link" href="#">아이디(이메일)/비밀번호 찾기</a>
     </div>
     <input class="Button Login" type="submit" value="로그인">
     <div class="Line"></div>
@@ -48,4 +67,3 @@
 </form>
 </body>
 </html>
-
