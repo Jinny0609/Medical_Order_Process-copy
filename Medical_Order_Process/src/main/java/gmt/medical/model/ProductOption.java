@@ -4,7 +4,6 @@ public class ProductOption {
 	private int optionId;
     private int productId;
     private String optionName;
-    private int optionPrice;
     
 	public int getOptionId() {
 		return optionId;
@@ -23,11 +22,5 @@ public class ProductOption {
 	}
 	public void setOptionName(String optionName) {
 		this.optionName = optionName;
-	}
-	public int getOptionPrice() {
-		return optionPrice;
-	}
-	public void setOptionPrice(int optionPrice) {
-		this.optionPrice = optionPrice;
 	}
 }

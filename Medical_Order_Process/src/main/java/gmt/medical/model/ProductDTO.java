@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ProductDTO {
 	private ProductInfo productInfo;
-    private List<ProductOption> productOptions;
-    private List<ProductImage> productImages;
+//    private List<ProductOption> productOptions;	// 이미지및 옵션은 나중에 테스트
+//    private List<ProductImage> productImages;		// 이미지및 옵션은 나중에 테스트
 
     public ProductInfo getProductInfo() {
         return productInfo;
@@ -14,7 +14,9 @@ public class ProductDTO {
     public void setProductInfo(ProductInfo productInfo) {
         this.productInfo = productInfo;
     }
-
+    
+    // 이미지및 옵션은 나중에 테스트
+    /*
     public List<ProductOption> getProductOptions() {
         return productOptions;
     }
@@ -30,4 +32,5 @@ public class ProductDTO {
     public void setProductImages(List<ProductImage> productImages) {
         this.productImages = productImages;
     }
+    */
 }

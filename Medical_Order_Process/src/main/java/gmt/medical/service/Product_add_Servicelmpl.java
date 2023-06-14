@@ -18,24 +18,24 @@ public class Product_add_Servicelmpl implements Product_add_Service{
 	@Autowired
     private ProductInfoMapper productInfoMapper;
 
-    @Autowired
-    private ProductOptionMapper productOptionMapper;
-
-    @Autowired
-    private ProductImagesMapper productImagesMapper;
+//    @Autowired
+//    private ProductOptionMapper productOptionMapper;
+//
+//    @Autowired
+//    private ProductImagesMapper productImagesMapper;
 
     @Override
-    public void saveProduct(ProductInfo productInfo, List<ProductOption> productOptions, List<ProductImage> productImages) {
+    public void saveProduct(ProductInfo productInfo/*, List<ProductOption> productOptions, List<ProductImage> productImages*/) {
         productInfoMapper.insertProductInfo(productInfo);
 
-        for (ProductOption option : productOptions) {
-            option.setProductId(productInfo.getProductId());  // 상품 정보에서 가져온 id를 설정
-            productOptionMapper.insertProductOption(option);
-        }
-
-        for (ProductImage image : productImages) {
-            image.setProductId(productInfo.getProductId());  // 상품 정보에서 가져온 id를 설정
-            productImagesMapper.insertProductImage(image);
-        }
+//        for (ProductOption option : productOptions) {
+//            option.setProductId(productInfo.getProductId());  // 상품 정보에서 가져온 id를 설정
+//            productOptionMapper.insertProductOption(option);
+//        }
+//
+//        for (ProductImage image : productImages) {
+//            image.setProductId(productInfo.getProductId());  // 상품 정보에서 가져온 id를 설정
+//            productImagesMapper.insertProductImage(image);
+//        }
     }
 }

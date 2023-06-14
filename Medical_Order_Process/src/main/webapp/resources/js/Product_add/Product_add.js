@@ -121,59 +121,54 @@ function removeOption(optionId) {
 //전송버튼 이벤트
 function submitForm(event) {
     event.preventDefault(); // 폼의 기본 동작인 페이지 새로고침을 방지합니다.
-
+    var url = "/Product_add"// 요청을 보낼 URL
+    
     var imageInput = document.getElementById('imageInput');
     var nameInput = document.getElementById('nameInput').value;
     var priceInput = document.getElementById('priceInput').value;
     var countInput = document.getElementById('countInput').value;
+    
+    var productInfo = {
+	    productName: nameInput,
+	    productPrice: priceInput,
+	    productCount: countInput,
+	    // 여기에 추가 필드가 있으면 계속 추가
+	};
 
     var formData = new FormData();
-    formData.append('product_image', imageInput.files[0]);
-    formData.append('product_name', nameInput);
-    formData.append('product_price', priceInput);
-    formData.append('product_count', countInput); 
+    // formData.append('product_image', imageInput.files[0]); 나중에 테스트하려고 주석처리함 2023-06-14 오전 10:15
     
-    // 옵션 데이터를 배열로 저장
-    let options = [];
-    for(let i = 1; i <= optionCounter; i++) {
-      let optionValue = document.getElementById('option_' + i).value;
-      options.push(optionValue);
-    }
-    // 옵션 데이터를 JSON 문자열로 변환하여 폼 데이터에 추가
-    formData.append('product_option', JSON.stringify(options));
-    formData.append('options', JSON.stringify(options));
+//    formData.append('product_name', nameInput);
+//    formData.append('product_price', priceInput);
+//    formData.append('product_count', countInput);
     
-    var url = "/Product_add";  // 요청을 보낼 URL
+    // ProductInfo 객체를 JSON 문자열로 변환하여 폼 데이터에 추가
+    formData.append('productInfo', JSON.stringify(productInfo));
+    
+//    // 옵션 데이터를 배열로 저장 - 옵션 나중에 테스트하려고 주석처리함 2023-06-14 오전 10:15
+//    let options = [];
+//    for(let i = 1; i <= optionCounter; i++) {
+//      let optionValue = document.getElementById('option_' + i).value;
+//      options.push(optionValue);
+//    }
+//    // 옵션 데이터를 JSON 문자열로 변환하여 폼 데이터에 추가
+//    formData.append('product_option', JSON.stringify(options));
+//    formData.append('options', JSON.stringify(options)); 
     
     fetch(url, {
         method: 'POST',
         body: formData,
     })
-    .then(response => {
-        // 서버 응답을 텍스트로 파싱하고 콘솔에 출력합니다.
-    	response.json().then(data => {
-            try {
-                // 응답 텍스트를 JSON으로 변환하려고 시도합니다.
-                return JSON.parse(text);
-            } catch (error) {
-                // 응답 텍스트를 JSON으로 변환하는데 실패하면 오류와 응답 텍스트를 콘솔에 출력합니다.
-                console.error('Parsing error:', error, 'Response text:', text);
-                throw error;
-            }
-        });
-    })
-    .then(data => console.log(data))   // 파싱된 데이터를 콘솔에 출력합니다.
+    .then(response => response.json())
+    .then(data => console.log(data))
     .catch(error => console.error('Error:', error)); // 에러가 발생하면 에러를 콘솔에 출력합니다.
   
     alert('제품이 등록되었습니다.');
 
     // 전송 후 전체 폼 초기화 -> 사실 다른페이지로 이동하면 필요없음 나중에 처리
     event.target.reset();
-    document.getElementById('imagePreviewContainer').innerHTML = '';
+//    document.getElementById('imagePreviewContainer').innerHTML = '';	나중에 테스트하려고 주석처리함 2023-06-14 오전 10:15
 }
-
-
-// 
 
 //취소 누를때 이미지 + 옵션 초기화 시키는 함수
 function resetForm() {
@@ -203,42 +198,55 @@ resetForm(); // 이미지 미리보기 초기화
 //document.getElementById("imageInput").onchange(); // 이미지 input 값 초기화
 });
 
+//카테고리와 해당하는 숫자를 매핑한 객체를 생성
+var categoryMap = {
+    '의료소모품': 1,
+    '수술기구': 2,
+    '의료기기': 3,
+    '건강용품': 4,
+    '사무용품': 5
+};
 
-//drop down 함수 시작
+//카테고리 drop down 함수 시작
 document.addEventListener("DOMContentLoaded", function() {
-	  var selectWrapper = document.querySelector('.select-wrapper');
-	  var selectedOption = selectWrapper.querySelector('.selected');
-	  var optionsList = selectWrapper.querySelector('.options');
-	  var hiddenInput = document.querySelector('#categoryInput');
-	  var isDropdownOpen = false;
+    var selectWrapper = document.querySelector('.select-wrapper');
+    var selectedOption = selectWrapper.querySelector('.selected');
+    var optionsList = selectWrapper.querySelector('.options');
+    var hiddenInput = document.querySelector('#categoryInput');
+    var isDropdownOpen = false;
 
-	  selectWrapper.addEventListener('click', function() {
-	    isDropdownOpen = !isDropdownOpen;
-	    if (isDropdownOpen) {
-	      optionsList.style.display = 'block';
-	    } else {
-	      optionsList.style.display = 'none';
-	    }
-	  });
+    selectWrapper.addEventListener('click', function() {
+        isDropdownOpen = !isDropdownOpen;
+        if (isDropdownOpen) {
+            optionsList.style.display = 'block';
+        } else {
+            optionsList.style.display = 'none';
+        }
+    });
 
-	  optionsList.addEventListener('click', function(e) {
-		  var target = e.target;
-		  if (target.tagName.toLowerCase() === 'li') {
-		    selectedOption.textContent = target.textContent;
-		    hiddenInput.value = target.getAttribute('data-value');
-		    optionsList.style.display = 'none';
-		    isDropdownOpen = false;
-		    e.stopPropagation();  // 이벤트 전파를 멈추는 코드를 추가(이벤트 버블링 : 해당 이벤트가 상위의 요소로 전달)
-		  }
-		});
+    optionsList.addEventListener('click', function(e) {
+        var target = e.target;
+        if (target.tagName.toLowerCase() === 'li') {
+            selectedOption.textContent = target.textContent;
+            
+            // 선택된 카테고리를 해당하는 숫자로 변환하여 hidden input의 value에 저장합니다.
+            var selectedCategory = target.getAttribute('data-value');
+            var categoryId = categoryMap[selectedCategory];
+            hiddenInput.value = categoryId;
+            
+            optionsList.style.display = 'none';
+            isDropdownOpen = false;
+            e.stopPropagation();  // 이벤트 전파를 멈추는 코드를 추가(이벤트 버블링 : 해당 이벤트가 상위의 요소로 전달)
+        }
+    });
 
-	  document.addEventListener('click', function(e) {
-	    var target = e.target;
-	    if (!selectWrapper.contains(target) && isDropdownOpen) {
-	      optionsList.style.display = 'none';
-	      isDropdownOpen = false;
-	    }
-	  });
-	});
+    document.addEventListener('click', function(e) {
+        var target = e.target;
+        if (!selectWrapper.contains(target) && isDropdownOpen) {
+            optionsList.style.display = 'none';
+            isDropdownOpen = false;
+        }
+    });
+});
 
 
