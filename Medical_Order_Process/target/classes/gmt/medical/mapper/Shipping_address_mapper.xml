@@ -11,21 +11,24 @@
 		INSERT INTO delivery
 		(recive, pscode, address_road,
 		address_detail, phonenum, request, user_id)
-		VALUES (#{recive}, #{pscode},
-		#{address_road}, #{address_detail}, #{phonenum}, #{request}, #{user_id});
+		VALUES (#{recive},
+		#{pscode},
+		#{address_road}, #{address_detail}, #{phonenum}, #{request},
+		#{user_id});
 	</insert>
 
 	<!-- 배송지 리스트 갖고오기 -->
 	<select id="getAllAddresses"
 		resultType="gmt.medical.model.Shipping_address">
-		SELECT * FROM delivery;
+		SELECT * FROM delivery
+		WHERE user_id = #{user_id}
 	</select>
 
 	<!-- 배송지 수정 데이터 가져오기 -->
 	<select id="getAddressById"
 		resultType="gmt.medical.model.Shipping_address">
 		SELECT * FROM delivery
-		WHERE address_id = #{address_id}
+		WHERE address_id = #{address_id} AND user_id = #{user_id}
 	</select>
 	<!-- 배송지 수정 후 저장 -->
 	<update id="updateAddress"
@@ -40,12 +43,12 @@
 		phonenum = #{phonenum},
 		request = #{request}
 		WHERE
-		address_id = #{address_id}
+		address_id = #{address_id} AND user_id = #{user_id}
 	</update>
 	<!-- 배송지 정보 삭제 -->
 	<delete id="deleteAddress" parameterType="int">
 		DELETE FROM delivery
-		WHERE address_id = #{address_id}
+		WHERE address_id = #{address_id} AND user_id = #{user_id}
 	</delete>
 
 </mapper>
