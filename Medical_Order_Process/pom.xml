@@ -174,7 +174,17 @@
 			<artifactId>json</artifactId>
 			<version>20210307</version>
 		</dependency>
-
+		
+		<!-- Amazon s3 버킷 연결위해서 필요(호준)-->
+		<!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
+		<dependency>
+		    <groupId>software.amazon.awssdk</groupId>
+		    <artifactId>s3</artifactId>
+		    <version>2.20.83</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		
 	</dependencies>
 
 	<build>
