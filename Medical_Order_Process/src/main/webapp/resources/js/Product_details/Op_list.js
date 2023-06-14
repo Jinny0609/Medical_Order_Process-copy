@@ -1,3 +1,16 @@
+$(document).ready(
+				function() {
+					$('.dropdown').hover(
+							function() {
+								$(this).find('.dropdown-content').stop(true,
+										true).slideDown(200);
+							},
+							function() {
+								$(this).find('.dropdown-content').stop(true,
+										true).slideUp(200);
+							});
+				});
+
 var optionPrices = {};
 
 function toggleOptionList() {
@@ -88,4 +101,20 @@ function calculatePrice() {
 // 마이정보 이동
 function redirectMYpage() {
 	window.location.href = '/Order_list';
+}
+// 로그인 페이지 이동
+function redirectMYLogin() {
+	window.location.href = '/Login';
+}
+// 회원가입이동
+function redirectMYSign_up() {
+	window.location.href = '/Sign_up';
+}
+// 장바구니 이동
+function redirectMYCart() {
+	window.location.href = '/Cart';
+}
+// 카테고리 이동
+function redirectMYCategorie() {
+	window.location.href = '/Categorie';
 }

@@ -10,14 +10,14 @@
 <script src="resources/js/Sign_up.js"></script>
 </head>
 <body>
- <form class="register-form" method="post" onsubmit="return Validation()">
+ <form action="/Sign_up" class="register-form" method="POST" onsubmit="return Validation()">
         <div class="logo-container">
             <img src="resources/img/MarshLogo.png" class="logo">
         </div>
         <div class="section-title">회원정보를 입력해주세요</div>
         <label class="input-container">
             <i class="icon fa-solid fa-envelope"></i>
-            <input autofocus class="input" maxlength="50" id="email" name="email" placeholder="아이디(이메일)" type="email">
+            <input autofocus class="input" maxlength="50" id="email" name="email_id" placeholder="아이디(이메일)" type="email">
         </label>
         <div id="EmailErrorMsg" class="ErrorMsg1"></div>
         <label class="input-container">
@@ -37,12 +37,12 @@
         <div id="NameErrorMsg" class="ErrorMsg4"></div>
         <label class="input-container">
             <i class="icon fa-solid fa-phone"></i>
-            <input class="input" maxlength="11" id="phone" name="phone" placeholder="휴대폰 번호" type="tel">
+            <input class="input" maxlength="11" id="phone" name="phonenum" placeholder="휴대폰 번호" type="tel">
         </label>
         <div id="PhoneErrorMsg" class="ErrorMsg5"></div>
         <label class="input-container">
             <i class="icon fa-solid fa-lock"></i>
-            <input class="input" maxlength="50" name="password" placeholder="병원 코드" type="password">
+            <input class="input" maxlength="50" name="hcode" placeholder="병원 코드" type="password">
         </label>
         <div id="McodeErrorMsg" class="ErrorMsg6"></div>
         <div class="line"></div>
