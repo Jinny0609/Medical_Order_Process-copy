@@ -13,7 +13,7 @@
 </head>
 <header>
 	<div class="dropdown">
-		<button class="btn btn-danger">
+		<button class="btn btn-danger" onclick="redirectMYCategorie()">
 			<i class="bi bi-justify fs-2"></i><br> 카테고리
 		</button>
 		<div class="dropdown-content">
@@ -24,8 +24,8 @@
 	<section>
 		<div class="I_BOX">
 			<h1 class="I_logo">
-				<a href="/"> <img src="resources/img/MarshLogo.png"
-					alt="쿠팡로고" width="174" height="39">
+				<a href="/"> <img src="resources/img/MarshLogo.png" alt="쿠팡로고"
+					width="174" height="39">
 				</a>
 			</h1>
 			<div class="search">
@@ -34,8 +34,10 @@
 					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
 			</div>
 			<ul class="H_ikon">
-				<li onclick="redirectMYpage()"><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
-				<li><a><i class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
+				<li onclick="redirectMYpage()"><a><i
+						class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
+				<li onclick="redirectMYCart()"><a><i
+						class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
 			</ul>
 		</div>
 	</section>
@@ -47,9 +49,10 @@
 			<li>입점신청</li>
 		</ul>
 		<ul class="M_login">
-			<li>로그인</li>
-			<li>회원가입</li>
-			<li>고객센터</li>
+			<li id="login_btn" onclick="redirectMYLogin()">로그인</li>
+			<li id="signup_btn" onclick="redirectMYSign_up()">회원가입</li>
+			<li id="user_info" style="display: none;"><span id="name"></span></li>
+			<li id="user_info2" onclick="logout()">로그아웃</li>
 		</ul>
 	</div>
 </article>
@@ -58,20 +61,6 @@
 
 	<!-- jQuery 라이브러리 추가 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(
-				function() {
-					$('.dropdown').hover(
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideDown(200);
-							},
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideUp(200);
-							});
-				});
-	</script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
