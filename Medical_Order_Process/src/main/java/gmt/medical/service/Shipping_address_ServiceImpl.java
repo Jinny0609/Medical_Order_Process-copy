@@ -21,8 +21,8 @@ public class Shipping_address_ServiceImpl implements Shipping_address_Service {
     	return addressRepository.getAllAddresses(user_id);
     }
     // 배송지 정보 수정 데이터 가져오기
-    public Shipping_address getAddressById(int address_id,int user_id) {
-    	return addressRepository.getAddressById(address_id,user_id);
+    public Shipping_address getAddressById(int address_id) {
+    	return addressRepository.getAddressById(address_id);
     }
     // 배송지 정보 수정 후 저장
  	public void updateAddress(Shipping_address address) {

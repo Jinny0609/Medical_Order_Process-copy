@@ -26,9 +26,9 @@
 
 	<!-- 배송지 수정 데이터 가져오기 -->
 	<select id="getAddressById"
-		resultType="gmt.medical.model.Shipping_address">
+		resultType="gmt.medical.model.Shipping_address"  parameterType="int">
 		SELECT * FROM delivery
-		WHERE address_id = #{address_id} AND user_id = #{user_id}
+		WHERE address_id = #{address_id}
 	</select>
 	<!-- 배송지 수정 후 저장 -->
 	<update id="updateAddress"
