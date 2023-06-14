@@ -1,5 +1,6 @@
 package gmt.medical.project;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class LoginController {
 		LoginVO result = loginservice.login_Success(loginVO);
 		if (result != null) {
 			session.setAttribute("user_id", result.getUser_id()); // 세션에 사용자 키(user_id) 설정
+			session.setAttribute("name", result.getName()); // 세션에 사용자 이름(nickname) 설정
 	        return "redirect:/"; // Replace "success-page" with the actual URL of the success page
 	    } else {
 	        return "redirect:/Login"; // Replace "failure-page" with the actual URL of the failure page
@@ -45,13 +47,14 @@ public class LoginController {
 	@RequestMapping(value = "/Sign_up", method = RequestMethod.POST)
 	public String signup(LoginVO loginVO) {
 		loginservice.signup(loginVO);
-		System.out.println(loginVO);
 		return "redirect:/Login";
 	}
-	/*비밀번호 찾기*/
-	@RequestMapping(value = "/Findpassword", method = RequestMethod.GET)
-	public String findpassword() {
-		return "/Findpassword";
-	}
 	
+	/*로그아웃*/
+	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
+	public String Logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+	    session.invalidate();
+		return "redirect:/";
+	}
 }
