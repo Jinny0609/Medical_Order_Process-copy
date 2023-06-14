@@ -24,8 +24,8 @@
 	<section>
 		<div class="I_BOX">
 			<h1 class="I_logo">
-				<a href="/"> <img src="resources/img/MarshLogo.png"
-					alt="쿠팡로고" width="174" height="39">
+				<a href="/"> <img src="resources/img/MarshLogo.png" alt="쿠팡로고"
+					width="174" height="39">
 				</a>
 			</h1>
 			<div class="search">
@@ -34,8 +34,10 @@
 					src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
 			</div>
 			<ul class="H_ikon">
-				<li onclick="redirectMYpage()"><a><i class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
-				<li onclick="redirectMYCart()"><a><i class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
+				<li onclick="redirectMYpage()"><a><i
+						class="bi bi-person fs-2"></i><span>마이 페이지</span></a></li>
+				<li onclick="redirectMYCart()"><a><i
+						class="bi bi-cart3 fs-2"></i><span>장바구니</span></a></li>
 			</ul>
 		</div>
 	</section>
@@ -47,9 +49,10 @@
 			<li>입점신청</li>
 		</ul>
 		<ul class="M_login">
-			<li onclick="redirectMYLogin()">로그인</li>
-			<li onclick="redirectMYSign_up()">회원가입</li>
-			<li>고객센터</li>
+			<li id="login_btn" onclick="redirectMYLogin()">로그인</li>
+			<li id="signup_btn" onclick="redirectMYSign_up()">회원가입</li>
+			<li id="user_info" style="display: none;"><span id="name"></span></li>
+			<li id="user_info2" onclick="logout()">로그아웃</li>
 		</ul>
 	</div>
 </article>
