@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="gmt.medical.mapper.Info_mapper">
+	<!-- 회원정보 검증 페이지 이메일 갖고오기 -->
+	<select id="getuseremail"
+		resultType="gmt.medical.model.LoginVO">
+		SELECT email_id FROM userinfo
+		WHERE user_id = #{user_id}
+	</select> 
+	
+	<!-- 회원정보 검증 -->
+	<select id="checkCredentials"
+		resultType="Boolean">
+		SELECT * FROM userinfo
+		WHERE user_id = #{user_id} AND password = #{password} AND email_id = #{email_id}
+	</select>
+	
+	<!-- 회원정보 수정 저장 -->
+	<update id="updateUserInfo">
+		UPDATE userinfo
+		SET name = #{name},
+		phonenum = #{phonenum},
+		password = #{password}
+		WHERE
+		email_id = #{email_id} AND user_id = #{user_id}
+	</update>
+	
+</mapper>

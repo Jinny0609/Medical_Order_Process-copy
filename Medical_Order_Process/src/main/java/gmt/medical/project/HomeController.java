@@ -27,15 +27,6 @@ public class HomeController {
 		return "Order_complete";
 	}
 	
-	@RequestMapping(value = "/Info_edit", method = RequestMethod.GET)
-	public String Info_edit() {
-		return "Info_edit";
-	}
-	
-	@RequestMapping(value = "/Info_edit_Form", method = RequestMethod.GET)
-	public String Info_edit_Form() {
-		return "Info_edit_Form";
-	}
 	@RequestMapping(value = "/Categorie", method = RequestMethod.GET)
 	public String Categorie() {
 		return "Categorie";

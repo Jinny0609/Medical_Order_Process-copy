@@ -1,7 +1,5 @@
 package gmt.medical.project;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,73 +9,50 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import gmt.medical.model.Shipping_address;
-import gmt.medical.service.Shipping_address_Service;
+import gmt.medical.model.LoginVO;
+import gmt.medical.service.InfoService;
 
 @Controller
 public class InfoController {
-
+	
 	@Autowired
-	private Shipping_address_Service addressService;
+	private InfoService infoService;
 
-	// 배송지주소 DB에 저장
-	@RequestMapping(value = "/saveAddress", method = RequestMethod.GET)
-	public String saveAddress(Shipping_address address, HttpSession session) {
-	    // 세션에서 사용자 고유 키(user_id) 가져오기
+	// 개인정보 수정 전 비밀번호 확인 페이지
+	@RequestMapping(value = "/Info_edit", method = RequestMethod.GET)
+	public String Info_edit(HttpSession session,LoginVO loginVO) {
+		// 세션에서 사용자 고유 키(user_id) 가져오기
 	    int user_id = (int) session.getAttribute("user_id");
+	    LoginVO email_id = infoService.getuseremail(user_id);
+	    session.setAttribute("User_date", email_id);
+		return "Info_edit";
+	}
+	
+	@RequestMapping(value = "/Info_edit_Form", method = RequestMethod.GET)
+	public String Info_edit_Form() {
+		return "/Info_edit_Form";
+	}
+	
+	// 개인정보 수정 후 저장 페이지
+	@RequestMapping(value = "/Info_edit_Form", method = RequestMethod.POST)
+	public String Info_edit_Form(@RequestParam("user_id") int userId, @RequestParam("email_id") String emailId, @RequestParam("password") String password, Model model) {
+		 // 아이디와 비밀번호를 사용하여 DB에서 조회 및 일치 여부 확인
+		Boolean isMatch = infoService.checkCredentials(emailId, password, userId);
 	    
-	    // Shipping_address 모델에 사용자 고유 키 설정
-	    address.setUser_id(user_id);
-
-	    addressService.saveAddress(address);
-		return "redirect:/Shipping_address_List";
+		if (isMatch != null && isMatch) {
+	        // 일치하는 경우 페이지 이동 처리
+	        return "redirect:/Info_edit_Form";
+	    } else {
+	        // 일치하지 않는 경우에 대한 처리 (예: 오류 메시지 표시)
+	        model.addAttribute("errorMessage", "아이디와 비밀번호가 일치하지 않습니다.");
+	        return "Info_edit";
+	    }
 	}
-
-	// 배송지 정보 작성 페이지 이동
-	@RequestMapping(value = "/Shipping_address_New", method = RequestMethod.GET)
-	public String Shipping_address_New() {
-		return "Shipping_address_New";
-	}
-
-	// 배송지 리스트 페이지 이동
-	@RequestMapping(value = "/Shipping_address_List", method = RequestMethod.GET)
-	public String Shipping_address_List(Model model, HttpSession session) {
-		// 세션에서 사용자 고유 키(user_id) 가져오기
-	    int user_id = (int) session.getAttribute("user_id");
-	    
-		List<Shipping_address> addresses = addressService.getAllAddresses(user_id);
-		model.addAttribute("addresses", addresses);
-		return "Shipping_address_List";
-	}
-
-	// 배송지 수정 페이지 이동
-	@RequestMapping(value = "/Shipping_address_Edit", method = RequestMethod.GET)
-	public String Shipping_address_Edit(@RequestParam("key") int address_id, Model model,HttpSession session) {
-		// 세션에서 사용자 고유 키(user_id) 가져오기
-	    int user_id = (int) session.getAttribute("user_id");
-	    Shipping_address address = addressService.getAddressById(address_id,user_id);
-		model.addAttribute("address", address);
-		return "Shipping_address_Edit";
-	}
-
-	// 배송지 수정 처리
-	@RequestMapping(value = "/updateAddress", method = RequestMethod.POST)
-	public String updateAddress(Shipping_address address,HttpSession session) {
-		// 세션에서 사용자 고유 키(user_id) 가져오기
-	    int user_id = (int) session.getAttribute("user_id");
-	    
-	    // Shipping_address 모델에 사용자 고유 키 설정
-	    address.setUser_id(user_id);
-		addressService.updateAddress(address);
-		return "redirect:/Shipping_address_List";
-	}
-
-	// 배송지 삭제 처리
-	@RequestMapping(value = "/deleteAddress", method = RequestMethod.POST)
-	public String deleteAddress(int address_id,HttpSession session) {
-		// 세션에서 사용자 고유 키(user_id) 가져오기
-	    int user_id = (int) session.getAttribute("user_id");
-		addressService.deleteAddress(address_id,user_id);
-		return "redirect:/Shipping_address_List";
+	
+	// 개인정보 수정 파일 저장
+	@RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
+	public String updateUserInfo(@RequestParam("user_id") int userId, @RequestParam("email_id") String emailId, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("phonenum") String phonenum) {
+		infoService.updateUserInfo(emailId, password, userId, name, phonenum);
+		return "redirect:/Info_edit";
 	}
 }
