@@ -9,6 +9,9 @@
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
+	<!-- config 설정 파일 스캔을 위해 추가(호준) -->
+	<context:component-scan base-package="gmt.medical.config" />
+	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

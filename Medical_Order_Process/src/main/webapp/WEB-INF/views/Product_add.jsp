@@ -26,7 +26,7 @@
 		      <li data-value="사무용품">사무용품</li>
 		    </ul>
 		  </div>
-		  <input type="hidden" id="categoryInput" name="category">
+		  <input type="hidden" id="categoryInput" name="category_id">
 		</div>
         
         <div class="product_details">
@@ -43,22 +43,22 @@
 		   </div>
 					
           <div class="input_field">
-            <label for="nameInput">제품명 : </label>
-            <input type="text" id="nameInput">
-          </div>
-          
-          <div class="price_field">
-            <label for="priceInput">가격 : </label>
-            <input type="text" id="priceInput" oninput="formatPrice()">
-          </div>
-          
-         <div class="count_field">
-		    <label for="countInput">수량 : </label>
-		    <input type="number" id="countInput" min="0">
-		    <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
-		 </div>
-          
-          <div class="optionContainer">
+			  <label for="productName">제품명 : </label>
+			  <input type="text" id="productName" name="product_name">
+		  </div>
+			
+		  <div class="price_field">
+			  <label for="productPrice">가격 : </label>
+			  <input type="text" id="productPrice" name="product_price" oninput="formatPrice()">
+		  </div>
+			
+		  <div class="count_field">
+			  <label for="productCount">수량 : </label>
+			  <input type="number" id="productCount" name="product_count" min="0">
+			  <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
+		  </div>
+			
+		  <div class="optionContainer">
 			  <label class="option-label">옵션 : </label>
 			  <input type="text" id="option" class="option-input">
 			  <button type="button" onclick="addOption()" class="option-add">옵션 추가</button>
