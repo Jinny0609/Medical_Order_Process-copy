@@ -7,6 +7,6 @@ public interface LoginMapper {
 	public void signup(LoginVO loginVO);
 	// 로그인 정보 검증
 	public LoginVO login_Success(LoginVO loginVO);
-	
+	// 비밀번호 찾기
 	public String findpasswordByEmailId(String emailId);
 }

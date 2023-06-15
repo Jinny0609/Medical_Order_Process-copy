@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService {
 	public LoginVO login_Success(LoginVO loginVO) {
 		return log.login_Success(loginVO);
 	}
-	
+	// 비밀번호 찾기
 	public String findpasswordByEmailId(String emailId) {
 		return loginMapper.findpasswordByEmailId(emailId);
 	}

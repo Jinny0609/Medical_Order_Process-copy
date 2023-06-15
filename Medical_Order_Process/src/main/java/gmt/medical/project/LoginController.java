@@ -70,8 +70,13 @@ public class LoginController {
 	@RequestMapping(value = "/Findpassword", method = RequestMethod.POST)
 	public String findPassword(@RequestParam("email_id") String emailId, Model model) {
 	    String password = loginservice.findpasswordByEmailId(emailId);
-	    model.addAttribute("password", password);
-	    return "redirect:/Findpassword2";
+	    if (password != null) {
+	        model.addAttribute("password", password);
+	        return "Findpassword2";
+	    } else {
+	        model.addAttribute("error", "입력한 이메일이 존재하지 않습니다.");
+	        return "Findpassword";
+	    }
 	}
 
 	/*비밀번호 보여지는 페이지*/
@@ -79,18 +84,5 @@ public class LoginController {
 	public String Findpassword2() {
 	    return "Findpassword2";
 	}
-
-	@RequestMapping(value = "/Findpassword2", method = RequestMethod.POST)
-	public String findpassword2(@RequestParam("email_id") String emailId, Model model) {
-	    String password = loginservice.findpasswordByEmailId(emailId);
-	    if (password != null) {
-	        model.addAttribute("password", password);
-	        return "/Findpassword2";
-	    } else {
-	        model.addAttribute("error", "입력한 이메일이 존재하지 않습니다.");
-	        return "Findpassword";
-	    }
-	}
-
 	
 }

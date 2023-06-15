@@ -21,7 +21,7 @@
 		password =
 		#{password}
 	</select>
-	
+	 <!-- 비밀번호 찾기 -->
 	<select id="findpasswordByEmailId" resultType="String">
 		SELECT password FROM userinfo WHERE email_id = #{email_id} 
 	</select>
