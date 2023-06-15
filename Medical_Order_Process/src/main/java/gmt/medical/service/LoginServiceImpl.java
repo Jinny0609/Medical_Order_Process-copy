@@ -11,6 +11,10 @@ public class LoginServiceImpl implements LoginService {
 
 	@Autowired
 	LoginMapper log;
+	
+	@Autowired
+	private LoginMapper loginMapper;
+	
 	// 회원가입 정보 저장
 	public void signup(LoginVO loginVO) {
 		log.signup(loginVO);
@@ -20,4 +24,7 @@ public class LoginServiceImpl implements LoginService {
 		return log.login_Success(loginVO);
 	}
 	
+	public String findpasswordByEmailId(String emailId) {
+		return loginMapper.findpasswordByEmailId(emailId);
+	}
 }

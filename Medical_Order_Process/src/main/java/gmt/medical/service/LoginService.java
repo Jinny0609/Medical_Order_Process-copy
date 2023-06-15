@@ -7,4 +7,6 @@ public interface LoginService {
 	public void signup(LoginVO loginVO);
 	// 로그인 정보 검증
 	public LoginVO login_Success(LoginVO loginVO);
+	
+	public String findpasswordByEmailId(String emailId);
 }

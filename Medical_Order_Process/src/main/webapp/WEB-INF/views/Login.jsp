@@ -58,11 +58,11 @@
             </span>
             <span class="Text">아이디 기억하기</span>
         </label>
-        <a class="Link" href="#">아이디(이메일)/비밀번호 찾기</a>
+        <a class="Link" href="/Findpassword">아이디(이메일)/비밀번호 찾기</a>
     </div>
     <input class="Button Login" type="submit" value="로그인">
     <div class="Line"></div>
-    <a class="Button register" href="user/register">회원가입</a>
+    <a class="Button register" href="/Sign_up">회원가입</a>
     <span class="Copyright">&copy;MarshTit Corp. All rights reserved</span>
 </form>
 </body>

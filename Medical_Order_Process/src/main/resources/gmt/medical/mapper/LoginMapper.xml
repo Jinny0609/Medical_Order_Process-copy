@@ -15,8 +15,14 @@
 
 	<!-- 로그인 -->
 	<select id="login_Success"
-		parameterType="gmt.medical.model.LoginVO" resultType="gmt.medical.model.LoginVO">
-		SELECT * FROM userinfo WHERE email_id = #{email_id} AND password =
+		parameterType="gmt.medical.model.LoginVO"
+		resultType="gmt.medical.model.LoginVO">
+		SELECT * FROM userinfo WHERE email_id = #{email_id} AND
+		password =
 		#{password}
+	</select>
+	
+	<select id="findpasswordByEmailId" resultType="String">
+		SELECT password FROM userinfo WHERE email_id = #{email_id} 
 	</select>
 </mapper>
