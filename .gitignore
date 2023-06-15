@@ -136,3 +136,5 @@ pom.properties
 
 MANIFEST.MF
 
+# application.properties
+application.properties

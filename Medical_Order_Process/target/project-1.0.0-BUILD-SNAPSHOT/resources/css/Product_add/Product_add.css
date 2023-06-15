@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+.product_container {
+	width: 1020px;
+	margin: 20px auto;
+	position: relative;
+}
+
+.product_add {
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.help {
+	color: #0099FF;
+	font-size: 14px;
+}
+
+.category_container {
+	height: 600px;
+	overflow: auto;
+}
+
+/* dropdown select */
+.dropdown_menu {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  color: #0099FF;
+  font-weight: bold;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.options li {
+  padding: 8px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.options li:hover {
+  background-color: #0099FF;
+  color: #fff;
+}
+
+#categoryInput {
+  display: none;
+}
+
+/* select 끝 */
+
+/* image_input style 시작*/
+
+.image_input {
+    display: flex;
+    align-items: start; /* 아이템들이 각 컨테이너의 시작점 (상단)에 정렬되게 만듭니다 */
+    margin-bottom: 20px;
+}
+
+.file_input {
+    margin-right: 20px; /* 파일 입력 및 버튼 영역과 이미지 미리보기 영역 사이의 간격 조정 */
+}
+
+.image_input > label {
+    margin-right: 10px;
+}
+
+.custom-file-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 310px; /* 입력 상자와 버튼의 너비의 합계와 일치하도록 조정 */
+}
+
+.custom-file-input input[type='file'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.custom-file-input input[type='text'] {
+    width: 200px;
+    cursor: pointer;
+}
+
+.custom-file-input button {
+    /* position: absolute; 삭제 */
+    width: 100px;
+    height: 30px;
+    background: #0099FF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* image_input style 끝 */
+
+/* input style */
+input {
+	font-size: 15px;
+	color: #222222;
+	width: 300px;
+	border: none;
+	border-bottom: solid #aaaaaa 1px;
+	margin-bottom: 10px;
+	position: relative;
+	background: none;
+	z-index: 5;
+}
+
+.input_field {
+	margin-bottom: 20px;
+}
+
+.price_field,
+.count_field,
+.optionContainer{
+	margin-bottom: 20px;
+	margin-left: 16px;
+}
+
+/* 내부 텍스트 위치 조절을 위한 css */
+.count_field input[type="number"] {
+    padding-left: 260px;
+  }
+
+
+#nameInput {
+	width: 300px;
+	margin-left: 5px;
+}
+
+#priceInput,
+#countInput,
+.option-input{
+	width: 300px;
+	margin-left: 5px;
+}
+
+/* 등록 취소 css */
+.buttons {
+	margin-top: 10px;
+}
+
+#regi,
+#resetBtn,
+#cancel,
+.option-add {
+	width: 100px;
+	height: 30px;
+	margin-left: 10px;
+	border: none;
+	border-radius: 14px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* x-offset, y-offset, blur, color */
+}
+
+.product_details {
+	position:relative;
+	margin-left: 260px;
+}
+
+.product_details {
+	overflow: hidden;
+}

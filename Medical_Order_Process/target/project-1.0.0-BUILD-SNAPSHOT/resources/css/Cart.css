@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+span {
+  margin: 0;
+  font-size:15px;
+}
+
+a {
+  color: black;
+}
+
+img {
+  display: block;
+  width: 90%;
+  height: 80px;
+  margin: auto;
+}
+.Coupang{
+	margin-top:20px;
+	width:175px;
+	height:39px;
+}
+.Goods{
+	display: block;
+	width: 71%;
+	height: 85px;
+	margin: auto;
+}
+.Cartimg{
+	margin:0px;
+	width:100%;
+}
+.Cart {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+}
+
+.Cart ul {
+  background-color: whitesmoke;
+  padding: 30px;
+  margin-bottom: 50px;
+  border: whitesmoke solid 1px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.Cart ul :first-child {
+  color: #2478FF;
+}
+
+table {
+  border-top: solid 1.5px black;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+thead {
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody {
+  font-size: 12px;
+}
+
+td {
+  padding: 15px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.Cart_list_detail :nth-child(3) {
+  vertical-align: top;
+}
+
+.Cart_list_detail :nth-child(3) a {
+  font-size: 12px;
+}
+
+.Cart_list_detail :nth-child(3) p {
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+.Cart_list_smartstore {
+  font-size: 12px;
+  color: gray;
+}
+
+.Cart_list_option {
+  vertical-align: top;
+  padding: 20px;
+}
+
+.Cart_list_option p {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.Cart_list_option p::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: lightgrey;
+  left: 0px;
+  top: 25px;
+  position: absolute;
+}
+
+.Cart_list_optionbtn {
+  background-color: white;
+  font-size: 10px;
+  border: lightgrey solid 1px;
+  padding: 7px;
+}
+
+.Cart_list_detail :nth-child(4),
+.Cart_list_detail :nth-child(5),
+.Cart_list_detail :nth-child(6) {
+  border-left: 2px solid whitesmoke;
+}
+
+.Cart_list_detail :nth-child(5),
+.Cart_list_detail :nth-child(6) {
+  text-align: center;
+}
+
+.Cart_list_detail :nth-child(5) button {
+  background-color: #2478FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.Price {
+  font-weight: bold;
+  font-size:15px;
+}
+
+.Cart_mainbtns {
+  width: 420px;
+  height: 200px;
+  padding-top: 40px;
+  display: block;
+  margin: auto;
+}
+
+.Cart_bigorderbtn {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.Cart_bigorderbtn.left {
+  background-color: white;
+  border: 1px lightgray solid;
+}
+
+.Cart_bigorderbtn.right {
+  background-color: #2478FF;
+  color: white;
+  border: none;
+}
+.Cart_modify{
+   display: flex;
+   align-items: center;	
+}
+.Cart_modify p{
+	margin-right: 10px;
+}
