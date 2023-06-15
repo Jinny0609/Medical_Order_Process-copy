@@ -21,10 +21,10 @@ public class ProductController {
 		return "Product_add";
 	}
 	
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public String addProduct(@ModelAttribute("productInfo") Product_info productInfo) {
-      productService.addProduct(productInfo); // ProductService에 등록 로직 구현
-
-      return "redirect:/Product_add"; // 등록이 성공한 후 이동할 페이지 지정
-    }
+	@RequestMapping(value = "/Product_add", method = RequestMethod.POST)
+	public String addProduct(@ModelAttribute("productInfo") Product_info productInfo) {
+	    productService.addProduct(productInfo); // ProductService에 등록 로직 구현
+	    System.out.println(productInfo);
+	    return "redirect:/Product_add"; // 등록이 성공한 후 이동할 페이지 지정
+	}
 }

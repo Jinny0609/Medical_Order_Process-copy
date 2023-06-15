@@ -14,7 +14,7 @@
   <div class="product_container">
     <span class="product_add">상품 등록</span> <span class="help">도움말</span> <br>
     <div class="category_container">
-      <form onsubmit="submitForm(event)">
+      <form id="product_form" action="/Product_add" method="post" onsubmit="submitForm(event)">
         <div class="dropdown_menu">
 		  <div class="select-wrapper">
 		    <div class="selected">Select a category</div>

@@ -194,37 +194,21 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-document.getElementById('regi').addEventListener('click', submitForm);
-
-// 전송 폼 이벤트
+// 쉼표, 때문에 오류 발생하기 때문에 추가함
 function submitForm(event) {
 	  event.preventDefault();
 
-	  var imageInput = document.getElementById('imageInput');
-	  var nameInput = document.getElementById('productName').value;
-	  var priceInput = document.getElementById('productPrice').value;
-	  var countInput = document.getElementById('productCount').value;
+	  var input = document.getElementById("productPrice");
+	  var value = input.value;
 
-	  var productInfo = {
-	    product_name: nameInput,
-	    product_price: priceInput,
-	    product_count: countInput,
-	    // 추가 필드가 있다면 여기에 추가
-	  };
+	  // 쉼표를 제외한 숫자만 추출합니다.
+	  var number = value.replace(/,/g, "");
 
-	  $.ajax({
-	    url: '/products',
-	    type: 'POST',
-	    contentType: 'application/json',
-	    data: JSON.stringify(productInfo),
-	    success: function(response) {
-	      alert('제품이 등록되었습니다.');
-	    },
-	    error: function(xhr, status, error) {
-	      alert('제품 등록에 실패했습니다.');
-	      console.log(xhr.responseText);
-	    }
-	  });
+	  // 숫자형태의 가격을 입력 필드에 설정합니다.
+	  input.value = number;
+
+	  // form 제출
+	  document.getElementById("product_form").submit();
 	}
 
 
