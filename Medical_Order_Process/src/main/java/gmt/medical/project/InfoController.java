@@ -52,9 +52,10 @@ public class InfoController {
 
 	// 배송지 수정 페이지 이동
 	@RequestMapping(value = "/Shipping_address_Edit", method = RequestMethod.GET)
-	public String Shipping_address_Edit(@RequestParam("key") int address_id, Model model) {
-		Shipping_address address = addressService.getAddressById(address_id);
-		System.out.println(address);
+	public String Shipping_address_Edit(@RequestParam("key") int address_id, Model model,HttpSession session) {
+		// 세션에서 사용자 고유 키(user_id) 가져오기
+	    int user_id = (int) session.getAttribute("user_id");
+	    Shipping_address address = addressService.getAddressById(address_id,user_id);
 		model.addAttribute("address", address);
 		return "Shipping_address_Edit";
 	}
