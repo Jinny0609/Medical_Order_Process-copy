@@ -1,0 +1,39 @@
+
+.Shipping_Card_Solid{
+	margin-top:20px;
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+.Shipping_Card_Text{
+	margin:20px;
+}
+
+.Shipping_Card_Title{
+	margin-bottom: 15px;
+}
+
+.Shipping_Card_BT{
+	border:1px solid #bbb;
+	background-color: #fff;
+	width:60px;
+	height: 30px;
+	color: rgb(58, 55, 247);
+	margin-top:5px;
+}
+
+.Shipping_BT{
+	height:40px;
+	border : 1px solid;
+	margin-top:15px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(58, 55, 247);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 스타일 조정 가능 */
+	border-radius: 10px;
+}
+
+.Shipping_BT:hover {
+  cursor: pointer;
+}
