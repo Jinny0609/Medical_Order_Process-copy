@@ -103,6 +103,10 @@ header {
 	padding: 8px 10px;
 }
 
+.dropdown-content a:hover {
+	cursor: pointer; /* 마우스 포인터를 포인터 형태로 변경 */
+}
+
 .dropdown:hover .dropdown-content {
 	display: block;
 }

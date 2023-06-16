@@ -114,6 +114,10 @@ function redirectMYCategorie() {
 	window.location.href = '/Categorie';
 }
 
+function redirectMYCategory(category_id) {
+	  window.location.href = '/Categorie?cate=' + category_id;
+}
+
 // 로그인시 마이정보/장바구니 이동가능
 function redirectMYpage() {
 	  fetch('/getUserID', {
