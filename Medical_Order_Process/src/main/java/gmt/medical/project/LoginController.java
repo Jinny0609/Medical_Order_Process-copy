@@ -84,5 +84,8 @@ public class LoginController {
 	public String Findpassword2() {
 	    return "Findpassword2";
 	}
-	
+	@RequestMapping(value = "/Order_history", method = RequestMethod.GET)
+	public String Order_history() {
+	    return "Order_history";
+	}
 }
