@@ -59,7 +59,7 @@
 								</div>
 								<div class="Products_Text">
 									<div class="Products_font">${categoryInfo.product_name}</div>
-									<div>${categoryInfo.product_price}원</div>
+									<div>${String.format("%,d", categoryInfo.product_price)}원</div>
 								</div>
 							</div>
 					</a></li>

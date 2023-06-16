@@ -20,7 +20,7 @@
 					<h4>${detail.product_name}</h4>
 				</div>
 				<div class="I_ex">
-					<span>판매가 </span><span>${detail.product_price}원</span>
+					<span>판매가 </span><span>${String.format("%,d", detail.product_price)}원</span>
 				</div>
 				<div class="I_ex">
 					배송비 <span>2,500원</span> / 주문시결제(선결제)
