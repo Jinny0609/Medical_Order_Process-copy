@@ -2,9 +2,11 @@ package gmt.medical.model;
 
 public class Product_info {
 	private int product_id;
+	private String product_image;
 	private String product_name;
 	private int product_price;
 	private int product_count;
+	private String image_path;
 	private int category_id;
 	
 	public int getProduct_id() {
@@ -12,6 +14,12 @@ public class Product_info {
 	}
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
+	}
+	public String getProduct_image() {
+		return product_image;
+	}
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
 	}
 	public String getProduct_name() {
 		return product_name;
@@ -30,6 +38,12 @@ public class Product_info {
 	}
 	public void setProduct_count(int product_count) {
 		this.product_count = product_count;
+	}
+	public String getImage_path() {
+		return image_path;
+	}
+	public void setImage_path(String image_path) {
+		this.image_path = image_path;
 	}
 	public int getCategory_id() {
 		return category_id;

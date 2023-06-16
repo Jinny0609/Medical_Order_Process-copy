@@ -8,7 +8,7 @@ import gmt.medical.model.Product_info;
 
 @Service
 public class Product_info_Servicelmpl implements Product_info_Service{	
-	 @Autowired
+	@Autowired
     private Product_info_mapper product_info_mapper;
 	
     @Override

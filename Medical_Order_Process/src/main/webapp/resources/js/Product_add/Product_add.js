@@ -194,9 +194,17 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// 쉼표, 때문에 오류 발생하기 때문에 추가함
+// 쉼표, + 카테고리 미선택 시 발생하는 오류 해결 하기 위해 추가
 function submitForm(event) {
 	  event.preventDefault();
+
+	  var categoryInput = document.getElementById("categoryInput");
+	  
+	  // 카테고리 선택을 확인
+	  if (!categoryInput.value) {
+	    alert("카테고리를 선택해주세요.");
+	    return; // 카테고리가 선택되지 않았다면 함수를 종료합니다.
+	  }
 
 	  var input = document.getElementById("productPrice");
 	  var value = input.value;
@@ -207,7 +215,7 @@ function submitForm(event) {
 	  // 숫자형태의 가격을 입력 필드에 설정합니다.
 	  input.value = number;
 
-	  // form 제출
+	  // 카테고리가 선택되었으며, 가격 형식이 맞춰졌다면 form을 제출합니다.
 	  document.getElementById("product_form").submit();
 	}
 

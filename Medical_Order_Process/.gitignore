@@ -139,4 +139,6 @@ MANIFEST.MF
 # application.properties
 application.properties
 
+# target 추적 안하게
+target/
 
