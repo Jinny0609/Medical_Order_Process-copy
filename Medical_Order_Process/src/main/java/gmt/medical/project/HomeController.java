@@ -26,11 +26,6 @@ public class HomeController {
 		session.setAttribute("Category", category);
 		return "Home";
 	}
-
-	@RequestMapping(value = "/Product_details", method = RequestMethod.GET)
-	public String Product_details() {
-		return "Product_details";
-	}
 	
 	@RequestMapping(value = "/Order_list", method = RequestMethod.GET)
 	public String Order_list() {

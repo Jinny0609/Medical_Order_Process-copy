@@ -23,4 +23,12 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<CategoryInfo> getCategoryInfoListById(int categoryId){
 		return category_mapper.getCategoryInfoListById(categoryId);
 	}
+	// 제품 상세 데이터 가져오기
+	public List<CategoryInfo> getProductdetail(int productId, int category_id){
+		return category_mapper.getProductdetail(productId, category_id);
+	}
+	// 제품 옵션정보 불러오기
+		public List<CategoryInfo> getoption_name(int productId) {
+			return category_mapper.getoption_name(productId);
+		}
 }

@@ -8,8 +8,15 @@ public class CategoryInfo {
     private String image_path;
     private int category_id;
     private int product_id;
+    private String option_name;
     
-    // Getters and Setters
+    public String getOption_name() {
+		return option_name;
+	}
+	public void setOption_name(String option_name) {
+		this.option_name = option_name;
+	}
+	// Getters and Setters
     public int getProduct_id() {
 		return product_id;
 	}

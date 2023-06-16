@@ -3,7 +3,14 @@ package gmt.medical.model;
 public class Categories {
 	private int category_id;
 	private String category_name;
+	private String option_name;
 	
+	public String getOption_name() {
+		return option_name;
+	}
+	public void setOption_name(String option_name) {
+		this.option_name = option_name;
+	}
 	public int getCategory_id() {
 		return category_id;
 	}

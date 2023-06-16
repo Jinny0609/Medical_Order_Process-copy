@@ -48,7 +48,7 @@
 				<!--상품 전체-->
 				<ul>
 				<c:forEach items="${categoryInfoList}" var="categoryInfo">
-					<li class="Products"><a>
+					<li class="Products" ><a onclick="redirectToProduct('${categoryInfo.product_id}', '${categoryInfo.category_id}')">
 							<div>
 								<img src="resources/img/home/item/group_banner/7.jpg">
 							</div>
@@ -68,6 +68,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="resources/js/Categorie/Categorie.js"></script>
 </body>
 <%@ include file="include/Footer.jsp"%>
 </html>

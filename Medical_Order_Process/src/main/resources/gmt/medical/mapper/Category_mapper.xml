@@ -17,4 +17,16 @@
 		WHERE category_id = #{category} 
 	</select>
 	
+	<select id="getProductdetail"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_info
+		WHERE product_id = #{product_id} AND category_id = #{category_id}
+	</select>
+	
+	<select id="getoption_name"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_option
+		WHERE product_id = #{product_id}
+	</select>
+	
 </mapper>
