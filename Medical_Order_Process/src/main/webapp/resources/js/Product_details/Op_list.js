@@ -111,7 +111,7 @@ function redirectMYSign_up() {
 
 // 카테고리 이동
 function redirectMYCategorie() {
-	window.location.href = '/Categorie';
+	window.location.href = '/Categorie?cate=' + 1;
 }
 
 function redirectMYCategory(category_id) {

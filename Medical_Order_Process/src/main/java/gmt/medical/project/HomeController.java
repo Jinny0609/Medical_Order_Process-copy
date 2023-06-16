@@ -42,11 +42,6 @@ public class HomeController {
 		return "Order_complete";
 	}
 	
-	@RequestMapping(value = "/Categorie", method = RequestMethod.GET)
-	public String Categorie() {
-		return "Categorie";
-	}
-	
 	@RequestMapping(value = "/Checkout", method = RequestMethod.GET)
 	public String Checkout() {
 		return "Checkout";

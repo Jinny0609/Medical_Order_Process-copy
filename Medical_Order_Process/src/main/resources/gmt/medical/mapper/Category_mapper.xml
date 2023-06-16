@@ -3,10 +3,18 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="gmt.medical.mapper.Category_mapper">
-<select id="getcategory"
+
+	<select id="getcategory"
 		resultType="gmt.medical.model.Categories">
 		SELECT * FROM categories
 	</select>
+	
+	<select id="getCategoryInfoListById"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_info
+		WHERE category_id = #{category} 
+	</select>
+	
 </mapper>
