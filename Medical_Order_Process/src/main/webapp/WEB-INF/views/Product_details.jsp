@@ -71,20 +71,6 @@
 
 	<!-- jQuery 라이브러리 추가 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(
-				function() {
-					$('.dropdown').hover(
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideDown(200);
-							},
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideUp(200);
-							});
-				});
-	</script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

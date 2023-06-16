@@ -1,6 +1,8 @@
-const toggleDescription = document.getElementById('toggleDescription');
-const toggleIcon = document.getElementById('toggleIcon');
-const productDescription = document.getElementById('productDescription');
+window.addEventListener('DOMContentLoaded', () => {
+  const toggleDescription = document.getElementById('toggleDescription');
+  const toggleIcon = document.getElementById('toggleIcon');
+  const productDescription = document.getElementById('productDescription');
+  
 
 let isDescriptionOpen = false;
 
@@ -18,4 +20,5 @@ toggleDescription.addEventListener('click', () => {
   }
   
   isDescriptionOpen = !isDescriptionOpen;
+	});
 });
