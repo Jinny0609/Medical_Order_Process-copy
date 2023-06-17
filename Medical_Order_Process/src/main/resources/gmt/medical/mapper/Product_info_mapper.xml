@@ -5,7 +5,15 @@
 
 <mapper namespace="gmt.medical.mapper.Product_info_mapper">
 	<insert id="addProduct" parameterType="gmt.medical.model.Product_info">
-		INSERT INTO product_info (product_name, product_price, product_count, category_id)
-   		VALUES (#{product_name}, #{product_price}, #{product_count}, #{category_id})
-	</insert>
+        INSERT INTO product_info (product_name, product_price, product_count, category_id)
+        VALUES (#{product_name}, #{product_price}, #{product_count},#{category_id})
+    </insert>
+    
+    <insert id="addOptions" parameterType="java.util.List">
+        INSERT INTO product_option (product_id, option_name, category_id)
+        VALUES
+        <foreach item="option" collection="list" separator=",">
+            (#{option.product_id}, #{option.option_name}, #{option.category_id})
+        </foreach>
+    </insert>
 </mapper>

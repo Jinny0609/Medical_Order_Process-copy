@@ -35,7 +35,7 @@
 		    <div class="file_input">
 		        <div class="custom-file-input">
 		            <input type="text" id="fileText" disabled>
-		            <input type="file" id="imageInput" onchange="previewImage(event)">
+		            <input type="file" name="product_image" id="imageInput" onchange="previewImage(event)">
 		            <button type="button">파일 선택</button>
 		        </div>
 		    </div>
@@ -44,7 +44,9 @@
 					
           <div class="input_field">
 			  <label for="productName">제품명 : </label>
-			  <input type="text" id="productName" name="product_name">
+  			  <input type="text" id="productName" name="productInfo.product_name">
+<!--		  <input type="text" id="productName" name="product_name"> -->
+	
 		  </div>
 			
 		  <div class="price_field">
@@ -60,7 +62,7 @@
 			
 		  <div class="optionContainer">
 			  <label class="option-label">옵션 : </label>
-			  <input type="text" id="option" class="option-input">
+			  <input type="text" id="option" class="option-input" name="productForm.productOptions[0].optionName">
 			  <button type="button" onclick="addOption()" class="option-add">옵션 추가</button>
 			  <div id="addedOptionsContainer"></div> <!-- 추가된 옵션들을 위한 새로운 컨테이너 -->
 		  </div>

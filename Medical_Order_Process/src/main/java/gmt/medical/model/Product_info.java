@@ -9,6 +9,11 @@ public class Product_info {
 	private String image_path;
 	private int category_id;
 	
+	@Override
+    public String toString() {
+        return "ProductInfo [category_id=" + category_id + ", product_name=" + product_name + ", product_price=" + product_price + "]";
+    }
+	
 	public int getProduct_id() {
 		return product_id;
 	}

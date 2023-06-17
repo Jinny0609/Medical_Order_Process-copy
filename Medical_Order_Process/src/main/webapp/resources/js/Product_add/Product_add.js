@@ -85,6 +85,13 @@ function addOption() {
   let optionInput = document.createElement("input");
   optionInput.type = "text";
   optionInput.id = "option_" + optionCounter;
+  optionInput.name = "productForm.productOptions[" + optionCounter + "].optionName"; // 각 옵션 필드에 고유한 이름 부여
+  
+//  let optionInput = document.createElement("input");
+//  optionInput.type = "text";
+//  optionInput.id = "option_" + optionCounter;
+//  optionInput.name = "option_name"; // 각 옵션 필드에 고유한 이름 부여
+//  optionInput.name = "option_name_" + optionCounter; // 각 옵션 필드에 고유한 이름 부여
 
   let removeButton = document.createElement("button");
   removeButton.innerHTML = "X";
