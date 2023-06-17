@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,9 @@
 			<i class="bi bi-justify fs-2"></i><br> 카테고리
 		</button>
 		<div class="dropdown-content">
-			<a href="#">의료소모품</a> <a href="#">수술기구</a> <a href="#">의료기기</a> <a
-				href="#">건강용품</a> <a href="#">사무용품</a>
+		<c:forEach items="${sessionScope.Category}" var="category">
+			<a onclick="redirectMYCategory('${category.category_id}')">${category.category_name}</a>
+		</c:forEach>
 		</div>
 	</div>
 	<section>

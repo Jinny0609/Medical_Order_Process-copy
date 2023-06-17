@@ -14,12 +14,13 @@
 				<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"
 					alt="의료용품이미지">
 			</div>
+			<c:forEach items="${Product_detail}" var="detail">
 			<div class="I_Detail">
 				<div class="I_title">
-					<h4>일회용 주사기(D/Syringe)</h4>
+					<h4>${detail.product_name}</h4>
 				</div>
 				<div class="I_ex">
-					<span>판매가 </span><span>5,010원</span>
+					<span>판매가 </span><span>${detail.product_price}원</span>
 				</div>
 				<div class="I_ex">
 					배송비 <span>2,500원</span> / 주문시결제(선결제)
@@ -30,9 +31,9 @@
 						<label class="option-label" onclick="toggleOptionList()">옵션
 							▼</label>
 						<ul id="optionList" class="option-list">
-							<li onclick="toggleOption(this, 10)">일회용주사기</li>
-							<li onclick="toggleOption(this, 20)">2회용주사기</li>
-							<li onclick="toggleOption(this, 30)">3회용주사기</li>
+						<c:forEach items="${Option_name}" var="opname">
+							<li onclick="toggleOption(this, ${detail.product_price})">${opname.option_name}</li>
+						</c:forEach>
 						</ul>
 					</div>
 
@@ -52,6 +53,7 @@
 					<button type="button" class="btn btn-primary">바로 구매</button>
 				</div>
 			</div>
+			</c:forEach>
 		</div>
 		<div id="productDescription" class="P_detail">
 			<img src="resources/img/Product_details/img_detail.jpg">
@@ -69,20 +71,6 @@
 
 	<!-- jQuery 라이브러리 추가 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(
-				function() {
-					$('.dropdown').hover(
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideDown(200);
-							},
-							function() {
-								$(this).find('.dropdown-content').stop(true,
-										true).slideUp(200);
-							});
-				});
-	</script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

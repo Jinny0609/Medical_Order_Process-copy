@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gmt.medical.mapper.Category_mapper">
+
+	<select id="getcategory"
+		resultType="gmt.medical.model.Categories">
+		SELECT * FROM categories
+	</select>
+	
+	<select id="getCategoryInfoListById"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_info
+		WHERE category_id = #{category} 
+	</select>
+	
+	<select id="getProductdetail"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_info
+		WHERE product_id = #{product_id} AND category_id = #{category_id}
+	</select>
+	
+	<select id="getoption_name"
+		resultType="gmt.medical.model.CategoryInfo">
+		SELECT * FROM product_option
+		WHERE product_id = #{product_id}
+	</select>
+	
+</mapper>
