@@ -207,6 +207,8 @@ function submitForm(event) {
 
 	  var categoryInput = document.getElementById("categoryInput");
 	  
+	  console.log(categoryInput.value); // 카테고리 값 출력
+	  
 	  // 카테고리 선택을 확인
 	  if (!categoryInput.value) {
 	    alert("카테고리를 선택해주세요.");

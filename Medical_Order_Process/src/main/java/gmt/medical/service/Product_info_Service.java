@@ -11,5 +11,5 @@ public interface Product_info_Service {
 	
 	public void addOption(Product_option productOption);
 
-	void addOptions(List<Product_option> productOptions);
+	public void addOptions(List<Product_option> productOptions);
 }
