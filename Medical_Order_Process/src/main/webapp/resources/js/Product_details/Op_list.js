@@ -96,73 +96,7 @@ function calculatePrice() {
   } else {
     priceContainer.style.display = "none";
   }
-  
-//선택한 옵션과 수량을 숨겨진 입력란에 할당
-  var selectedOption = getSelectedOption();
-  var quantity = getTotalQuantity();
-
-  document.getElementById("selectedOptionInput").value = selectedOption;
-  document.getElementById("quantityInput").value = quantity;
 }
-
-function getSelectedOption() {
-	  var selectedOption = "";
-
-	  var optionItems = document.getElementsByClassName("option-item");
-
-	  for (var i = 0; i < optionItems.length; i++) {
-	    var optionItem = optionItems[i];
-	    var optionText = optionItem.dataset.option;
-	    var quantityInput = optionItem.getElementsByClassName("quantity-input")[0];
-	    var quantity = quantityInput.value;
-
-	    selectedOption += optionText;
-	  }
-
-	  // 마지막 쉼표 제거
-	  selectedOption = selectedOption.slice(0, -2);
-
-	  return selectedOption;
-	}
-
-function getTotalQuantity() {
-	  var quantityInputs = document.getElementsByClassName("quantity-input");
-	  var optionQuantities = {}; // 각 옵션의 수량을 추적하기 위한 객체
-
-	  for (var i = 0; i < quantityInputs.length; i++) {
-	    var input = quantityInputs[i];
-	    var option = input.getAttribute("data-option");
-	    var quantity = parseInt(input.value);
-
-	    if (optionQuantities.hasOwnProperty(option)) {
-	      optionQuantities[option] += quantity; // 기존 옵션의 수량에 더하기
-	    } else {
-	      optionQuantities[option] = quantity; // 새로운 옵션의 수량 설정
-	    }
-	  }
-
-	  // 옵션과 수량을 문자열로 변환하여 보여주기
-	  var totalQuantity = 0;
-	  var quantityDisplay = "";
-
-	  for (var option in optionQuantities) {
-	    if (optionQuantities.hasOwnProperty(option)) {
-	      var quantity = optionQuantities[option];
-	      totalQuantity += quantity;
-
-	      quantityDisplay += option + ": " + quantity + ", ";
-	    }
-	  }
-
-	  // 마지막 쉼표 제거
-	  quantityDisplay = quantityDisplay.slice(0, -2);
-
-	  // 수량을 표시할 요소에 값 설정
-	  var quantityDisplayElement = document.getElementById("quantityInput");
-	  quantityDisplayElement.value = quantityDisplay;
-
-	  return totalQuantity;
-	}
 
 // 로그인 페이지 이동
 function redirectMYLogin() {
@@ -277,3 +211,31 @@ function redirectMYpage() {
 		window.location.href = '/Logout';
 		alert("로그아웃되었습니다.");
 	}
+	
+	
+	function sendOptionsToController() {
+		  var selectedOptions = [];  // 선택한 옵션 정보를 저장할 배열
+
+		  // 선택한 옵션 정보 수집
+		  var optionItems = document.querySelectorAll('.option-item');
+		  for (var i = 0; i < optionItems.length; i++) {
+		    var optionItem = optionItems[i];
+		    var optionName = optionItem.dataset.option;
+		    var optionQuantity = parseInt(optionItem.querySelector('.quantity-input').value);
+		    selectedOptions.push({ name: optionName, quantity: optionQuantity });
+		  }
+
+		  // AJAX를 사용하여 데이터를 서버로 전송
+		  $.ajax({
+		    type: 'POST',
+		    url: '/Product_details',  // 컨트롤러의 URL을 입력하세요
+		    data: JSON.stringify(selectedOptions),
+		    contentType: 'application/json',
+		    success: function(response) {
+		      // 서버로부터의 응답 처리
+		    },
+		    error: function(xhr, status, error) {
+		      // 오류 처리
+		    }
+		  });
+		}
