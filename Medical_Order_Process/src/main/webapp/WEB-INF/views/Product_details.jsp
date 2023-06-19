@@ -9,52 +9,59 @@
 </head>
 <body>
 	<div class="I_container">
-		<div class="B_itembox">
-			<div>
-				<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"
-					alt="의료용품이미지">
-			</div>
-			<c:forEach items="${Product_detail}" var="detail">
-			<div class="I_Detail">
-				<div class="I_title">
-					<h4>${detail.product_name}</h4>
-				</div>
-				<div class="I_ex">
-					<span>판매가 </span><span>${String.format("%,d", detail.product_price)}원</span>
-				</div>
-				<div class="I_ex">
-					배송비 <span>2,500원</span> / 주문시결제(선결제)
-				</div>
-				<div class="S_sun"></div>
+		<form action="/Cart_table" method="GET">
+			<div class="B_itembox">
 				<div>
-					<div class="option-container">
-						<label class="option-label" onclick="toggleOptionList()">옵션
-							▼</label>
-						<ul id="optionList" class="option-list">
-						<c:forEach items="${Option_name}" var="opname">
-							<li onclick="toggleOption(this, ${detail.product_price})">${opname.option_name}</li>
-						</c:forEach>
-						</ul>
-					</div>
+					<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"
+						alt="의료용품이미지">
+				</div>
+				<c:forEach items="${Product_detail}" var="detail">
+					<input type="hidden" name="P_name" value="${detail.product_name}">
+					<input type="hidden" name="P_price" value="${detail.product_price}">
+					<div class="I_Detail">
+						<div class="I_title">
+							<h4>${detail.product_name}</h4>
+						</div>
+						<div class="I_ex">
+							<span>판매가 </span><span>${detail.product_price}원</span>
+						</div>
+						<div class="I_ex">
+							배송비 <span>2,500원</span> / 주문시결제(선결제)
+						</div>
+						<div class="S_sun"></div>
+						<div>
+							<div class="option-container">
+								<label class="option-label" onclick="toggleOptionList()">옵션
+									▼</label>
+								<ul id="optionList" class="option-list">
+									<c:forEach items="${Option_name}" var="opname">
+										<li onclick="toggleOption(this, ${detail.product_price})">${opname.option_name}</li>
+									</c:forEach>
+								</ul>
+							</div>
+							<input id="quantityInput" type="text" name="quantity" value="">
+							<input id="selectedOptionInput" type="text"
+								name="selectedOption" value="">
 
-					<div id="quantityContainer"></div>
+							<div id="quantityContainer"></div>
 
-					<div id="priceContainer">
-						<div class="priceContainer2">
-							<p class="price">
-								총 합계금액: <span id="price">0</span>원
-							</p>
+							<div id="priceContainer">
+								<div class="priceContainer2">
+									<p class="price">
+										총 합계금액: <span id="price">0</span>원
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="I_BT">
+							<button type="submit" class="btn btn-outline-primary">장바구니
+								담기</button>
+							<button type="button" class="btn btn-primary">바로 구매</button>
 						</div>
 					</div>
-				</div>
-				<div class="I_BT">
-					<button type="button" class="btn btn-outline-primary">장바구니
-						담기</button>
-					<button type="button" class="btn btn-primary">바로 구매</button>
-				</div>
+				</c:forEach>
 			</div>
-			</c:forEach>
-		</div>
+		</form>
 		<div id="productDescription" class="P_detail">
 			<img src="resources/img/Product_details/img_detail.jpg">
 		</div>
