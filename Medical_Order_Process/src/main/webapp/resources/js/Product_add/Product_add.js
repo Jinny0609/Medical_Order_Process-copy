@@ -1,9 +1,39 @@
-// 파일 선택 트릭
+// 이미지 파일 업로드
+function uploadImageFile(file, onSuccess, onError) {
+  var formData = new FormData();
+  // 원본 파일 이름을 자동으로 사용
+  formData.append('product_image', file);
+  
+  // 원본 파일 이름을 직접 지정
+  // formData.append('product_image', file, file.name);
+
+  $.ajax({
+    url: '/Product_add',
+    type: 'POST',
+    data: formData,
+    processData: false,  // jQuery가 데이터를 처리하지 않도록 합니다.
+    contentType: false,  // 컨텐츠 타입을 설정하지 않습니다.
+    success: onSuccess,
+    error: onError
+  });
+}
+
+//파일 선택 트릭
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('imageInput').onchange = function (event) {
     previewImage(event);
     document.getElementById('fileText').value = event.target.files[0].name;
+    
+    // 선택된 파일을 업로드합니다.
+    var file = event.target.files[0];
+    uploadImageFile(file, function(response) {
+      console.log('Image uploaded successfully!');
+      console.log(response);  // 업로드에 성공했을 때의 응답을 로그에 출력합니다.
+    }, function(jqXHR, textStatus, errorThrown) {
+      console.log('Failed to upload image: ' + textStatus);
+    });
   };
+  
   document.querySelector('.custom-file-input button').addEventListener('click', function () {
     document.getElementById('imageInput').click();
   });
