@@ -2,6 +2,8 @@ package gmt.medical.project;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +31,11 @@ public class CategorieController {
 
 	// 제품 상세페이지
 	@RequestMapping(value = "/Product_details", method = RequestMethod.GET)
-	public String Product_details(@RequestParam("productId") int productId, @RequestParam("categoryId") int category_id , Model model) {
+	public String Product_details(HttpSession session, @RequestParam("productId") int productId, @RequestParam("categoryId") int category_id , Model model) {
 		List<CategoryInfo> product_detail = categoryService.getProductdetail(productId, category_id);
 		List<CategoryInfo> option_name = categoryService.getoption_name(productId);
-		model.addAttribute("Option_name", option_name);	
-		model.addAttribute("Product_detail", product_detail);
+		 session.setAttribute("Option_name", option_name);
+		 session.setAttribute("Product_detail", product_detail);
 		return "Product_details";
 	}
 }
