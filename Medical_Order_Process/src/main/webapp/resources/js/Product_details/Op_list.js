@@ -224,18 +224,25 @@ function redirectMYpage() {
 		    var optionQuantity = parseInt(optionItem.querySelector('.quantity-input').value);
 		    selectedOptions.push({ name: optionName, quantity: optionQuantity });
 		  }
+		  
+		  // productId와 categoryId 값을 가져옴
+		    var productId = document.getElementById("productId").value;
+		    var categoryId = document.getElementById("categoryId").value;
 
-		  // AJAX를 사용하여 데이터를 서버로 전송
-		  $.ajax({
-		    type: 'POST',
-		    url: '/Product_details',  // 컨트롤러의 URL을 입력하세요
-		    data: JSON.stringify(selectedOptions),
-		    contentType: 'application/json',
-		    success: function(response) {
-		      // 서버로부터의 응답 처리
-		    },
-		    error: function(xhr, status, error) {
-		      // 오류 처리
-		    }
-		  });
-		}
+		 // AJAX를 사용하여 데이터를 서버로 전송
+		    $.ajax({
+		      type: 'POST',
+		      url: '/Product_details',
+		      data: JSON.stringify(selectedOptions),
+		      contentType: 'application/json',
+		      success: function(response) {
+		        // 서버로부터의 응답 처리
+		        var redirectUrl = '/Product_details?productId=' + productId + '&categoryId=' + categoryId;
+		        window.location.href = redirectUrl;
+		        alert("장바구니에 담겼습니다.")
+		      },
+		      error: function(xhr, status, error) {
+		        // 오류 처리
+		      }
+		    });
+		  }

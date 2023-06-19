@@ -10,6 +10,11 @@
 <body>
 	<div class="I_container">
 		<form action="Product_details" onsubmit="sendOptionsToController()">
+			<!-- productId와 categoryId 값을 가져올 input 요소 추가 -->
+			<input type="hidden" id="productId"
+				value="<%=session.getAttribute("productId")%>" /> <input
+				type="hidden" id="categoryId"
+				value="<%=session.getAttribute("categoryId")%>" />
 			<div class="B_itembox">
 				<div>
 					<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"

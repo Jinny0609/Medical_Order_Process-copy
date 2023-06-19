@@ -20,14 +20,13 @@ public class CartController {
 	@RequestMapping(value = "/Product_details", method = RequestMethod.POST)
 	public String Cart_table(@RequestBody List<OptionData> selectedOptions) {
 		for (OptionData option : selectedOptions) {
-			String name = option.getName();
-			int quantity = option.getQuantity();
-			System.out.println(name);
-			System.out.println(quantity);
+			String name = option.getName();  // 옵션 이름
+			int quantity = option.getQuantity(); // 옵션 수량
+			// 유저 고유키,상품고유키,상품 가격,상품이름
 			// 장바구니에 옵션 추가 로직 작성
 		}
 
 		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
-		return "Product_details";
+		return "/Product_details";
 	}
 }
