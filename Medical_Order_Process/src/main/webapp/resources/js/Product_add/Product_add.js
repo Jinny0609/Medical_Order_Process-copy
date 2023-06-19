@@ -81,16 +81,11 @@ function addOption() {
 
   let optionLabel = document.createElement("label");
   optionLabel.innerHTML = "옵션 : &nbsp;";
-
+  
   let optionInput = document.createElement("input");
   optionInput.type = "text";
   optionInput.id = "option_" + optionCounter;
-  optionInput.name = "productForm.productOptions[" + optionCounter + "].optionName"; // 각 옵션 필드에 고유한 이름 부여
-  
-//  let optionInput = document.createElement("input");
-//  optionInput.type = "text";
-//  optionInput.id = "option_" + optionCounter;
-//  optionInput.name = "option_name"; // 각 옵션 필드에 고유한 이름 부여
+  optionInput.name = "optionNames"; // 각 옵션 필드에 동일한 이름 부여
 //  optionInput.name = "option_name_" + optionCounter; // 각 옵션 필드에 고유한 이름 부여
 
   let removeButton = document.createElement("button");
@@ -200,6 +195,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+//새로 수정한 saveOption 함수
+function saveOption(optionId) {
+  let optionInputs = document.getElementsByName('option_name[]');
+  let optionNames = Array.from(optionInputs).map((input) => input.value);
+
+  // 옵션 정보를 서버로 보내는 AJAX 또는 fetch 요청을 작성합니다.
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/Product_add", true); // 컨트롤러의 URL을 지정합니다.
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+  var data = {
+    optionNames: optionNames
+  };
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // 요청이 성공적으로 처리되었을 때의 로직을 작성합니다.
+      console.log(xhr.responseText);
+    }
+  };
+
+  xhr.send(JSON.stringify(data));
+}
+
 
 // 쉼표, + 카테고리 미선택 시 발생하는 오류 해결 하기 위해 추가
 function submitForm(event) {

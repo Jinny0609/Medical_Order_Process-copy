@@ -5,11 +5,6 @@ public class Product_option {
 	private String option_name;
 	private int category_id;
 	
-	@Override
-    public String toString() {
-        return "ProductOption [option_name=" + option_name + "]";
-    }
-	
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -27,5 +22,14 @@ public class Product_option {
 	}
 	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
+	}
+
+	@Override
+	public String toString() {
+	    return "Product_option : {" +
+	            "product_id=" + product_id +
+	            ", option_name='" + option_name + '\'' +
+	            ", category_id=" + category_id +
+	            '}';
 	}
 }
