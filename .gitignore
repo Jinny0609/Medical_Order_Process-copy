@@ -138,3 +138,6 @@ MANIFEST.MF
 
 # application.properties
 application.properties
+
+# root-context.xml Á¦¿Ü
+/root-context.xml
