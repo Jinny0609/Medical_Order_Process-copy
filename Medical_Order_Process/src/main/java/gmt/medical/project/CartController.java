@@ -1,27 +1,44 @@
 package gmt.medical.project;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import gmt.medical.model.OptionData;
+import gmt.medical.model.RequestData;
+import gmt.medical.service.CartService;
 
 @Controller
 public class CartController {
+	@Autowired
+	private CartService cartService;
 
 	@RequestMapping(value = "/Cart", method = RequestMethod.GET)
 	public String cart() {
 		return "Cart";
 	}
 
-	@RequestMapping(value = "/Cart_table", method = RequestMethod.GET)
-	public String Cart_table(@RequestParam("P_name") String productName, @RequestParam("P_price") int productPrice,
-			@RequestParam("quantity") int quantity, @RequestParam("selectedOption") String selectedOption) {
-		// 전달된 값들을 출력
-	    System.out.println("Product Name: " + productName);
-	    System.out.println("Product Price: " + productPrice);
-	    System.out.println("Quantity: " + quantity);
-	    System.out.println("Selected Option: " + selectedOption);
-		return "Product_details";
-	}
+	@RequestMapping(value = "/Product_details", method = RequestMethod.POST)
+	public String Cart_table(@RequestBody RequestData requestData, HttpSession session) {
+		 List<OptionData> selectedOptions = requestData.getSelectedOptions();
+		    int productId = requestData.getProductId();// 제품 고유키
+		    String productName = requestData.getProductName(); //제품 이름
+		    int productPrice = requestData.getProductPrice(); // 제품 가격
+		    Integer user_id = (Integer) session.getAttribute("user_id"); // 유저 고유키
 
+		    for (OptionData option : selectedOptions) {
+		        String name = option.getName(); // 제품 옵션 이름
+		        int quantity = option.getQuantity(); // 제품 옵션 수량
+			// 장바구니에 옵션 추가 로직 작성
+		        cartService.addcatedata(productId,productName,productPrice,user_id,name,quantity);
+		}
+		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
+		return "/Product_details";
+	}
 }

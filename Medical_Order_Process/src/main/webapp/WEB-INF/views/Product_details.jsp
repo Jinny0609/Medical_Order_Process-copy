@@ -9,15 +9,19 @@
 </head>
 <body>
 	<div class="I_container">
-		<form action="/Cart_table" method="GET">
+		<form action="Product_details" onsubmit="sendOptionsToController()">
+		<input type="text" id="user_id" value="<%= session.getAttribute("user_id") %>">
+			<!-- productId와 categoryId 값을 가져올 input 요소 추가 -->
+			<input type="hidden" id="productId" name="productId"
+				value="<%=session.getAttribute("productId")%>" /> <input
+				type="hidden" id="categoryId" name="categoryId"
+				value="<%=session.getAttribute("categoryId")%>" />
 			<div class="B_itembox">
 				<div>
 					<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"
 						alt="의료용품이미지">
 				</div>
 				<c:forEach items="${Product_detail}" var="detail">
-					<input type="hidden" name="P_name" value="${detail.product_name}">
-					<input type="hidden" name="P_price" value="${detail.product_price}">
 					<div class="I_Detail">
 						<div class="I_title">
 							<h4>${detail.product_name}</h4>
@@ -39,10 +43,6 @@
 									</c:forEach>
 								</ul>
 							</div>
-							<input id="quantityInput" type="text" name="quantity" value="">
-							<input id="selectedOptionInput" type="text"
-								name="selectedOption" value="">
-
 							<div id="quantityContainer"></div>
 
 							<div id="priceContainer">
@@ -53,6 +53,10 @@
 								</div>
 							</div>
 						</div>
+						<!-- Include hidden input fields for product name and price -->
+							<input type="hidden" name="product_name" value="${detail.product_name}"> 
+							<input type="hidden" name="product_price" value="${detail.product_price}">
+
 						<div class="I_BT">
 							<button type="submit" class="btn btn-outline-primary">장바구니
 								담기</button>
