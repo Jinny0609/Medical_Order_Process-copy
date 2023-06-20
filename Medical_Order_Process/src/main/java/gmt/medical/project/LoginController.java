@@ -1,5 +1,7 @@
 package gmt.medical.project;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import gmt.medical.model.Hcode;
 import gmt.medical.model.LoginVO;
 import gmt.medical.service.LoginService;
 
@@ -18,9 +21,6 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginservice;
-
-	@Autowired
-	HttpSession session;
 	
 	/* 로그인 */
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
@@ -42,7 +42,9 @@ public class LoginController {
 
 	/* 회원가입 */
 	@RequestMapping(value = "/Sign_up", method = RequestMethod.GET)
-	public String signup() {
+	public String signup(Model model) {
+		List<Hcode> hcode =  loginservice.gethcode();
+		model.addAttribute("Hcode", hcode);
 		return "Sign_up";
 	}
 
