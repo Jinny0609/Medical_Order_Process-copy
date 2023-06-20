@@ -66,7 +66,7 @@
 			</form>
 		</table>
 		<div class="Cart_mainbtns">
-			<button class="Cart_bigorderbtn left">쇼핑 계속하기</button>
+			<button class="Cart_bigorderbtn left" onclick="window.location.href='/'">쇼핑 계속하기</button>
 			<button class="Cart_bigorderbtn right">주문하기</button>
 		</div>
 	</section>

@@ -177,7 +177,8 @@ td {
 }
 .Cart_modify{
    display: flex;
-   align-items: center;	
+   justify-content: center;
+  
 }
 .Cart_modify p{
 	margin-right: 10px;

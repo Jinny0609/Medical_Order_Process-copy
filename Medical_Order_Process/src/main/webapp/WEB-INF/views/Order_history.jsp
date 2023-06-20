@@ -20,9 +20,9 @@
                 <!-- 검색 폼 영역 -->
                 <td colspan="6">
                     <select>
-                        <option value='A'>상품</option>
+                        <option value='A'>상품명</option>
                         <option value='T'>날짜</option>
-                        <option value='C'>상품 코드</option>
+                        <option value='C'>유저 아이디</option>
                     </select>
                     <input type="text" />
                     <button type="button" class="Button Login">검색</button>
@@ -30,20 +30,18 @@
             </tr>
             <tr>
                 <th>No</th>
-                <th>주문 번호</th>
+                <th>유저 아이디</th>
                 <th>상품명</th>
+                <th>가격(원)</th>
                 <th>날짜</th>
-                <th>상품 코드</th>
-                <th>상세 내용</th>
             </tr>
             <!-- 게시물이 출력될 영역 -->
             <tr>
                 <td>1</td>
                 <td>202306160712</td>
                 <td>투명 망토</td>
+                <td>4,900</td>
                 <td>2023.06.16</td>
-                <td>E123456789</td>
-                <td>투명 망토 SET</td>
             </tr>
         </table>
     </div>
