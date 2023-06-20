@@ -253,6 +253,7 @@ function redirectMYpage() {
 		      },
 		      error: function(xhr, status, error) {
 		        // 오류 처리
+		    	  alert("로그인하세요.");
 		      }
 		    });
 		  } else {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,11 @@
 <link rel="stylesheet" href="resources/css/Sign_up.css">
 <script src="https://kit.fontawesome.com/0d51ab0f86.js"
 	crossorigin="anonymous"></script>
-<script src="resources/js/Sign_up.js"></script>
 </head>
 <body>
+ <c:forEach var="code" items="${Hcode}">
+<input type="text" class="hcode-input" value="${code}">
+ </c:forEach>
 	<form action="/Sign_up" class="register-form" method="POST"
 		onsubmit="return Validation()">
 		<div class="logo-container">
@@ -61,5 +64,6 @@
 		<input class="button register" type="submit" value="가입하기"> <span
 			class="copyright">&copy;MarshTit Corp. All rights reserved</span>
 	</form>
+<script src="resources/js/Sign_up.js"></script>
 </body>
 </html>

@@ -25,4 +25,9 @@
 	<select id="findpasswordByEmailId" resultType="String">
 		SELECT password FROM userinfo WHERE email_id = #{email_id} 
 	</select>
+	
+	<!-- 병원코드 가져오기 -->
+	<select id="gethcode" resultType="gmt.medical.model.Hcode">
+		SELECT hcode FROM hospital_info
+	</select>
 </mapper>

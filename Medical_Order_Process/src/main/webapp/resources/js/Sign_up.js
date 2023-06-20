@@ -82,6 +82,18 @@ function Validation() {
         phoneErrorMsg.innerText = ""; // Remove error message if validation passes
     }
 
-    // Return true if all conditions pass validation
-    return true;
+    var enteredHCode = document.getElementsByName("hcode")[0].value; // 입력된 병원 코드 가져오기
+	var hcodeInputs = document.getElementsByClassName("hcode-input");
+	var validCodes = []; // 유효한 병원 코드 배열 생성
+
+	for (var i = 0; i < hcodeInputs.length; i++) {
+		validCodes.push(hcodeInputs[i].value); // 유효한 병원 코드를 배열에 추가합니다
+	}
+
+	if (!validCodes.includes(enteredHCode)) {
+		alert("올바른 병원 코드를 입력하세요.");
+		return false;
+	}
+
+	return true;
 }

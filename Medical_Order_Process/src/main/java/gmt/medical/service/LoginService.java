@@ -1,5 +1,8 @@
 package gmt.medical.service;
 
+import java.util.List;
+
+import gmt.medical.model.Hcode;
 import gmt.medical.model.LoginVO;
 
 public interface LoginService {
@@ -9,4 +12,6 @@ public interface LoginService {
 	public LoginVO login_Success(LoginVO loginVO);
 	// 비밀번호 찾기
 	public String findpasswordByEmailId(String emailId);
+	// 병원 코드 갖고 오기
+	public List<Hcode> gethcode();
 }

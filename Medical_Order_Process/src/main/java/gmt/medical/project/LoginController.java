@@ -1,5 +1,7 @@
 package gmt.medical.project;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import gmt.medical.model.Hcode;
 import gmt.medical.model.LoginVO;
 import gmt.medical.service.LoginService;
 
@@ -18,9 +21,6 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginservice;
-
-	@Autowired
-	HttpSession session;
 	
 	/* 로그인 */
 	@RequestMapping(value = "/Login", method = RequestMethod.GET)
@@ -34,6 +34,7 @@ public class LoginController {
 		if (result != null) {
 			session.setAttribute("user_id", result.getUser_id()); // 세션에 사용자 키(user_id) 설정
 			session.setAttribute("name", result.getName()); // 세션에 사용자 이름(nickname) 설정
+			session.setAttribute("hcode", result.getHcode()); // 세션에 로그인한 사용자의 병원 코드 설정
 			return "redirect:/"; // Replace "success-page" with the actual URL of the success page
 		} else {
 			return "redirect:/Login"; // Replace "failure-page" with the actual URL of the failure page
@@ -42,7 +43,9 @@ public class LoginController {
 
 	/* 회원가입 */
 	@RequestMapping(value = "/Sign_up", method = RequestMethod.GET)
-	public String signup() {
+	public String signup(Model model) {
+		List<Hcode> hcode =  loginservice.gethcode();
+		model.addAttribute("Hcode", hcode);
 		return "Sign_up";
 	}
 

@@ -10,7 +10,7 @@
 <body>
 	<div class="I_container">
 		<form action="Product_details" onsubmit="sendOptionsToController()">
-		<input type="text" id="user_id" value="<%= session.getAttribute("user_id") %>">
+		<input type="hidden" id="user_id" value="<%= session.getAttribute("user_id") %>">
 			<!-- productId와 categoryId 값을 가져올 input 요소 추가 -->
 			<input type="hidden" id="productId" name="productId"
 				value="<%=session.getAttribute("productId")%>" /> <input
