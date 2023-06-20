@@ -10,10 +10,11 @@
 <body>
 	<div class="I_container">
 		<form action="Product_details" onsubmit="sendOptionsToController()">
+		<input type="text" id="user_id" value="<%= session.getAttribute("user_id") %>">
 			<!-- productId와 categoryId 값을 가져올 input 요소 추가 -->
-			<input type="hidden" id="productId"
+			<input type="hidden" id="productId" name="productId"
 				value="<%=session.getAttribute("productId")%>" /> <input
-				type="hidden" id="categoryId"
+				type="hidden" id="categoryId" name="categoryId"
 				value="<%=session.getAttribute("categoryId")%>" />
 			<div class="B_itembox">
 				<div>
@@ -52,6 +53,10 @@
 								</div>
 							</div>
 						</div>
+						<!-- Include hidden input fields for product name and price -->
+							<input type="hidden" name="product_name" value="${detail.product_name}"> 
+							<input type="hidden" name="product_price" value="${detail.product_price}">
+
 						<div class="I_BT">
 							<button type="submit" class="btn btn-outline-primary">장바구니
 								담기</button>

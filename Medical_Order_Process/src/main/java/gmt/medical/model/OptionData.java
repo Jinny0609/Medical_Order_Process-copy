@@ -2,6 +2,9 @@ package gmt.medical.model;
 
 public class OptionData {
 	private String name;
+	private int quantity;
+    private int price;
+    
     public String getName() {
 		return name;
 	}
@@ -20,6 +23,4 @@ public class OptionData {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	private int quantity;
-    private int price;
 }
