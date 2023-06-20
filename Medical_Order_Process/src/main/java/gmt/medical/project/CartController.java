@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import gmt.medical.model.CategoryInfo;
 import gmt.medical.model.OptionData;
 import gmt.medical.model.RequestData;
 import gmt.medical.service.CartService;
@@ -20,7 +21,10 @@ public class CartController {
 	private CartService cartService;
 
 	@RequestMapping(value = "/Cart", method = RequestMethod.GET)
-	public String cart() {
+	public String cart(HttpSession session) {
+		int user_id = (int) session.getAttribute("user_id");
+		List<CategoryInfo> cartList = cartService.addToCart(user_id);
+		session.setAttribute("CartList", cartList);
 		return "Cart";
 	}
 

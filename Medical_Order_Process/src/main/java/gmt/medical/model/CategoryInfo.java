@@ -60,4 +60,17 @@ public class CategoryInfo {
 		this.category_id = category_id;
 	}
     
+	@Override
+	public String toString() {
+	    return "CategoryInfo{" +
+	            "product_image='" + product_image + '\'' +
+	            ", product_name='" + product_name + '\'' +
+	            ", product_price=" + product_price +
+	            ", product_count=" + product_count +
+	            ", image_path='" + image_path + '\'' +
+	            ", category_id=" + category_id +
+	            ", product_id=" + product_id +
+	            ", option_name='" + option_name + '\'' +
+	            '}';
+	}
 }

@@ -6,9 +6,8 @@ public class CartVO {
 	    private int product_id;
 	    private String product_image;//상품 이미지
 	    private String product_name;// 상품 이름
-	    private String product_price;//상품 가격
-	    private int product_count;
-	    private String shipping_fee;//배송비인데 삭제할 예정
+	    private int product_price; //상품 가격
+	    private int product_count; //옵션 수량
 	    private String cart_option;//옵션
 	    private int user_id;		//유저 ID
 	    
@@ -37,11 +36,11 @@ public class CartVO {
 	        this.product_name = product_name;
 	    }
 	    
-	    public String getProduct_price() {
+	    public int getProduct_price() {
 	        return product_price;
 	    }
 	    
-	    public void setProduct_price(String product_price) {
+	    public void setProduct_price(int product_price) {
 	        this.product_price = product_price;
 	    }
 	    
@@ -51,14 +50,6 @@ public class CartVO {
 	    
 	    public void setProduct_count(int product_count) {
 	        this.product_count = product_count;
-	    }
-	    
-	    public String getShipping_fee() {
-	        return shipping_fee;
-	    }
-	    
-	    public void setShipping_fee(String shipping_fee) {
-	        this.shipping_fee = shipping_fee;
 	    }
 	    
 	    public String getCart_option() {
@@ -77,19 +68,6 @@ public class CartVO {
 	        this.user_id = user_id;
 	    }
 
-	    @Override
-	    public String toString() {
-	        return "Cart{" +
-	                "product_id=" + product_id +
-	                ", product_image='" + product_image + '\'' +
-	                ", product_name='" + product_name + '\'' +
-	                ", product_price='" + product_price + '\'' +
-	                ", product_count=" + product_count +
-	                ", shipping_fee='" + shipping_fee + '\'' +
-	                ", cart_option='" + cart_option + '\'' +
-	                ", user_id=" + user_id +
-	                '}';
-	    }
 	    
 	}
 
