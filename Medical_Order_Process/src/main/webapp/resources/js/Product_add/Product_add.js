@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('fileText').value = event.target.files[0].name;
     
     // 선택된 파일을 업로드합니다.
-    var file = event.target.files[0];
-    uploadImageFile(file, function(response) {
-      console.log('Image uploaded successfully!');
-      console.log(response);  // 업로드에 성공했을 때의 응답을 로그에 출력합니다.
-    }, function(jqXHR, textStatus, errorThrown) {
-      console.log('Failed to upload image: ' + textStatus);
-    });
+//    var file = event.target.files[0];
+//    uploadImageFile(file, function(response) {
+//      console.log('Image uploaded successfully!');
+//      console.log(response);  // 업로드에 성공했을 때의 응답을 로그에 출력합니다.
+//    }, function(jqXHR, textStatus, errorThrown) {
+//      console.log('Failed to upload image: ' + textStatus);
+//    });
   };
   
   document.querySelector('.custom-file-input button').addEventListener('click', function () {

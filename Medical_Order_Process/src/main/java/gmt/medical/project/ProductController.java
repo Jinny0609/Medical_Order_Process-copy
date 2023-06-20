@@ -1,7 +1,6 @@
 package gmt.medical.project;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,12 +34,12 @@ public class ProductController {
 	@RequestMapping(value = "/Product_add", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("productInfo") Product_info productInfo, @RequestParam(value = "product_image", required = false) MultipartFile productImage) {
 		// 이미지 파일 처리 코드
-	    if (productImage != null && !productImage.isEmpty()) {
-	        String fileName = generateRandomFileName(productImage.getOriginalFilename());
-	        String imagePath = saveImageFile(productImage, productInfo.getCategory_id(), fileName);
-	        productInfo.setProduct_image(fileName);
-	        productInfo.setImage_path(imagePath);
-	    }
+		if (productImage != null && !productImage.isEmpty()) {
+		    String fileName = generateRandomFileName(productImage.getOriginalFilename());
+		    String imagePath = saveImageFile(productImage, fileName);
+		    productInfo.setProduct_image(fileName);
+		    productInfo.setImage_path(imagePath);
+		}
 
 	    // 상품 정보 저장
 	    int productId = productService.addProduct(productInfo);
@@ -66,26 +65,32 @@ public class ProductController {
 	    return UUID.randomUUID().toString() + extension;
 	}
 	
-	private String saveImageFile(MultipartFile file, int categoryId, String fileName) {
-	    String basePath = "C:/Users/wlsgh/Desktop/Category/";
-	    String categoryPath = basePath + categoryId + "/";
-	    String filePath = categoryPath + fileName;
+	private String saveImageFile(MultipartFile file, String productImage) {
+	    String uploadFolder = "D:\\upload";
 
 	    try {
-	        File directory = new File(categoryPath);
-	        if (!directory.exists()) {
-	            directory.mkdirs();
-	        }
+	        // 파일 이름 처리
+	        String originalFileName = file.getOriginalFilename();
+	        String fileName = UUID.randomUUID().toString() + "_" + originalFileName;
 
-	        file.transferTo(new File(filePath));
-	    } catch (IOException e) {
+	        // 파일 저장
+	        File saveFile = new File(uploadFolder, fileName);
+	        file.transferTo(saveFile);
+
+	        // 파일 경로 반환
+	        return uploadFolder + "\\" + fileName;
+	    } catch (Exception e) {
 	        e.printStackTrace();
 	        // 파일 저장 실패 처리를 원하는 방식으로 구현할 수 있습니다.
+	        return null;
 	    }
-
-	    return filePath;
 	}
 }
+// root context에 아래 코드 추가해야함..
+//<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+//<!-- one of the properties available; the maximum file size in bytes -->
+//<property name="maxUploadSize" value="104857600"/> <!-- 100 * 1024 * 1024 = 100MB -->
+//</bean>
 
 //	@RequestMapping(value = "/addOption", method = RequestMethod.POST)
 //	public String addOption(@RequestParam("option_name") String option_name, @ModelAttribute("productInfo") Product_info productInfo) {
