@@ -235,7 +235,7 @@ function redirectMYpage() {
 
 		  // AJAX를 사용하여 데이터를 서버로 전송
 		  var user_id = document.getElementById("user_id").value;
-		  if (user_id == null) {
+		  if (user_id != null) {
 		    $.ajax({
 		      type: 'POST',
 		      url: '/Product_details',
