@@ -41,12 +41,12 @@
 						alt="magic keyboard"></td>
 					<td><a href="#">그린몰 공식 스토어</a><span
 						class="Cart_list_smartstore"> 그린몰</span>
-						<p>마법의 종아리 마사지</p> <span class="Price">11,660원</span></td>
+						<p>${product_name}</p> <span class="Price">${product_price}원</span></td>
 					<td>
 						<div class="Cart_modify">
-							<p>모델명 : MK2A3KH/A</p>
+							<p>${cart_option}</p>
 							<input type="number" min="1" max="40" step="1" value="1"
-								onchange="updatePrice(this, 11660)" /> <br />
+								onchange="updatePrice(this, ${product_price})" /> <br />
 						</div>
 					</td>
 					<td><span class="Price"></span><br></td>
