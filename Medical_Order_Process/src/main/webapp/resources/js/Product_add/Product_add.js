@@ -81,10 +81,12 @@ function addOption() {
 
   let optionLabel = document.createElement("label");
   optionLabel.innerHTML = "옵션 : &nbsp;";
-
+  
   let optionInput = document.createElement("input");
   optionInput.type = "text";
   optionInput.id = "option_" + optionCounter;
+  optionInput.name = "optionNames"; // 각 옵션 필드에 동일한 이름 부여
+//  optionInput.name = "option_name_" + optionCounter; // 각 옵션 필드에 고유한 이름 부여
 
   let removeButton = document.createElement("button");
   removeButton.innerHTML = "X";
@@ -194,37 +196,56 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-document.getElementById('regi').addEventListener('click', submitForm);
+//새로 수정한 saveOption 함수
+function saveOption(optionId) {
+  let optionInputs = document.getElementsByName('option_name[]');
+  let optionNames = Array.from(optionInputs).map((input) => input.value);
 
-// 전송 폼 이벤트
+  // 옵션 정보를 서버로 보내는 AJAX 또는 fetch 요청을 작성합니다.
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/Product_add", true); // 컨트롤러의 URL을 지정합니다.
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+  var data = {
+    optionNames: optionNames
+  };
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // 요청이 성공적으로 처리되었을 때의 로직을 작성합니다.
+      console.log(xhr.responseText);
+    }
+  };
+
+  xhr.send(JSON.stringify(data));
+}
+
+
+// 쉼표, + 카테고리 미선택 시 발생하는 오류 해결 하기 위해 추가
 function submitForm(event) {
 	  event.preventDefault();
 
-	  var imageInput = document.getElementById('imageInput');
-	  var nameInput = document.getElementById('productName').value;
-	  var priceInput = document.getElementById('productPrice').value;
-	  var countInput = document.getElementById('productCount').value;
+	  var categoryInput = document.getElementById("categoryInput");
+	  
+	  console.log(categoryInput.value); // 카테고리 값 출력
+	  
+	  // 카테고리 선택을 확인
+	  if (!categoryInput.value) {
+	    alert("카테고리를 선택해주세요.");
+	    return; // 카테고리가 선택되지 않았다면 함수를 종료합니다.
+	  }
 
-	  var productInfo = {
-	    product_name: nameInput,
-	    product_price: priceInput,
-	    product_count: countInput,
-	    // 추가 필드가 있다면 여기에 추가
-	  };
+	  var input = document.getElementById("productPrice");
+	  var value = input.value;
 
-	  $.ajax({
-	    url: '/products',
-	    type: 'POST',
-	    contentType: 'application/json',
-	    data: JSON.stringify(productInfo),
-	    success: function(response) {
-	      alert('제품이 등록되었습니다.');
-	    },
-	    error: function(xhr, status, error) {
-	      alert('제품 등록에 실패했습니다.');
-	      console.log(xhr.responseText);
-	    }
-	  });
+	  // 쉼표를 제외한 숫자만 추출합니다.
+	  var number = value.replace(/,/g, "");
+
+	  // 숫자형태의 가격을 입력 필드에 설정합니다.
+	  input.value = number;
+
+	  // 카테고리가 선택되었으며, 가격 형식이 맞춰졌다면 form을 제출합니다.
+	  document.getElementById("product_form").submit();
 	}
 
 
