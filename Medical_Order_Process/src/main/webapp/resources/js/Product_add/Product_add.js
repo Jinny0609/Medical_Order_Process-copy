@@ -1,23 +1,3 @@
-// 이미지 파일 업로드
-function uploadImageFile(file, onSuccess, onError) {
-  var formData = new FormData();
-  // 원본 파일 이름을 자동으로 사용
-  formData.append('product_image', file);
-  
-  // 원본 파일 이름을 직접 지정
-  // formData.append('product_image', file, file.name);
-
-  $.ajax({
-    url: '/Product_add',
-    type: 'POST',
-    data: formData,
-    processData: false,  // jQuery가 데이터를 처리하지 않도록 합니다.
-    contentType: false,  // 컨텐츠 타입을 설정하지 않습니다.
-    success: onSuccess,
-    error: onError
-  });
-}
-
 //파일 선택 트릭
 document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('imageInput').onchange = function (event) {
