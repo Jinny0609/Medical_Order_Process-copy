@@ -36,6 +36,8 @@ public class CategorieController {
 		List<CategoryInfo> option_name = categoryService.getoption_name(productId);
 		 session.setAttribute("Option_name", option_name);
 		 session.setAttribute("Product_detail", product_detail);
+		 session.setAttribute("productId", productId);
+		 session.setAttribute("categoryId", category_id);
 		return "Product_details";
 	}
 }
