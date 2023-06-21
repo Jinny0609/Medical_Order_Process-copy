@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import gmt.medical.model.CategoryInfo;
+import gmt.medical.model.CartVO;
 import gmt.medical.model.OptionData;
 import gmt.medical.model.RequestData;
 import gmt.medical.service.CartService;
@@ -23,7 +23,8 @@ public class CartController {
 	@RequestMapping(value = "/Cart", method = RequestMethod.GET)
 	public String cart(HttpSession session) {
 		int user_id = (int) session.getAttribute("user_id");
-		List<CategoryInfo> cartList = cartService.addToCart(user_id);
+		List<CartVO> cartList = cartService.addToCart(user_id);
+		System.out.println(cartList);
 		session.setAttribute("CartList", cartList);
 		return "Cart";
 	}
@@ -45,4 +46,5 @@ public class CartController {
 		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
 		return "/Product_details";
 	}
+	
 }

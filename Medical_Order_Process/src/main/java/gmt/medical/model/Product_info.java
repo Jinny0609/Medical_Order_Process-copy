@@ -10,12 +10,14 @@ public class Product_info {
     private int product_count;
     private String image_path;
     private int category_id;
+	private String cart_option;
     private List<String> optionNames;
     
     @Override
 	public String toString() {
 	    return "Product_info : {" +
 	            "product_id=" + product_id +
+	            "cart_option=" + cart_option +
 	            ", product_image='" + product_image + '\'' +
 	            ", product_name='" + product_name + '\'' +
 	            ", product_price=" + product_price +
@@ -73,5 +75,11 @@ public class Product_info {
 	}
 	public void setOptionNames(List<String> optionNames) {
 		this.optionNames = optionNames;
+	}
+	public String getCart_option() {
+		return cart_option;
+	}
+	public void setCart_option(String cart_option) {
+		this.cart_option = cart_option;
 	}
 }

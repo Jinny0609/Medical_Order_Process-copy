@@ -24,12 +24,11 @@
 		<div>
 			<img class="Cartimg" src="resources/img/Cart/Cart.png">
 		</div>
-		<form>
+		<form action="/Order_history" method="POST">
 			<table class="Cart_list">
-
 				<thead>
 					<tr>
-						 <td><input type="checkbox"></td>
+						<td><input type="checkbox"></td>
 						<td colspan="2">상품정보</td>
 						<td>옵션</td>
 						<td>상품금액</td>
@@ -45,17 +44,17 @@
 								alt="magic keyboard"></td>
 							<td><a href="#">그린몰 공식 스토어</a><span
 								class="Cart_list_smartstore"> 그린몰</span>
-								<p>${cartItem.product_name}</p> <span class="Price">${cartItem.product_price}원</span>
+								<p>${cartItem.product_name}</p> <span class="Price" data-price="${cartItem.product_price}">${cartItem.product_price}원</span>
 							</td>
 							<td>
 								<div class="Cart_modify">
-									<p>${cartItem.option_name}</p>
+									<p>${cartItem.cart_option}</p>
 									<input type="number" min="1" max="40" step="1"
 										value="${cartItem.product_count}"
-										onchange="updatePrice(this,${cartItem.product_price})" /> <br />
+										onchange="calculateTotalPrice()" /> <br />
 								</div>
 							</td>
-							<td><span class="Price">${cartItem.product_price}원</span><br></td>
+							<td><span class="SubTotal">${cartItem.product_count * cartItem.product_price}원</span><br></td>
 							<td>2,500원</td>
 						</tr>
 					</c:forEach>
@@ -65,19 +64,19 @@
 						<td colspan="3"><button class="Cart_list_optionbtn">선택상품
 								삭제</button>
 							<button class="Cart_list_optionbtn">선택상품 찜</button></td>
-						<td><label>선택 상품 금액 : </label></td>
+						<td><label>선택 상품 금액 : <span id="totalPrice"></span></label></td>
 						<td><label>총 배송비 : 2,500 원</label></td>
-						<td><label>주문 금액 : </label></td>
+						<td><label>주문 금액 : <span id="orderPrice"></span></label></td>
 					</tr>
 				</tfoot>
-
 			</table>
-			<div class="Cart_mainbtns">
-				<button class="Cart_bigorderbtn left"
-					onclick="window.location.href='/'">쇼핑 계속하기</button>
-				<button class="Cart_bigorderbtn right">주문하기</button>
-			</div>
 		</form>
+		<div class="Cart_mainbtns">
+			<button class="Cart_bigorderbtn left"
+				onclick="window.location.href='/'">쇼핑 계속하기</button>
+			<button class="Cart_bigorderbtn right"
+			onclick="window.location.href='/Checkout'">주문하기</button>
+		</div>
 	</section>
 </body>
 </html>
