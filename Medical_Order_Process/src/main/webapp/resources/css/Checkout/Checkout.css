@@ -89,11 +89,20 @@ h3{
 .UserForm_Item{
     margin: 10px;
     border: 2px solid #ddd;
-    display: flex;
-    height: 30px;
     padding: 10px;
-    align-items: center;
-    justify-content: space-between;
+}
+
+.UserForm_Item_Data{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:8px;
+	border-bottom:1px solid  #ddd;
+}
+
+.UserForm_Item_IMG{
+	width:85px;
+	height:85px;
 }
 
 .UserForm_BT1{

@@ -15,4 +15,6 @@ public interface Shipping_address_Service {
 	public void updateAddress(Shipping_address address);
 	// 배송지 삭제
 	public void deleteAddress(int address_id,int user_id);
+	// 최근 배송지 갖고오기(구매 확정 페이지용)
+	public Shipping_address getaddressdate(int user_id);
 }
