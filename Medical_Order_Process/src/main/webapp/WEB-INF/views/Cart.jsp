@@ -40,7 +40,7 @@
 					<c:forEach items="${CartList}" var="cartItem">
 						<tr class="Cart_list_detail">
 							<td><input type="checkbox"></td>
-							<td><img class="Goods" src="#"
+							<td><img class="Goods" src="${cartItem.image_path}"
 								alt="magic keyboard"></td>
 							<td><a href="#">그린몰 공식 스토어</a><span
 								class="Cart_list_smartstore"> 그린몰</span>

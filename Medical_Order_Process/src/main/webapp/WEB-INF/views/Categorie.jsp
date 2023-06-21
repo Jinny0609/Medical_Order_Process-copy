@@ -50,7 +50,7 @@
 				<c:forEach items="${categoryInfoList}" var="categoryInfo">
 					<li class="Products" ><a onclick="redirectToProduct('${categoryInfo.product_id}', '${categoryInfo.category_id}')">
 							<div>
-								<img src="resources/img/home/item/group_banner/7.jpg">
+								<img src="${categoryInfo.image_path}">
 							</div>
 							<div class="Texts">
 								<div class="discount">

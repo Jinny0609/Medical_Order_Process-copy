@@ -224,6 +224,12 @@ function redirectMYpage() {
 		    var optionQuantity = parseInt(optionItem.querySelector('.quantity-input').value);
 		    selectedOptions.push({ name: optionName, quantity: optionQuantity });
 		  }
+		  
+		  // 옵션값 선택 여부 검사
+		  if (selectedOptions.length === 0) {
+		    alert("옵션값을 선택하세요.");
+		    return;
+		  }
 
 		  // productId와 categoryId 값을 가져옴
 		  var productId = document.getElementById("productId").value;
@@ -232,10 +238,11 @@ function redirectMYpage() {
 		  // product_name과 product_price 값을 가져옴
 		  var productName = document.getElementsByName("product_name")[0].value;
 		  var productPrice = document.getElementsByName("product_price")[0].value;
+		  var image_path = document.getElementsByName("image_path")[0].value;
 
 		  // AJAX를 사용하여 데이터를 서버로 전송
 		  var user_id = document.getElementById("user_id").value;
-		  if (user_id != null) {
+		  if (user_id !== null && user_id !== "") {
 		    $.ajax({
 		      type: 'POST',
 		      url: '/Product_details',
@@ -244,10 +251,11 @@ function redirectMYpage() {
 		        productId: productId,
 		        categoryId: categoryId,
 		        productName: productName,
-		        productPrice: productPrice
+		        productPrice: productPrice,
+		        image_path: image_path
 		      }),
 		      contentType: 'application/json',
-		      success: function(response) {
+		      success: function() {
 		        // 서버로부터의 응답 처리
 		        alert("장바구니에 담겼습니다.");
 		      },

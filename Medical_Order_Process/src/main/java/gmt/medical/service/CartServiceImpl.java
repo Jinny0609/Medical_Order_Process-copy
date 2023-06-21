@@ -14,8 +14,8 @@ public class CartServiceImpl implements CartService {
 	@Autowired
     private Cartmapper cartmapper;
 	
-	public void	addcatedata(int productId,String productName,int productPrice,int user_id,String name,int quantity) {
-		cartmapper.addcatedata(productId,productName,productPrice,user_id,name,quantity);
+	public void	addcatedata(int productId,String productName,int productPrice,int user_id,String name,int quantity,String imagePath) {
+		cartmapper.addcatedata(productId,productName,productPrice,user_id,name,quantity,imagePath);
 	}
 	public List<CartVO> addToCart(int uesr_id) {
 		return cartmapper.addToCart(uesr_id);

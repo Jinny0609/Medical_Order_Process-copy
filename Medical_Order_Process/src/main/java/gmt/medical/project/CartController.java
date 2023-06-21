@@ -24,7 +24,6 @@ public class CartController {
 	public String cart(HttpSession session) {
 		int user_id = (int) session.getAttribute("user_id");
 		List<CartVO> cartList = cartService.addToCart(user_id);
-		System.out.println(cartList);
 		session.setAttribute("CartList", cartList);
 		return "Cart";
 	}
@@ -35,13 +34,14 @@ public class CartController {
 		    int productId = requestData.getProductId();// 제품 고유키
 		    String productName = requestData.getProductName(); //제품 이름
 		    int productPrice = requestData.getProductPrice(); // 제품 가격
+		    String imagePath = requestData.getImage_path(); // 이미지 경로
 		    Integer user_id = (Integer) session.getAttribute("user_id"); // 유저 고유키
 
 		    for (OptionData option : selectedOptions) {
 		        String name = option.getName(); // 제품 옵션 이름
 		        int quantity = option.getQuantity(); // 제품 옵션 수량
 			// 장바구니에 옵션 추가 로직 작성
-		        cartService.addcatedata(productId,productName,productPrice,user_id,name,quantity);
+		        cartService.addcatedata(productId,productName,productPrice,user_id,name,quantity,imagePath);
 		}
 		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
 		return "/Product_details";

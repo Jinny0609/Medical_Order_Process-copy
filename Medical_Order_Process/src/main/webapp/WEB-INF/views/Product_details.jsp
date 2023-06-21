@@ -17,11 +17,11 @@
 				type="hidden" id="categoryId" name="categoryId"
 				value="<%=session.getAttribute("categoryId")%>" />
 			<div class="B_itembox">
+			<c:forEach items="${Product_detail}" var="detail">
 				<div>
-					<img class="I_img" src="resources/img/Product_details/Jsagi.jpg"
+					<img class="I_img" src="${detail.image_path}"
 						alt="의료용품이미지">
 				</div>
-				<c:forEach items="${Product_detail}" var="detail">
 					<div class="I_Detail">
 						<div class="I_title">
 							<h4>${detail.product_name}</h4>
@@ -56,7 +56,7 @@
 						<!-- Include hidden input fields for product name and price -->
 							<input type="hidden" name="product_name" value="${detail.product_name}"> 
 							<input type="hidden" name="product_price" value="${detail.product_price}">
-
+							<input type="hidden" name="image_path" value="${detail.image_path}">
 						<div class="I_BT">
 							<button type="submit" class="btn btn-outline-primary">장바구니
 								담기</button>
