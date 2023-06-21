@@ -52,8 +52,7 @@
 						</tr>
 						<tr>
 							<th>배송주소</th>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getAddress_road() %></td>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getAddress_detail() %></td>
+							<td><%= ((Shipping_address) session.getAttribute("Address")).getAddress_road() %><br><%= ((Shipping_address) session.getAttribute("Address")).getAddress_detail() %></td>
 						</tr>
 						<tr>
 							<th>연락처</th>
