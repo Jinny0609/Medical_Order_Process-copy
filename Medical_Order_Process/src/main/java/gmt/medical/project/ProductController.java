@@ -1,6 +1,5 @@
 package gmt.medical.project;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -84,22 +83,4 @@ public class ProductController {
 	        return null;
 	    }
 	}
-	
-//	private String saveImageFile(MultipartFile file, String fileName, String categoryId) {
-//	    String uploadDirectory = "C:\\Users\\GR\\Desktop\\Category\\" + categoryId + "\\";
-//	    try {
-//	        byte[] bytes = file.getBytes();
-//	        Path path = Paths.get(uploadDirectory + fileName);
-//	        // 디렉토리가 없을 경우 생성
-//	        if (!Files.exists(path)) {
-//	            Files.createDirectories(path.getParent());
-//	        }
-//	        Files.write(path, bytes);
-//	        return uploadDirectory + fileName;
-//	    } catch (IOException e) {
-//	        e.printStackTrace();
-//	        return null;
-//	    }
-//	}
-	
 }
