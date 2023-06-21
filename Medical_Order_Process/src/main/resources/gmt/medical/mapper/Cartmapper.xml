@@ -12,7 +12,7 @@
 		#{product_count}, #{cart_option}, #{user_id});
 	</insert>
 	
-	 <select id="addToCart" resultType="gmt.medical.model.CategoryInfo">
+	 <select id="addToCart" resultType="gmt.medical.model.CartVO">
         SELECT * FROM cart WHERE user_id = #{user_id}
     </select>
 </mapper>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 </head>
 <header>
     <div class="H_BOX">
-        <a href="#"><img src="resources/img//MarshLogo.png"></a>
+        <a href="/"><img src="resources/img//MarshLogo.png"></a>
     </div>
 </header>
 <body>
@@ -24,15 +25,15 @@
                     <tbody>
                         <tr>
                             <th>이름</th>
-                            <td>홍길동</td>
+                            <td><%= session.getAttribute("User_data_name") %></td>
                         </tr>
                         <tr>
                             <th>이메일</th>
-                            <td>abcd@naver.com</td>
+                            <td><%= session.getAttribute("User_data_email_id") %></td>
                         </tr>
                         <tr>
                             <th>휴대폰 번호</th>
-                            <td>010-1111-1234</td>
+                            <td><%= session.getAttribute("User_data_phonenum") %></td>
                         </tr>
                     </tbody>
                 </table>
@@ -43,7 +44,7 @@
                     <tbody>
                         <tr>
                             <th>이름</th>
-                            <td>홍길동</td>
+                            <td><%= session.getAttribute("User_data_name") %></td>
                         </tr>
                         <tr>
                             <th>배송주소</th>
@@ -62,8 +63,11 @@
             </div>
             <h3>배송물품</h3>
             <div class="UserForm_Item">
-                <div>오뚜기 콕콕콕 치즈볶이 95g, 24개</div>
-                <div>수량 1개 / 무료배송</div>
+            <c:forEach items="${OtherControllerCartList}" var="item">
+                <div>${item.product_name}</div>
+                <div>${item.cart_option}</div>
+                <div>수량 ${item.product_count}개 </div><br>
+            </c:forEach>
             </div>
             <div class="UserForm_BOX">
                 <h3>결제정보</h3>
@@ -71,15 +75,20 @@
                     <tbody>
                         <tr>
                             <th>총상품가격</th>
-                            <td>0원</td>
+                            <td><c:set var="totalPrice" value="0" />
+    						<c:forEach items="${OtherControllerCartList}" var="cartItem">
+       						 <c:set var="itemPrice" value="${cartItem.product_count * cartItem.product_price}" />
+        					<c:set var="totalPrice" value="${totalPrice + itemPrice}" />
+   							 </c:forEach>
+   							${totalPrice}원</td>
                         </tr>
                         <tr>
                             <th>배송비</th>
-                            <td>0원</td>
+                            <td>2,500원</td>
                         </tr>
                         <tr>
                             <th>총결제금액</th>
-                            <td>0원</td>
+                            <td>${totalPrice + 2500}원</td>
                         </tr>
                     </tbody>
                 </table>
