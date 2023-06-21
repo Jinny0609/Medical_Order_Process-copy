@@ -26,7 +26,7 @@ public class Product_option {
 
 	@Override
 	public String toString() {
-	    return "Product_option : {" +
+	    return "{" +
 	            "product_id=" + product_id +
 	            ", option_name='" + option_name + '\'' +
 	            ", category_id=" + category_id +

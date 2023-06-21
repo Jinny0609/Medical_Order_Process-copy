@@ -14,7 +14,7 @@
   <div class="product_container">
     <span class="product_add">상품 등록</span> <span class="help">도움말</span> <br>
     <div class="category_container">
-      <form id="product_form" action="/Product_add" method="post" onsubmit="submitForm(event)">
+      <form id="product_form" action="/Product_add" method="post" onsubmit="submitForm(event)" enctype="multipart/form-data">
         <div class="dropdown_menu">
 		  <div class="select-wrapper">
 		    <div class="selected">Select a category</div>
@@ -35,7 +35,7 @@
 		    <div class="file_input">
 		        <div class="custom-file-input">
 		            <input type="text" id="fileText" disabled>
-		            <input type="file" name="product_image" id="imageInput" onchange="previewImage(event)">
+		            <input type="file" name="save_image" id="imageInput" onchange="previewImage(event)">
 		            <button type="button">파일 선택</button>
 		        </div>
 		    </div>
@@ -54,7 +54,7 @@
 			
 		  <div class="count_field">
 			  <label for="productCount">수량 : </label>
-			  <input type="number" id="productCount" name="product_count" min="0">	  			   -->
+			  <input type="number" id="productCount" name="product_count" min="0">
 			  <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
 		  </div>
 			
