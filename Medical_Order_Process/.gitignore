@@ -142,3 +142,6 @@ application.properties
 # target 추적 안하게
 target/
 
+# root-context.xml 제외
+/root-context.xml
+

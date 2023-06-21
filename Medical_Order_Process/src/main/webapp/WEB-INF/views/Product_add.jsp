@@ -14,7 +14,7 @@
   <div class="product_container">
     <span class="product_add">상품 등록</span> <span class="help">도움말</span> <br>
     <div class="category_container">
-      <form id="product_form" action="/Product_add" method="post" onsubmit="submitForm(event)">
+      <form id="product_form" action="/Product_add" method="post" onsubmit="submitForm(event)" enctype="multipart/form-data">
         <div class="dropdown_menu">
 		  <div class="select-wrapper">
 		    <div class="selected">Select a category</div>
@@ -26,7 +26,6 @@
 		      <li data-value="사무용품">사무용품</li>
 		    </ul>
 		  </div>
-<!--   		  <input type="hidden" id="categoryInput" name="productInfo.category_id"> -->
 		  <input type="hidden" id="categoryInput" name="category_id">
 		</div>
         
@@ -36,7 +35,7 @@
 		    <div class="file_input">
 		        <div class="custom-file-input">
 		            <input type="text" id="fileText" disabled>
-		            <input type="file" name="product_image" id="imageInput" onchange="previewImage(event)">
+		            <input type="file" name="save_image" id="imageInput" onchange="previewImage(event)">
 		            <button type="button">파일 선택</button>
 		        </div>
 		    </div>
@@ -46,28 +45,22 @@
           <div class="input_field">
 			  <label for="productName">제품명 : </label>
 		  <input type="text" id="productName" name="product_name">
-<!--      	  	  <input type="text" id="productName" name="productInfo.product_name"> -->
 		  </div>
 			
 		  <div class="price_field">
 			  <label for="productPrice">가격 : </label>
 			  <input type="text" id="productPrice" name="product_price" oninput="formatPrice()">
-<!--   			  <input type="text" id="productPrice" name="productInfo.product_price" oninput="formatPrice()"> -->
 		  </div>
 			
 		  <div class="count_field">
 			  <label for="productCount">수량 : </label>
 			  <input type="number" id="productCount" name="product_count" min="0">
-<!-- 			  <input type="number" id="productCount" name="productInfo.product_count" min="0">			  			   -->
 			  <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
 		  </div>
 			
 		  <div class="optionContainer">
 			  <label class="option-label">옵션 : </label>
 			  <input type="text" id="option" name="optionNames" />
-<!-- 			  <input type="text" id="option" name="option_name[]" />			   -->
-<!-- 			  <input type="text" id="option" class="option-input" name="option_name"> -->
-<!-- 			  <input type="text" id="option" class="option-input" name="productForm.productOptions[0].optionName"> -->
 			  <button type="button" onclick="addOption()" class="option-add">옵션 추가</button>
 			  <div id="addedOptionsContainer"></div> <!-- 추가된 옵션들을 위한 새로운 컨테이너 -->
 		  </div>

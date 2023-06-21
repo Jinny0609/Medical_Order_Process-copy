@@ -5,8 +5,8 @@
 
 <mapper namespace="gmt.medical.mapper.Product_info_mapper">
 	<insert id="addProduct" parameterType="gmt.medical.model.Product_info" useGeneratedKeys="true" keyProperty="product_id">
-	    INSERT INTO product_info (product_name, product_price, product_count, category_id)
-	    VALUES (#{product_name}, #{product_price}, #{product_count},#{category_id})
+	    INSERT INTO product_info (product_name, product_price, product_count, category_id, product_image, image_path)
+	    VALUES (#{product_name}, #{product_price}, #{product_count}, #{category_id}, #{product_image}, #{image_path})
 	</insert>
     <insert id="addOption" parameterType="gmt.medical.model.Product_option">
 	    INSERT INTO product_option (product_id, option_name, category_id)
