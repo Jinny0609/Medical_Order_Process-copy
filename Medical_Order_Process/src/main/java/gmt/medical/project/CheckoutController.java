@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import gmt.medical.model.CartVO;
-import gmt.medical.model.LoginVO;
 
 @Controller
 public class CheckoutController {
@@ -18,7 +17,7 @@ public class CheckoutController {
 	public String Checkout(HttpSession session) {
 		 List<CartVO> cartList = (List<CartVO>) session.getAttribute("CartList");
 		 Integer user_id = (Integer) session.getAttribute("user_id");
-		 int hcode = (int) session.getAttribute("hcode");
+		 String hcode = (String) session.getAttribute("hcode");
 		 String name = (String) session.getAttribute("name");
 		 String email_id = (String) session.getAttribute("email_id");
 		 String phonenum = (String) session.getAttribute("phonenum");

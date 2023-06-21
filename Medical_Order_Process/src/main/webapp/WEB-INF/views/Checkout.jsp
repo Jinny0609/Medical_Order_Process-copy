@@ -64,9 +64,11 @@
             <h3>배송물품</h3>
             <div class="UserForm_Item">
             <c:forEach items="${OtherControllerCartList}" var="item">
+            <div class="UserForm_Item_Data">
                 <div>${item.product_name}</div>
                 <div>${item.cart_option}</div>
-                <div>수량 ${item.product_count}개 </div><br>
+                <div>수량 ${item.product_count}개 </div>
+            </div>
             </c:forEach>
             </div>
             <div class="UserForm_BOX">
