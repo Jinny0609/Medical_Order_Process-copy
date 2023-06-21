@@ -65,6 +65,8 @@
             <div class="UserForm_Item">
             <c:forEach items="${OtherControllerCartList}" var="item">
             <div class="UserForm_Item_Data">
+            	<div><img class="UserForm_Item_IMG" src="${item.image_path}"
+						alt="의료용품이미지"></div>
                 <div>${item.product_name}</div>
                 <div>${item.cart_option}</div>
                 <div>수량 ${item.product_count}개 </div>
