@@ -14,7 +14,14 @@ public class Product_info {
     private int category_id;
     private MultipartFile save_image;
     private List<String> optionNames;
+    private String cart_option;
     
+	public String getCart_option() {
+		return cart_option;
+	}
+	public void setCart_option(String cart_option) {
+		this.cart_option = cart_option;
+	}
 	public int getProduct_id() {
 		return product_id;
 	}
