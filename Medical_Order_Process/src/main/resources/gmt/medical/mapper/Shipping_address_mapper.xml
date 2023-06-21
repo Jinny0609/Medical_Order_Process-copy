@@ -50,5 +50,12 @@
 		DELETE FROM delivery
 		WHERE address_id = #{address_id} AND user_id = #{user_id}
 	</delete>
+	<!-- 최근 배송지 불러오기 -->
+	<select id="getaddressdate"
+		resultType="gmt.medical.model.Shipping_address">
+		SELECT *
+		FROM delivery
+		WHERE address_id = (SELECT MAX(address_id) FROM delivery WHERE user_id = #{user_id});
+	</select>
 
 </mapper>
