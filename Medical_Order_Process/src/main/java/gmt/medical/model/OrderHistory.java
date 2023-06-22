@@ -1,41 +1,34 @@
 package gmt.medical.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class OrderHistory {
 	private int list_id;
-    private String email_id ;
+    private int user_id;
     private String product_name;
-    private String product_price;
     private String option_name;
     private String hcode;
-    private Date product_saledata;
+    private Timestamp purchase_date;
     private int purchase_quantity;
-    private int product_count;
-    private String hname;		// 병원이름
+    private int remaining_quantity;
+    
 	public int getList_id() {
 		return list_id;
 	}
 	public void setList_id(int list_id) {
 		this.list_id = list_id;
 	}
-	public String getEmail_id() {
-		return email_id;
+	public int getUser_id() {
+		return user_id;
 	}
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 	public String getProduct_name() {
 		return product_name;
 	}
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
-	}
-	public String getProduct_price() {
-		return product_price;
-	}
-	public void setProduct_price(String product_price) {
-		this.product_price = product_price;
 	}
 	public String getOption_name() {
 		return option_name;
@@ -49,11 +42,11 @@ public class OrderHistory {
 	public void setHcode(String hcode) {
 		this.hcode = hcode;
 	}
-	public Date getProduct_saledata() {
-		return product_saledata;
+	public Timestamp getPurchase_date() {
+		return purchase_date;
 	}
-	public void setProduct_saledata(Date product_saledata) {
-		this.product_saledata = product_saledata;
+	public void setPurchase_date(Timestamp purchase_date) {
+		this.purchase_date = purchase_date;
 	}
 	public int getPurchase_quantity() {
 		return purchase_quantity;
@@ -61,33 +54,10 @@ public class OrderHistory {
 	public void setPurchase_quantity(int purchase_quantity) {
 		this.purchase_quantity = purchase_quantity;
 	}
-	public int getProduct_count() {
-		return product_count;
+	public int getRemaining_quantity() {
+		return remaining_quantity;
 	}
-	public void setProduct_count(int product_count) {
-		this.product_count = product_count;
+	public void setRemaining_quantity(int remaining_quantity) {
+		this.remaining_quantity = remaining_quantity;
 	}
-	public String getHname() {
-		return hname;
-	}
-	public void setHname(String hname) {
-		this.hname = hname;
-	}
-    
-	@Override
-    public String toString() {
-        return "OrderHistory{" +
-                "list_id=" + list_id +
-                ", email_id='" + email_id + '\'' +
-                ", product_name='" + product_name + '\'' +
-                ", product_price='" + product_price + '\'' +
-                ", option_name='" + option_name + '\'' +
-                ", hcode='" + hcode + '\'' +
-                ", product_saledata=" + product_saledata +
-                ", purchase_quantity=" + purchase_quantity +
-                ", product_count=" + product_count +
-                ", hname= " + hname +
-                '}';
-    }
-	
 }

@@ -7,20 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import gmt.medical.model.OrderHistory;
-import gmt.medical.service.OrderHistroyService;
+import gmt.medical.service.OrderHistoryService;
 
 @Controller
 public class OrderHistoryController {
 	@Autowired
-	private OrderHistroyService orderHistroyService;
+	private OrderHistoryService orderHistoryService;
 	
 	@RequestMapping(value = "/Order_history", method = RequestMethod.GET)
-	public String Order_history(Model model, String email) {
-	    List<OrderHistory> orders = orderHistroyService.getOrderHistory(email);
-		model.addAttribute("orders", orders);
-		return "Order_history";
-	}
+    public String getOrderHistory(Model model) {
+        List<OrderHistory> orderList = orderHistoryService.getOrderList(); // 주문 목록 조회
+        model.addAttribute("orderList", orderList); // 조회한 주문 목록을 모델에 추가
+        
+        return "/Order_history"; // 주문 목록을 출력할 뷰의 이름 반환
+    }
 }
