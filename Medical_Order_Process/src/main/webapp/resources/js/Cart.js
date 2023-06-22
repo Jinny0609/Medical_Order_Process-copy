@@ -49,3 +49,4 @@ window.onload = function() {
 	        totalPriceElement.textContent = total.toLocaleString() + '원';
 	        orderPriceElement.textContent = (total + 2500).toLocaleString() + '원';
 	    }
+}	    

@@ -21,10 +21,12 @@
 					바랍니다.</li>
 			</ul>
 		</div>
-		<div>
-			<img class="Cartimg" src="resources/img/Cart/Cart.png">
+		<div style="display: flex; justify-content: space-between;">
+			<img class="Cartimg" src="resources/img/Cart/Cart1.png"  />
+			<img class="Cartimg1" src="resources/img/Cart/Cart2.png"/>
 		</div>
-		<form action="/Order_history" method="POST">
+
+		<form action="/Cart_delete" method="POST">
 			<table class="Cart_list">
 				<thead>
 					<tr>
@@ -40,11 +42,11 @@
 					<c:forEach items="${CartList}" var="cartItem">
 						<tr class="Cart_list_detail">
 							<td><input type="checkbox"></td>
-							<td><img class="Goods" src="#"
-								alt="magic keyboard"></td>
+							<td><img class="Goods" src="#" alt="magic keyboard"></td>
 							<td><a href="#">그린몰 공식 스토어</a><span
 								class="Cart_list_smartstore"> 그린몰</span>
-								<p>${cartItem.product_name}</p> <span class="Price" data-price="${cartItem.product_price}">${cartItem.product_price}원</span>
+								<p>${cartItem.product_name}</p> <span class="Price"
+								data-price="${cartItem.product_price}">${cartItem.product_price}원</span>
 							</td>
 							<td>
 								<div class="Cart_modify">
@@ -61,8 +63,7 @@
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="3"><button class="Cart_list_optionbtn">선택상품
-								삭제</button>
+						<td colspan="3"><button class="Cart_list_optionbtn">선택상품삭제</button>
 							<button class="Cart_list_optionbtn">선택상품 찜</button></td>
 						<td><label>선택 상품 금액 : <span id="totalPrice"></span></label></td>
 						<td><label>총 배송비 : 2,500 원</label></td>
@@ -75,7 +76,7 @@
 			<button class="Cart_bigorderbtn left"
 				onclick="window.location.href='/'">쇼핑 계속하기</button>
 			<button class="Cart_bigorderbtn right"
-			onclick="window.location.href='/Checkout'">주문하기</button>
+				onclick="window.location.href='/Checkout'">주문하기</button>
 		</div>
 	</section>
 </body>

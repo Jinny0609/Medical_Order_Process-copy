@@ -46,5 +46,4 @@ public class CartController {
 		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
 		return "/Product_details";
 	}
-	
 }

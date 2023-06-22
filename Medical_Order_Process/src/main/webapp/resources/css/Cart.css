@@ -18,8 +18,6 @@ a {
 
 img {
   display: block;
-  width: 90%;
-  height: 80px;
   margin: auto;
 }
 .Coupang{
@@ -35,7 +33,15 @@ img {
 }
 .Cartimg{
 	margin:0px;
-	width:100%;
+	margin-bottom:7px;
+	height: 40px;
+	flex-shrink: 0;"
+}
+.Cartimg1{
+	margin:0px;
+	margin-bottom:7px;
+	height: 40px; 
+	flex-shrink: 0;" 
 }
 .Cart {
   width: 80%;
