@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import gmt.medical.model.CartVO;
 import gmt.medical.model.OptionData;
 import gmt.medical.model.RequestData;
@@ -24,7 +23,6 @@ public class CartController {
 	public String cart(HttpSession session) {
 		int user_id = (int) session.getAttribute("user_id");
 		List<CartVO> cartList = cartService.addToCart(user_id);
-		System.out.println(cartList);
 		session.setAttribute("CartList", cartList);
 		return "Cart";
 	}
@@ -45,5 +43,12 @@ public class CartController {
 		}
 		// "Product_details" 페이지로 이동하거나 응답을 반환하는 코드
 		return "/Product_details";
+	}
+	// 장바구니 상품 삭제
+	@RequestMapping(value = "/Cart_delete", method = { RequestMethod.GET, RequestMethod.POST })
+	public String Cartdelete(int product_id, HttpSession session) {
+	    int user_id = (int) session.getAttribute("user_id");
+	    cartService.deleteCart(user_id, product_id);
+	    return "redirect:/Cart";
 	}
 }

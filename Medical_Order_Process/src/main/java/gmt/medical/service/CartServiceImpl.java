@@ -10,15 +10,20 @@ import gmt.medical.model.CartVO;
 
 @Service
 public class CartServiceImpl implements CartService {
-	
+
 	@Autowired
-    private Cartmapper cartmapper;
-	
-	public void	addcatedata(int productId,String productName,int productPrice,int user_id,String name,int quantity) {
-		cartmapper.addcatedata(productId,productName,productPrice,user_id,name,quantity);
+	private Cartmapper cartmapper;
+
+	public void addcatedata(int productId, String productName, int productPrice, int user_id, String name,
+			int quantity) {
+		cartmapper.addcatedata(productId, productName, productPrice, user_id, name, quantity);
 	}
-	public List<CartVO> addToCart(int uesr_id) {
-		return cartmapper.addToCart(uesr_id);
+
+	public List<CartVO> addToCart(int user_id) {
+		return cartmapper.addToCart(user_id);
 	}
-		
+
+	 public void deleteCart(int user_id, int product_id) {
+	        cartmapper.deleteCart(user_id, product_id);
+	 }
 }

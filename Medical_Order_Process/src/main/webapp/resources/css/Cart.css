@@ -189,3 +189,28 @@ td {
 .Cart_modify p{
 	margin-right: 10px;
 }
+.Cart_delete{
+	text-align:center;
+}
+
+.Button.Login{
+	width:82px;
+	height:34px;
+}
+
+.Button.Login:hover {
+    filter: brightness(110%);
+}
+
+.Button.Login:active {
+    filter: brightness(90%);
+}
+
+.Button.Login {
+    border: 0.0625rem solid rgb(209, 209, 209, 209);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #0074e9;
+    color: white;
+}
