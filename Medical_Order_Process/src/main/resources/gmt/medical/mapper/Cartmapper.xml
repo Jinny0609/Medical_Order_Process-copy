@@ -15,4 +15,20 @@
 	 <select id="addToCart" resultType="gmt.medical.model.CartVO">
         SELECT * FROM cart WHERE user_id = #{user_id}
     </select>
+    
+    <delete id="additemdelete">
+   		DELETE FROM direct_order
+		WHERE user_id = #{user_id}
+    </delete>
+    
+    <insert id="additemdata">
+		insert into direct_order 
+		(product_id, product_name, product_price , product_count , cart_option, user_id, image_path)
+		values (#{product_id}, #{product_name}, #{product_price},
+		#{product_count}, #{cart_option}, #{user_id}, #{image_path});
+	</insert>
+	
+	<select id="getitemdata" resultType="gmt.medical.model.CartVO">
+        SELECT * FROM direct_order WHERE user_id = #{user_id}
+    </select>
 </mapper>

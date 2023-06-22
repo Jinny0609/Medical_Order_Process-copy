@@ -42,8 +42,15 @@ public class RequestData {
 		}
 		 public String getImage_path() {
 				return image_path;
-			}
-			public void setImage_path(String image_path) {
-				this.image_path = image_path;
-			}
+		}
+		public void setImage_path(String image_path) {
+			this.image_path = image_path;
+		}
+		@Override
+		public String toString() {
+			return "RequestData [productId=" + productId + ", categoryId=" + categoryId + ", productName=" + productName
+					+ ", productPrice=" + productPrice + ", image_path=" + image_path + ", selectedOptions="
+					+ selectedOptions + "]";
+		}
+		
 }
