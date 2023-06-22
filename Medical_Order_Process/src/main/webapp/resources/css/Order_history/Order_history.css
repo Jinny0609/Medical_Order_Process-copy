@@ -5,7 +5,7 @@ body {
 }
 
 .MainWrapper {
-    max-width: 1400px;
+    width: 1250px;
     margin: 20px auto;
     padding: 20px;
     overflow-x: auto; /* 가로 스크롤바 추가 */

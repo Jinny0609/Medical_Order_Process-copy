@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,26 +30,27 @@
                 </td>
             </tr>
             <tr>
-                <th>No</th>
                 <th>주문 식별키</th> <!-- list_id (int) -->
                 <th>구매자</th> <!-- email_id (varchar)  -->
-                <th>구매한 제품명</th> <!-- product_id(varchar) -->
-                <th>날짜</th> <!-- 4. 날짜 -->
-                <th>병원 이름</th> <!-- 5. 병원 이름 -->
-                <th>옵션</th> <!-- 7. 옵션 -->
-                <th>현재 재고 / 구매 수량 / 남은 수량</th> <!-- 8. 현재 재고 / 구매 수량 / 남은 수량 -->
+                <th>구매한 제품명</th> <!-- product_id(varchar) -> 제품이름-->
+                <th>옵션</th> <!-- 6. option_name(VARCHAR) -->
+                <th>병원 이름</th> <!-- 5. hospital_info테이블의 hname(varchar) 병원명 사용	 -->
+                <th>날짜</th> <!-- 4. product_saledate(datetime)  -->
+                <th>구매 수량 / 남은 수량</th> 
+                <!-- 7. 현재 재고 / 구매 수량 / 남은 수량 -->
+<!-- 등록할때 수량 가져와서(product_info)의 수량 > 저장한 order_list에 있는 수량 minus > 남은 값(product_info) View에 값을 보여줌 -->
             </tr>
             <!-- 게시물이 출력될 영역 -->
-            <tr>
-                <td>1</td>
-                <td>10</td> <!-- 예시 데이터 -->
-                <td>buyer@example.com</td> <!-- 예시 데이터 -->
-                <td>투명 망토</td> <!-- 예시 데이터 -->
-                <td>2023.06.16</td> <!-- 예시 데이터 -->
-                <td>병원 이름</td> <!-- 예시 데이터 -->
-                <td>옵션</td> <!-- 예시 데이터 -->
-                <td>현재 재고 / 구매 수량 / 남은 수량</td> <!-- 예시 데이터 -->
-            </tr>
+            <c:forEach var="order" items="${orders}">
+			    <tr>
+			        <td>${order.email_id}</td>
+			        <td>${order.product_name}</td>
+			        <td>${order.option_name}</td>
+			        <td>${order.hcode}</td>
+			        <td>${order.product_saledata}</td>
+			        <td>${order.purchase_quantity} / ${order.productCount}</td>
+			    </tr>
+			</c:forEach>
         </table>
     </div>
 </body>
