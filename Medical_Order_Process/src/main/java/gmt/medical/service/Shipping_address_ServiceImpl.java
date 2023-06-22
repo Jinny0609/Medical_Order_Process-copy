@@ -32,4 +32,8 @@ public class Shipping_address_ServiceImpl implements Shipping_address_Service {
  	public void deleteAddress(int address_id,int user_id) {
  		addressRepository.deleteAddress(address_id,user_id);
  	}
+ 	// 최근 배송지 갖고오기(구매 확정 페이지용)
+ 	public Shipping_address getaddressdate(int user_id) {
+ 		return addressRepository.getaddressdate(user_id);
+ 	}
 }

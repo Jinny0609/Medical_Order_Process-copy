@@ -7,6 +7,7 @@ public class RequestData {
 	    private int categoryId;
 	    private String productName;
 	    private int productPrice;
+		private String image_path;
 	    private List<OptionData> selectedOptions;
 	    
 	    public List<OptionData> getSelectedOptions() {
@@ -39,4 +40,17 @@ public class RequestData {
 		public void setProductPrice(int productPrice) {
 			this.productPrice = productPrice;
 		}
+		 public String getImage_path() {
+				return image_path;
+		}
+		public void setImage_path(String image_path) {
+			this.image_path = image_path;
+		}
+		@Override
+		public String toString() {
+			return "RequestData [productId=" + productId + ", categoryId=" + categoryId + ", productName=" + productName
+					+ ", productPrice=" + productPrice + ", image_path=" + image_path + ", selectedOptions="
+					+ selectedOptions + "]";
+		}
+		
 }
