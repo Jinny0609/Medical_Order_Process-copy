@@ -24,11 +24,11 @@ public class CheckoutController {
 	@RequestMapping(value = "/Checkout", method = RequestMethod.GET)
 	public String Checkout(HttpSession session, @RequestParam(value = "buy_now", required = false) String buyNowParam) {
 	    if (buyNowParam == null) {
-	        List<CartVO> cartList = (List<CartVO>) session.getAttribute("CartList");
+	      List<CartVO> cartList = (List<CartVO>) session.getAttribute("CartList");
 	        // cartList 사용하는 로직...
 	        session.setAttribute("OtherControllerCartList", cartList); // 세션에 카트 데이터 저장(장바구니)
 	    }
-	    	List<CartVO> cartList = (List<CartVO>) session.getAttribute("CartList");
+	    List<CartVO> cartList = (List<CartVO>) session.getAttribute("CartList");
 		 Integer user_id = (Integer) session.getAttribute("user_id");
 		 String hcode = (String) session.getAttribute("hcode");
 		 String name = (String) session.getAttribute("name");

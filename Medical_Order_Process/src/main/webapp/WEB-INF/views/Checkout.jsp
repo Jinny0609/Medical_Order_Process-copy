@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="gmt.medical.model.Shipping_address" %>
+<%@ page import="gmt.medical.model.Shipping_address"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +26,15 @@
 					<tbody>
 						<tr>
 							<th>이름</th>
-							<td><%= session.getAttribute("User_data_name") %></td>
+							<td><%=session.getAttribute("User_data_name")%></td>
 						</tr>
 						<tr>
 							<th>이메일</th>
-							<td><%= session.getAttribute("User_data_email_id") %></td>
+							<td><%=session.getAttribute("User_data_email_id")%></td>
 						</tr>
 						<tr>
 							<th>휴대폰 번호</th>
-							<td><%= session.getAttribute("User_data_phonenum") %></td>
+							<td><%=session.getAttribute("User_data_phonenum")%></td>
 						</tr>
 					</tbody>
 				</table>
@@ -48,26 +48,26 @@
 					<tbody>
 						<tr>
 							<th>이름</th>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getRecive() %></td>
+							<td><%=((Shipping_address) session.getAttribute("Address")).getRecive()%></td>
 						</tr>
 						<tr>
 							<th>배송주소</th>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getAddress_road() %><br><%= ((Shipping_address) session.getAttribute("Address")).getAddress_detail() %></td>
+							<td><%=((Shipping_address) session.getAttribute("Address")).getAddress_road()%><br><%=((Shipping_address) session.getAttribute("Address")).getAddress_detail()%></td>
 						</tr>
 						<tr>
 							<th>연락처</th>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getPhonenum() %></td>
+							<td><%=((Shipping_address) session.getAttribute("Address")).getPhonenum()%></td>
 						</tr>
 						<tr>
 							<th>배송 요청사항</th>
-							<td><%= ((Shipping_address) session.getAttribute("Address")).getRequest() %>
-								<button class="UserForm_BT1">변경</button>
-							</td>
+							<td><%=((Shipping_address) session.getAttribute("Address")).getRequest()%>
+								<button class="UserForm_BT1">변경</button></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<h3>배송물품</h3>
+			<form action="/Order_complete" method="GET">
 			<div class="UserForm_Item">
 				<c:forEach items="${OtherControllerCartList}" var="item">
 					<div class="UserForm_Item_Data">
@@ -78,6 +78,10 @@
 						<div>${item.product_name}</div>
 						<div>${item.cart_option}</div>
 						<div>수량 ${item.product_count}개</div>
+						<input type="hidden" name="product_id" value="${item.product_id}">
+						<input type="hidden" name="product_name"
+							value="${item.product_name}"> <input type="hidden"
+							name="cart_option" value="${item.cart_option}">
 					</div>
 				</c:forEach>
 			</div>
@@ -87,12 +91,15 @@
 					<tbody>
 						<tr>
 							<th>총상품가격</th>
-							<td><c:set var="totalPrice" value="0" /> <c:forEach
+							<td><c:set var="totalPrice" value="0" /> <c:set
+									var="totalQuantity" value="0" /> <c:forEach
 									items="${OtherControllerCartList}" var="cartItem">
 									<c:set var="itemPrice"
 										value="${cartItem.product_count * cartItem.product_price}" />
 									<c:set var="totalPrice" value="${totalPrice + itemPrice}" />
-								</c:forEach> ${totalPrice}원</td>
+									<c:set var="totalQuantity"
+										value="${totalQuantity + cartItem.product_count}" />
+								</c:forEach>${totalPrice}원</td>
 						</tr>
 						<tr>
 							<th>배송비</th>
@@ -103,12 +110,15 @@
 							<td>${totalPrice + 2500}원</td>
 						</tr>
 					</tbody>
+					
 				</table>
 			</div>
+			<input type="hidden" name="purchase_quantity" value="${totalQuantity}"><!-- 총수량   -->
 			<div class="UserForm_BTBOX">
-				<button class="UserForm_BT2">결제하기</button>
+				<button type="submit" class="UserForm_BT2">결제하기</button>
 				<button class="UserForm_BT3">취소하기</button>
 			</div>
+			</form>
 		</div>
 	</div>
 </body>
