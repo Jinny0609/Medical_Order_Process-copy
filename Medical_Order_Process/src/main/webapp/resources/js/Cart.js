@@ -1,3 +1,4 @@
+//장바구니 물품 총합
 function calculateTotalPrice() {
   var total = 0;
   var items = document.querySelectorAll('.Cart_list_detail');
@@ -19,7 +20,7 @@ function calculateTotalPrice() {
   totalPriceElement.textContent = total.toLocaleString() + '원';
   orderPriceElement.textContent = (total + 2500).toLocaleString() + '원';
 }
-
+//장바구니 물품 삭제
 function deleteCartItem(productId) {
 	  // 서버로 삭제 요청을 보내는 Ajax 호출을 수행합니다.
 	  var xhr = new XMLHttpRequest();
@@ -38,3 +39,4 @@ function deleteCartItem(productId) {
 	  };
 	  xhr.send("product_id=" + productId);
 	}
+
