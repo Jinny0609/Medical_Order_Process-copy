@@ -24,6 +24,7 @@ public interface Category_mapper {
 			  @Param("option_name") String optionName,
 			  @Param("purchase_quantity") int purchaseQuantity,
 			  @Param("hcode") String hcode,
-			  @Param("user_id") int userId
+			  @Param("user_id") int userId,
+			  @Param("product_price") int productPrice
 			);
 }

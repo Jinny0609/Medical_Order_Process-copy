@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import gmt.medical.mapper.Shipping_address_mapper;
+import gmt.medical.model.OrderVO;
 import gmt.medical.model.Shipping_address;
 
 @Service
@@ -35,5 +36,13 @@ public class Shipping_address_ServiceImpl implements Shipping_address_Service {
  	// 최근 배송지 갖고오기(구매 확정 페이지용)
  	public Shipping_address getaddressdate(int user_id) {
  		return addressRepository.getaddressdate(user_id);
+ 	}
+ 	// 회원이 주문한 상품 정보 가져오기
+ 	public List<OrderVO> getitemlist(int user_id) {
+ 		return addressRepository.getitemlist(user_id);
+ 	}
+ 	// 회원이 주문한 상품 정보 가져오기 이미지.ver
+ 	public List<OrderVO> getimglist(int productId) {
+ 		return addressRepository.getimglist(productId);
  	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import gmt.medical.model.OrderVO;
 import gmt.medical.model.Shipping_address;
 
 public interface Shipping_address_mapper {
@@ -19,4 +20,8 @@ public interface Shipping_address_mapper {
 	public void deleteAddress(@Param("address_id") int address_id, @Param("user_id")int user_id);
 	// 최근 배송지 갖고오기(구매 확정 페이지용)
 	public Shipping_address getaddressdate(int user_id);
+	// 회원이 주문한 상품 정보 가져오기
+	public List<OrderVO> getitemlist(int user_id);
+	// 회원이 주문한 상품 정보 가져오기 이미지.ver
+	public List<OrderVO> getimglist(@Param("product_id") int productId);
 }

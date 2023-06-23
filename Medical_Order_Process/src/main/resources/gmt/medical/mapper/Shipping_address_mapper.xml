@@ -57,5 +57,16 @@
 		FROM delivery
 		WHERE address_id = (SELECT MAX(address_id) FROM delivery WHERE user_id = #{user_id});
 	</select>
-
+	<!-- 회원이 구매한 물품 정보가져오기 -->
+	<select id="getitemlist"
+		resultType="gmt.medical.model.OrderVO">
+		SELECT * FROM order_list
+		WHERE user_id = #{user_id}
+	</select>
+	<!-- 회원이 구매한 물품 정보가져오기 이미지.ver-->
+	<select id="getimglist"
+		resultType="gmt.medical.model.OrderVO">
+		SELECT image_path FROM product_info
+		WHERE product_id = #{product_id}
+	</select>
 </mapper>

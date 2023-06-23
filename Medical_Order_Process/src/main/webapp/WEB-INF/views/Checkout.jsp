@@ -95,6 +95,7 @@
 									var="totalQuantity" value="0" /> <c:forEach
 									items="${OtherControllerCartList}" var="cartItem">
 									<input type="hidden" name="product_count" value="${cartItem.product_count}">
+									<input type="hidden" name="product_price" value="${cartItem.product_price}">
 									<c:set var="itemPrice"
 										value="${cartItem.product_count * cartItem.product_price}" />
 									<c:set var="totalPrice" value="${totalPrice + itemPrice}" />

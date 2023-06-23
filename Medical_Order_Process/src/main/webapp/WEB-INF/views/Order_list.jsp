@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,16 +48,20 @@
               <!--  여기서부터 제품 목록 아마 반복문 써야될거같은데-->
             <div class="MY_deliverypage">
                 <div class="MY_deliveryheader"><strong>배송상품</strong></div>
+                <c:forEach var="order" items="${Orderitem}">
                 <div class="MY_deliverylistbox">
-                    <h3>2023.06.01 주문</h3>
+                    <h3><c:out value="${order.purchase_date}" /> 주문</h3>
                     <div class="MY_deliverylist">
                         <div style="margin-top: 15px; margin-left:15px;">
                             <strong>배송중</strong>
                             <div class="MY_deliveryGoodsbox">
-                                <div class="MY_deliveryGoods1"><img src="resources/img/Order_list/Jsagi.jpg"></div>
+                            	<c:forEach items="${order.imglist}" var="img">
+                                <div class="MY_deliveryGoods1"><img src="<c:out value="${img.image_path}" />"></div>
+                                </c:forEach>
                                 <div class="MY_deliveryGoods2">
-                                    <a>일회용주사기</a>
-                                    <div class="MY_deliveryGoods3"><span>5,010원</span><button>장바구니 담기</button></div>
+                                    <a>상품  : <c:out value="${order.product_name}" /></a><br>
+                                    <span>옵션 : <c:out value="${order.option_name}" /></span>
+                                    <div class="MY_deliveryGoods3"><span><c:out value="${order.product_price}" />원</span></div>
                                 </div>
                             </div>
                         </div>
@@ -66,6 +71,7 @@
                         </div>
                     </div>
                 </div>
+                </c:forEach>
             </div>
         </div>
         </div>

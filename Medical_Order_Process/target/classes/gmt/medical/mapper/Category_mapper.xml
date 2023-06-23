@@ -32,14 +32,15 @@
 	</select>
 
 	<insert id="addorderlist">
-  INSERT INTO order_list (product_id, product_name, option_name, purchase_quantity, hcode, user_id)
+  INSERT INTO order_list (product_id, product_name, option_name, purchase_quantity, hcode, user_id,product_price)
   VALUES (
     #{product_id},
     #{product_name},
     #{option_name},
     #{purchase_quantity},
     #{hcode},
-    #{user_id}
+    #{user_id},
+    #{product_price}
   )
 </insert>
 

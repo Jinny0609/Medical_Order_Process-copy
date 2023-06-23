@@ -15,6 +15,6 @@ public interface CategoryService {
 	// 제품 옵션정보 불러오기
 	public List<CategoryInfo> getoption_name(int productId);
 	// 구매확정테이블에 정보저장
-	public void addorderlist(int productId,String productName,String cartOption,int purchaseQuantity,String hcode,int user_id);
+	public void addorderlist(int productId,String productName,String cartOption,int purchaseQuantity,String hcode,int user_id,int productPrice);
 
 }
