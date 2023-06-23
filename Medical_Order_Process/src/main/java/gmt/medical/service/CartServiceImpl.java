@@ -32,5 +32,8 @@ public class CartServiceImpl implements CartService {
 	public List<CartVO> getitemdata(int user_id) {
 		return cartmapper.getitemdata(user_id);
 	}
+	public void deleteCart(int user_id, int product_id) {
+		 cartmapper.deleteCart(user_id, product_id);
+    }
 		
 }

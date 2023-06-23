@@ -17,4 +17,8 @@ public interface CartService {
 	public void	additemdata(int productId,String productName,int productPrice,int user_id,String name,int quantity,String imagePath);
 	// 바로 구매 테이블에서 갖고오기
 	public List<CartVO> getitemdata(int user_id);
+	
+	// 장바구니 상품 삭제
+	public void deleteCart(int user_id, int product_id);
+	
 }
