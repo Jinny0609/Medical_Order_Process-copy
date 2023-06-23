@@ -94,6 +94,7 @@
 							<td><c:set var="totalPrice" value="0" /> <c:set
 									var="totalQuantity" value="0" /> <c:forEach
 									items="${OtherControllerCartList}" var="cartItem">
+									<input type="hidden" name="product_count" value="${cartItem.product_count}">
 									<c:set var="itemPrice"
 										value="${cartItem.product_count * cartItem.product_price}" />
 									<c:set var="totalPrice" value="${totalPrice + itemPrice}" />
@@ -113,7 +114,6 @@
 					
 				</table>
 			</div>
-			<input type="hidden" name="purchase_quantity" value="${totalQuantity}"><!-- 총수량   -->
 			<div class="UserForm_BTBOX">
 				<button type="submit" class="UserForm_BT2">결제하기</button>
 				<button class="UserForm_BT3">취소하기</button>

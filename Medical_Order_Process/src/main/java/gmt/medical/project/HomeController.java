@@ -34,15 +34,34 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/Order_complete", method = RequestMethod.GET)
-	public String Order_complete(@RequestParam("product_id") int productId,
-								@RequestParam("product_name") String productName,
-								@RequestParam("cart_option") String cartOption,
-								@RequestParam("purchase_quantity") int purchaseQuantity,HttpSession session) {
-		String hcode = (String) session.getAttribute("hcode");
-		Integer user_id = (Integer) session.getAttribute("user_id");
-		categoryService.addorderlist(productId,productName,cartOption,purchaseQuantity,hcode,user_id);
-		return "Order_complete";
+	public String Order_complete(@RequestParam("product_id") List<Integer> productIds,
+	                             @RequestParam("product_name") List<String> productNames,
+	                             @RequestParam("cart_option") List<String> cartOptions,
+	                             @RequestParam("product_count") List<Integer> product_counts,
+	                             HttpSession session) {
+	    String hcode = (String) session.getAttribute("hcode");
+	    Integer user_id = (Integer) session.getAttribute("user_id");
+	    
+	 // 리스트의 크기와 인덱스 범위 검사
+	    if (productIds.size() != productNames.size() || productIds.size() != cartOptions.size()
+	            || productIds.size() != product_counts.size()) {
+	        // 오류 처리 로직 또는 예외 처리
+	        // ...
+	        return "error"; // 예시로 오류 페이지를 리턴하도록 설정
+	    }
+	    
+	    // 리스트의 길이를 기준으로 반복하면서 값을 추출하여 로직 처리
+	    for (int i = 0; i < productIds.size(); i++) {
+	        int productId = productIds.get(i);
+	        String productName = productNames.get(i);
+	        String cartOption = cartOptions.get(i);
+	        int product_count = product_counts.get(i);
+	        
+	        // 로직 처리
+	        categoryService.addorderlist(productId, productName, cartOption, product_count, hcode, user_id);
+	    }
+	    
+	    return "Order_complete";
 	}
-	
 	
 }
