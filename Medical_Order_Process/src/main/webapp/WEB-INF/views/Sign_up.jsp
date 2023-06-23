@@ -12,7 +12,7 @@
 </head>
 <body>
  <c:forEach var="code" items="${Hcode}">
-<input type="text" class="hcode-input" value="${code}">
+<input type="hidden" class="hcode-input" value="${code}">
  </c:forEach>
 	<form action="/Sign_up" class="register-form" method="POST"
 		onsubmit="return Validation()">
