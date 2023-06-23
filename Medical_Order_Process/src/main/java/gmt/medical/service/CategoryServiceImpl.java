@@ -39,4 +39,9 @@ public class CategoryServiceImpl implements CategoryService {
 	public void addorderlist(int productId, String productName, String cartOption, int purchaseQuantity, String hcode, int user_id,int productPrice) {
 		category_mapper.addorderlist(productId,productName,cartOption,purchaseQuantity,hcode,user_id,productPrice);
 	}
+	
+	// 구매 확정시 총 수량 갯수 업데이트
+	public void updatecount(int productId,int product_count) {
+		category_mapper.updatecount(productId,product_count);
+	}
 }

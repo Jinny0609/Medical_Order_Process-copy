@@ -76,6 +76,7 @@ public class HomeController {
 	        
 	        // 로직 처리
 	        categoryService.addorderlist(productId, productName, cartOption, product_count, hcode, user_id,productPrice);
+	        categoryService.updatecount(productId,product_count);
 	    }
 	    
 	    return "Order_complete";

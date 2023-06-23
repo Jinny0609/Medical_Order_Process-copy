@@ -32,16 +32,27 @@
 	</select>
 
 	<insert id="addorderlist">
-  INSERT INTO order_list (product_id, product_name, option_name, purchase_quantity, hcode, user_id,product_price)
-  VALUES (
-    #{product_id},
-    #{product_name},
-    #{option_name},
-    #{purchase_quantity},
-    #{hcode},
-    #{user_id},
-    #{product_price}
-  )
-</insert>
+		INSERT INTO order_list (product_id, product_name,
+		option_name,
+		purchase_quantity, hcode, user_id,product_price)
+		VALUES (
+		#{product_id},
+		#{product_name},
+		#{option_name},
+		#{purchase_quantity},
+		#{hcode},
+		#{user_id},
+		#{product_price}
+		)
+	</insert>
+
+	<!-- product_info 테이블에서 product_id에 해당하는 product_count 업데이트 -->
+	<!-- product_info 테이블에서 product_id에 해당하는 product_count 업데이트 (기존 product_id 
+		값에서 #{productId} 빼기) -->
+	<update id="updatecount">
+		UPDATE product_info
+		SET product_count = product_count - #{product_count}
+		WHERE product_id = #{product_id}
+	</update>
 
 </mapper>

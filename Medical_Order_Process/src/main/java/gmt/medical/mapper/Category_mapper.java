@@ -27,4 +27,5 @@ public interface Category_mapper {
 			  @Param("user_id") int userId,
 			  @Param("product_price") int productPrice
 			);
+	public void updatecount(@Param("product_id") int productId, @Param("product_count") int product_count);
 }
