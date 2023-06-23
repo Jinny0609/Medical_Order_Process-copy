@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gmt.medical.mapper.OrderHistoryMapper">
+	<select id="getOrderHistory" resultType="gmt.medical.model.OrderHistory">
+        SELECT o.list_id, u.name, o.product_name, o.option_name, hi.hname AS hospital_name, o.purchase_date, o.purchase_quantity, pi.product_count AS remaining_quantity 
+        FROM order_list o
+        INNER JOIN userinfo u ON o.user_id = u.user_id
+        INNER JOIN hospital_info hi ON o.hcode = hi.hcode
+        INNER JOIN product_info pi ON o.product_id = pi.product_id
+    </select>
+</mapper>
+
+<!--     <select id="getOrderHistory" resultType="gmt.medical.model.OrderHistory"> -->
+<!--         SELECT * FROM order_list -->
+<!--     </select> -->
