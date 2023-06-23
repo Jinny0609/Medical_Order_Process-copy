@@ -92,5 +92,9 @@
 		</div>
 	</section>
 </body>
-
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    calculateTotalPrice();
+  });
+</script>
 </html>
