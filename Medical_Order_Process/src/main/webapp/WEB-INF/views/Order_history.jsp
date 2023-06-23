@@ -36,7 +36,8 @@
                 <th>옵션</th> <!-- 6. option_name(VARCHAR) -->
                 <th>병원 이름</th> <!-- 5. hospital_info테이블의 hname(varchar) 병원명 사용	 -->
                 <th>날짜</th> <!-- 4. product_saledate(datetime)  -->
-                <th>구매 수량 / 남은 수량</th> 
+                <th>구매 수량</th>
+                <th>남은 수량</th> 
                 <!-- 7. 구매 수량 / 남은 수량 -->
 <!-- 등록할때 수량 가져와서(product_info)의 수량 > 저장한 order_list에 있는 수량 minus > 남은 값(product_info) View에 값을 보여줌 -->
             </tr>
@@ -49,7 +50,8 @@
 			        <td>${order.option_name}</td>
 			        <td>${order.hospital_name}</td>
 			        <td>${order.purchase_date}</td>
-			        <td>${order.purchase_quantity} / ${order.remaining_quantity}</td>
+			        <td>${order.purchase_quantity}</td>
+			        <td>${order.remaining_quantity}</td>
 			    </tr>
 			</c:forEach>
         </table>
