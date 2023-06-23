@@ -31,4 +31,8 @@
 	<select id="getitemdata" resultType="gmt.medical.model.CartVO">
         SELECT * FROM direct_order WHERE user_id = #{user_id}
     </select>
+    <delete id="deleteCart">
+		DELETE FROM cart WHERE
+		product_id = #{product_id} AND user_id = #{user_id};
+	</delete>
 </mapper>

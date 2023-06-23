@@ -79,4 +79,11 @@ public class CartController {
 	    //  페이지로 이동하거나 응답을 반환하는 코드
 	    return new ResponseEntity<> (HttpStatus.OK);
 	}
+	// 장바구니 상품 삭제
+		@RequestMapping(value = "/Cart_delete", method = { RequestMethod.GET, RequestMethod.POST })
+		public String Cartdelete(int product_id, HttpSession session) {
+		    int user_id = (int) session.getAttribute("user_id");
+		    cartService.deleteCart(user_id, product_id);
+		    return "redirect:/Cart";
+		}
 }
