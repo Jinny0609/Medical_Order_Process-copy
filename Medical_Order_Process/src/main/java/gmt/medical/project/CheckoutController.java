@@ -40,7 +40,14 @@ public class CheckoutController {
 		 session.setAttribute("User_data_name", name); // 세션에 이름 데이터 저장
 		 session.setAttribute("User_data_email_id", email_id); // 세션에 이메일 데이터 저장
 		 session.setAttribute("User_data_phonenum", phonenum); // 세션에 폰넘버 데이터 저장
-		 session.setAttribute("Address", address); // 최근 배송지 주소 저장
-		return "Checkout";
+		 if (address != null) {
+		        session.setAttribute("Address", address); // 최근 배송지 주소 저장
+		        return "Checkout";
+		    } else {
+		        // 주소가 null인 경우에 대한 처리 로직
+		        // 예를 들어, 오류 메시지를 세션에 저장하고 다른 페이지로 이동시킬 수 있습니다.
+		        session.setAttribute("ErrorMessage", "주소 정보를 찾을 수 없습니다.");
+		        return "/Shipping_address_List";
+		    }
 	}
 }
