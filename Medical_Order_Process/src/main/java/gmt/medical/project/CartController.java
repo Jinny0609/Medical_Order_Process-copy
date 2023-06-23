@@ -49,11 +49,10 @@ public class CartController {
 		    return new ResponseEntity<> (HttpStatus.OK);
 	}
 	
-	// 바로 구매 버튼 누르면 오는곳
 	@RequestMapping(value = "/Checkout", method = RequestMethod.POST)
 	public ResponseEntity<String> BuyNowServlet(@RequestBody RequestData requestData, HttpSession session) {
-		System.out.println("checkout........."+requestData);
-		
+	    System.out.println("checkout........." + requestData);
+
 	    List<OptionData> selectedOptions = requestData.getSelectedOptions();
 	    int productId = requestData.getProductId(); // 제품 고유키
 	    String productName = requestData.getProductName(); // 제품 이름
@@ -61,23 +60,26 @@ public class CartController {
 	    String imagePath = requestData.getImage_path(); // 이미지 경로
 	    Integer user_id = (Integer) session.getAttribute("user_id"); // 유저 고유키
 
-	    for (OptionData option : selectedOptions) {
-	        String name = option.getName(); // 제품 옵션 이름
-	        int quantity = option.getQuantity(); // 제품 옵션 수량
-	        // 바로 구매 테이블 저장 작성
-	        try {
-	            cartService.additemdelete(user_id);
+	    try {
+	        cartService.additemdelete(user_id);
+
+	        for (OptionData option : selectedOptions) {
+	            String name = option.getName(); // 제품 옵션 이름
+	            int quantity = option.getQuantity(); // 제품 옵션 수량
+
 	            cartService.additemdata(productId, productName, productPrice, user_id, name, quantity, imagePath);
-	            List<CartVO> cartList = cartService.getitemdata(user_id);
-	            session.setAttribute("CartList", cartList);
-	        } catch (Exception e) {
-	            // 오류 발생 시 콘솔 로그에 출력
-	            e.printStackTrace();
-	            throw e; // 예외를 다시 던져서 500 오류를 전달
 	        }
+
+	        List<CartVO> cartList = cartService.getitemdata(user_id);
+	        session.setAttribute("CartList", cartList);
+	    } catch (Exception e) {
+	        // 오류 발생 시 콘솔 로그에 출력
+	        e.printStackTrace();
+	        throw e; // 예외를 다시 던져서 500 오류를 전달
 	    }
-	    //  페이지로 이동하거나 응답을 반환하는 코드
-	    return new ResponseEntity<> (HttpStatus.OK);
+
+	    // 페이지로 이동하거나 응답을 반환하는 코드
+	    return new ResponseEntity<>(HttpStatus.OK);
 	}
 	// 장바구니 상품 삭제
 		@RequestMapping(value = "/Cart_delete", method = { RequestMethod.GET, RequestMethod.POST })
