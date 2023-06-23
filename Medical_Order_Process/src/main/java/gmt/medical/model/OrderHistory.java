@@ -5,9 +5,11 @@ import java.sql.Timestamp;
 public class OrderHistory {
 	private int list_id;
     private int user_id;
+    private String name;
     private String product_name;
     private String option_name;
     private String hcode;
+    private String hospital_name;
     private Timestamp purchase_date;
     private int purchase_quantity;
     private int remaining_quantity;
@@ -23,6 +25,12 @@ public class OrderHistory {
 	}
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getProduct_name() {
 		return product_name;
@@ -42,6 +50,12 @@ public class OrderHistory {
 	public void setHcode(String hcode) {
 		this.hcode = hcode;
 	}
+	public String getHospital_name() {
+		return hospital_name;
+	}
+	public void setHospital_name(String hospital_name) {
+		this.hospital_name = hospital_name;
+	}
 	public Timestamp getPurchase_date() {
 		return purchase_date;
 	}
@@ -60,4 +74,6 @@ public class OrderHistory {
 	public void setRemaining_quantity(int remaining_quantity) {
 		this.remaining_quantity = remaining_quantity;
 	}
+    
+	
 }

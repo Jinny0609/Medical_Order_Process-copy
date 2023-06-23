@@ -44,10 +44,10 @@
             <c:forEach var="order" items="${orderList}">
 			    <tr>
 			        <td>${order.list_id}</td>
-			        <td>${order.user_id}</td>
+			        <td>${order.name}</td>
 			        <td>${order.product_name}</td>
 			        <td>${order.option_name}</td>
-			        <td>${order.hcode}</td>
+			        <td>${order.hospital_name}</td>
 			        <td>${order.purchase_date}</td>
 			        <td>${order.purchase_quantity} / ${order.remaining_quantity}</td>
 			    </tr>
