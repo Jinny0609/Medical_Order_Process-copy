@@ -55,21 +55,29 @@
 			<!-- 여기서부터 바꿀 내용 들어갑니다.-->
 			<div class="MY_delivery">
 				<div class="Shipping_Card_Box">
-				<c:forEach items="${addresses}" var="address">
-					<div class="Shipping_Card_Solid">
-						<div class="Shipping_Card_Text">
-							<div class="Shipping_Card_Title">
-								<strong>${address.recive}</strong>
+					<c:forEach items="${addresses}" var="address">
+						<div class="Shipping_Card_Solid">
+							<div class="Shipping_Card_Text">
+								<div class="Shipping_Card_Title">
+									<strong>${address.recive}</strong>
+								</div>
+								<div>${address.pscode}</div>
+								<div>${address.address_road}</div>
+								<div>${address.address_detail}</div>
+								<div>${address.phonenum}</div>
+								<div>${address.request}</div>
+								<button class="Shipping_Card_BT"
+									onclick="redirectToPage('${address.address_id}')">수정</button>
 							</div>
-							<div>${address.pscode}</div>
-							<div>${address.address_road}</div>
-							<div>${address.address_detail}</div>
-							<div>${address.phonenum}</div>
-							<div>${address.request}</div>
-							<button class="Shipping_Card_BT" onclick="redirectToPage('${address.address_id}')">수정</button>
 						</div>
-					</div>
 					</c:forEach>
+					<c:if test="${empty addresses}">
+						<script>
+							window.onload = function() {
+								alert('배송지를 등록하세요');
+							};
+						</script>
+					</c:if>
 					<div class="Shipping_BT" onclick="redirectToJSP()">
 						<i class="bi bi-plus-lg fs-5"></i>배송지 추가 버튼
 					</div>
