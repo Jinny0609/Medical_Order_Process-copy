@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gmt.medical.mapper.OrderCompleteMapper">
+	<resultMap id="OrderCompleteInfoMap" type="gmt.medical.model.OrderCompleteInfo">
+        <result property="purchaseDate" column="purchase_date" jdbcType="TIMESTAMP"/>
+        <result property="listId" column="list_id"/>
+        <result property="addressRoad" column="address_road"/>
+        <result property="addressDetail" column="address_detail"/>
+        <result property="request" column="request"/>
+        <result property="productPrice" column="product_price"/>
+    </resultMap>
+	<!-- 회원정보 검증 페이지 이메일 갖고오기 -->
+	<select id="getOrderCompleteInfo" parameterType="int" resultMap="OrderCompleteInfoMap">
+	    SELECT 
+	        o.purchase_date,
+	        o.list_id,
+	        u.name,
+	        u.phonenum,
+	        d.address_road,
+	        d.address_detail,
+	        d.request,
+	        o.product_price
+	    FROM 
+	        order_list o
+	        JOIN userinfo u ON o.user_id = u.user_id
+	        JOIN delivery d ON u.user_id = d.user_id
+	    WHERE
+	        o.user_id = #{user_id}
+	    ORDER BY o.purchase_date DESC
+	    LIMIT 1
+	</select>
+	
+	<!-- 주문 총액 계산 -->
+	<select id="getTotalPrice" parameterType="int" resultType="int">
+	    SELECT SUM(product_price)
+	    FROM order_list
+	    WHERE user_id = #{user_id} AND purchase_date = (
+	        SELECT MAX(purchase_date)
+	        FROM order_list
+	        WHERE user_id = #{user_id}
+	    )
+	</select>
+	
+</mapper>

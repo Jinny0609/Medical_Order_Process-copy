@@ -11,7 +11,3 @@
         INNER JOIN product_info pi ON o.product_id = pi.product_id
     </select>
 </mapper>
-
-<!--     <select id="getOrderHistory" resultType="gmt.medical.model.OrderHistory"> -->
-<!--         SELECT * FROM order_list -->
-<!--     </select> -->

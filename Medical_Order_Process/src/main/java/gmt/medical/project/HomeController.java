@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import gmt.medical.model.Categories;
+import gmt.medical.model.OrderCompleteInfo;
 import gmt.medical.model.OrderVO;
 import gmt.medical.service.CategoryService;
+import gmt.medical.service.OrderCompleteService;
 import gmt.medical.service.Shipping_address_Service;
 
 
@@ -25,6 +27,9 @@ public class HomeController {
 	
 	@Autowired
 	private Shipping_address_Service shipping_address_service;
+	
+	@Autowired
+	private OrderCompleteService orderCompleteService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpSession session,Categories categories) {
@@ -54,11 +59,12 @@ public class HomeController {
 	                             @RequestParam("cart_option") List<String> cartOptions,
 	                             @RequestParam("product_count") List<Integer> product_counts,
 	                             @RequestParam("product_price") List<Integer> productPrices,
-	                             HttpSession session) {
+	                             HttpSession session,
+	                             Model model) { // Model 객체를 파라미터로 추가
 	    String hcode = (String) session.getAttribute("hcode");
 	    Integer user_id = (Integer) session.getAttribute("user_id");
 	    
-	 // 리스트의 크기와 인덱스 범위 검사
+	    // 리스트의 크기와 인덱스 범위 검사
 	    if (productIds.size() != productNames.size() || productIds.size() != cartOptions.size()
 	            || productIds.size() != product_counts.size() || productIds.size() != productPrices.size()) {
 	        // 오류 처리 로직 또는 예외 처리
@@ -79,7 +85,19 @@ public class HomeController {
 	        categoryService.updatecount(productId,product_count);
 	    }
 	    
+	    // 주문 정보를 가져온 후 모델에 추가
+	    OrderCompleteInfo orderCompleteInfo = orderCompleteService.getOrderCompleteInfo(user_id);
+	    if(orderCompleteInfo == null) {
+	        return "error"; 
+	    }
+	    model.addAttribute("orderCompleteInfo", orderCompleteInfo);
+	    model.addAttribute("productPrice", orderCompleteInfo.getProductPrice() + 2500); // 개별 제품 가격을 모델에 추가
+
+	    // 총 결제 금액을 가져와 모델에 추가
+	    int totalPrice = orderCompleteService.getTotalPrice(user_id);
+	    model.addAttribute("totalPriceWithoutDelivery", totalPrice); // 배송비를 제외한 가격
+	    model.addAttribute("totalPrice", totalPrice + 2500); // 배송비 포함한 가격
+	    
 	    return "Order_complete";
 	}
-	
 }

@@ -119,21 +119,21 @@
 				</div>
 				<div class="UserForm_BTBOX">
 					<button type="submit" class="UserForm_BT2">결제하기</button>
-					<button class="UserForm_BT3" onclick="goBack()">취소하기</button>
+<!-- 					<button class="UserForm_BT3" onclick="goBack()">취소하기</button> -->
 				</div>
 			</form>
 		</div>
 	</div>
 	<script>
-		function goBack() {
-			history.back();
-		}
+// 		function goBack() {
+// 			history.back();
+// 		}
 
-		window.onload = function() {
-			document.getElementById("orderForm").onsubmit = function() {
-				return false;
-			};
-		};
+// 		window.onload = function() {
+// 			document.getElementById("orderForm").onsubmit = function() {
+// 				return false;
+// 			};
+// 		};
 	</script>
 </body>
 </html>
