@@ -78,7 +78,7 @@
 							<div>${item.product_name}</div>
 							<div>${item.cart_option}</div>
 							<div>수량 ${item.option_count}개</div>
-							<input type="hidden" name="product_id" value="${item.product_id}">
+<%-- 							<input type="hidden" name="product_id" value="${item.product_id}"> --%>
 							<input type="hidden" name="product_name"
 								value="${item.product_name}"> <input type="hidden"
 								name="cart_option" value="${item.cart_option}">
@@ -117,6 +117,17 @@
 
 					</table>
 				</div>
+				<c:forEach items="${OtherControllerCartList}" var="item">
+				    <div class="UserForm_Item_Data">
+				        <!-- 이전 코드 생략 -->
+						<input type="hidden" name="option_id" value="${item.option_id}">
+				        <input type="hidden" name="product_id" value="${item.product_id}">
+<%-- 				        <input type="hidden" name="product_name" value="${item.product_name}"> --%>
+<%-- 				        <input type="hidden" name="cart_option" value="${item.cart_option}"> --%>
+				        <!-- 추가: 각 상품의 option_count 값을 purchase_quantity로 서버로 보냅니다. -->
+				        <input type="hidden" name="purchase_quantity" value="${item.option_count}">
+				    </div>
+				</c:forEach>
 				<div class="UserForm_BTBOX">
 					<button type="submit" class="UserForm_BT2" onclick="submitForm()">결제하기</button>
 					<button type="button" class="UserForm_BT3" onclick="goBack()">취소하기</button>

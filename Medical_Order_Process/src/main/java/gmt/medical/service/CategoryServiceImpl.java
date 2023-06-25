@@ -36,12 +36,18 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	// 구매확정테이블에 정보저장
-	public void addorderlist(int productId, String productName, String cartOption, int purchaseQuantity, String hcode, int user_id,int productPrice) {
+	public void addorderlist(int productId, int optionId, String productName, String cartOption, int purchaseQuantity, String hcode, int user_id,int productPrice) {
 		category_mapper.addorderlist(productId,productName,cartOption,purchaseQuantity,hcode,user_id,productPrice);
 	}
 	
 	// 구매 확정시 총 수량 갯수 업데이트
-	public void updatecount(int productId,int product_count) {
-		category_mapper.updatecount(productId,product_count);
-	}
+//	public void updatecount(int productId,int product_count) {
+//		category_mapper.updatecount(productId,product_count);
+//	}
+	
+	// 추가한부분(호준)
+	@Override
+    public void updateOptionCount(int productId, int optionId, int purchaseQuantity) {
+        category_mapper.updateOptionCount(productId, optionId, purchaseQuantity);
+    }
 }

@@ -27,5 +27,8 @@ public interface Category_mapper {
 			  @Param("user_id") int userId,
 			  @Param("product_price") int productPrice
 			);
-	public void updatecount(@Param("product_id") int productId, @Param("product_count") int product_count);
+//	public void updatecount(@Param("product_id") int productId, @Param("product_count") int product_count);
+	
+	//추가한 부분(호준)
+	void updateOptionCount(@Param("productId") int productId, @Param("optionId") int optionId, @Param("purchase_quantity") int purchaseQuantity);
 }

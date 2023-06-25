@@ -54,35 +54,41 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/Order_complete", method = RequestMethod.GET)
-	public String Order_complete(@RequestParam("product_id") List<Integer> productIds,
-	                             @RequestParam("product_name") List<String> productNames,
-	                             @RequestParam("cart_option") List<String> cartOptions,
-	                             @RequestParam("product_count") List<Integer> product_counts,
-	                             @RequestParam("product_price") List<Integer> productPrices,
-	                             HttpSession session,
-	                             Model model) { // Model 객체를 파라미터로 추가
+	public String Order_complete(
+		@RequestParam("product_id") List<Integer> productIds, // productId 리스트 추가
+	    @RequestParam("option_id") List<Integer> optionIds, // optionId 리스트 받아옴
+	    @RequestParam("purchase_quantity") List<Integer> purchaseQuantities, // purchase_quantity 리스트 받아옴
+	    @RequestParam("product_name") List<String> productNames,
+	    @RequestParam("cart_option") List<String> cartOptions,
+	    @RequestParam("option_count") List<Integer> optionCounts, // product_count를 option_count로 변경
+	//	@RequestParam("product_count") List<Integer> product_counts,
+	    @RequestParam("product_price") List<Integer> productPrices,
+	    HttpSession session,
+	    Model model) { // Model 객체를 파라미터로 추가
 	    String hcode = (String) session.getAttribute("hcode");
 	    Integer user_id = (Integer) session.getAttribute("user_id");
 	    
 	    // 리스트의 크기와 인덱스 범위 검사
-	    if (productIds.size() != productNames.size() || productIds.size() != cartOptions.size()
-	            || productIds.size() != product_counts.size() || productIds.size() != productPrices.size()) {
+	    if (optionIds.size() != productNames.size() || optionIds.size() != cartOptions.size()
+	            || optionIds.size() != optionCounts.size() || optionIds.size() != productPrices.size()) {
 	        // 오류 처리 로직 또는 예외 처리
 	        // ...
 	        return "error"; // 예시로 오류 페이지를 리턴하도록 설정
 	    }
 	    
 	    // 리스트의 길이를 기준으로 반복하면서 값을 추출하여 로직 처리
-	    for (int i = 0; i < productIds.size(); i++) {
-	        int productId = productIds.get(i);
+	    for (int i = 0; i < optionIds.size(); i++) {	// 안되면 optionIds로 수정
+	    	int productId = productIds.get(i); // productId 값 받아옴
+	        int optionId = optionIds.get(i);	// optionId 값 받아옴
+	        int purchase_quantity = purchaseQuantities.get(i); // purchase_quantity 값 받아옴
 	        String productName = productNames.get(i);
 	        String cartOption = cartOptions.get(i);
-	        int product_count = product_counts.get(i);
+	        int optionCount = optionCounts.get(i); // product_count를 optionCount로 변경
 	        int productPrice = productPrices.get(i);
 	        
 	        // 로직 처리
-	        categoryService.addorderlist(productId, productName, cartOption, product_count, hcode, user_id,productPrice);
-	        categoryService.updatecount(productId,product_count);
+	        categoryService.addorderlist(productId, optionId, productName, cartOption, optionCount, hcode, user_id, productPrice);
+	        categoryService.updateOptionCount(productId, optionId, purchase_quantity);
 	    }
 	    
 	    // 주문 정보를 가져온 후 모델에 추가
