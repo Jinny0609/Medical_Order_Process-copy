@@ -118,22 +118,26 @@
 					</table>
 				</div>
 				<div class="UserForm_BTBOX">
-					<button type="submit" class="UserForm_BT2">결제하기</button>
-<!-- 					<button class="UserForm_BT3" onclick="goBack()">취소하기</button> -->
+					<button type="submit" class="UserForm_BT2" onclick="submitForm()">결제하기</button>
+					<button type="button" class="UserForm_BT3" onclick="goBack()">취소하기</button>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script>
-// 		function goBack() {
-// 			history.back();
-// 		}
+	 	function goBack() {
+	        history.back();
+	    }
 
-// 		window.onload = function() {
-// 			document.getElementById("orderForm").onsubmit = function() {
-// 				return false;
-// 			};
-// 		};
+	    function submitForm() {
+	        document.getElementById("orderForm").submit();
+	    }
+
+	    window.onload = function() {
+	        document.getElementById("orderForm").onsubmit = function() {
+	            return false;
+	        };
+	    };
 	</script>
 </body>
 </html>

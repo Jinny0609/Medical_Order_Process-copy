@@ -34,7 +34,7 @@
 	
 	<!-- 주문 총액 계산 -->
 	<select id="getTotalPrice" parameterType="int" resultType="int">
-	    SELECT SUM(product_price)
+	    SELECT SUM(purchase_quantity * product_price)
 	    FROM order_list
 	    WHERE user_id = #{user_id} AND purchase_date = (
 	        SELECT MAX(purchase_date)
