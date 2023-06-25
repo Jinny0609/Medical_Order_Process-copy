@@ -46,14 +46,16 @@ public class ProductController {
 
 	    // 상품 정보 저장
 	    int productId = productService.addProduct(productInfo);
-	    
+
 	    // 옵션 정보 저장
 	    List<String> optionNames = productInfo.getOptionNames();
+	    List<Integer> optionCounts = productInfo.getOptionCounts();  // 옵션 수량 리스트를 가져옵니다.
 	    if (optionNames != null && !optionNames.isEmpty()) {
-	        for (String option_name : optionNames) {
+	        for (int i = 0; i < optionNames.size(); i++) {
 	            Product_option productOption = new Product_option();
 	            productOption.setProduct_id(productId);
-	            productOption.setOption_name(option_name);
+	            productOption.setOption_name(optionNames.get(i));
+	            productOption.setOption_count(optionCounts.get(i));  // 옵션 수량을 설정합니다.
 	            productOption.setCategory_id(productInfo.getCategory_id());
 	            productService.addOption(productOption);
 	        }

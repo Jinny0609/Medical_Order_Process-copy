@@ -3,15 +3,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('imageInput').onchange = function (event) {
     previewImage(event);
     document.getElementById('fileText').value = event.target.files[0].name;
-    
-    // 선택된 파일을 업로드합니다.
-//    var file = event.target.files[0];
-//    uploadImageFile(file, function(response) {
-//      console.log('Image uploaded successfully!');
-//      console.log(response);  // 업로드에 성공했을 때의 응답을 로그에 출력합니다.
-//    }, function(jqXHR, textStatus, errorThrown) {
-//      console.log('Failed to upload image: ' + textStatus);
-//    });
   };
   
   document.querySelector('.custom-file-input button').addEventListener('click', function () {
@@ -61,20 +52,23 @@ function formatPrice() {
 
 // 최대 수량에 대한 함수
 window.checkCount = function() {
-  var countInput = document.getElementById('productCount');
-  var count = parseInt(countInput.value);
+	  var countInput = document.getElementById('optionCount');
+	  var count = parseInt(countInput.value);
 
-  if (isNaN(count)) {
-    countInput.value = '';
-  } else if (count > 30) {
-    var errorMessage = document.getElementById('countErrorMessage');
-    errorMessage.style.display = 'inline';
-    setTimeout(function() {
-      errorMessage.style.display = 'none';
-      countInput.value = 30;
-    }, 1000);
-  }
-};
+	  var errorMessage = document.getElementById('optionCountErrorMessage'); // 아이디를 'optionCountErrorMessage'로 통일
+
+	  if (isNaN(count)) {
+	    countInput.value = '';
+	  } else if (count > 30) {
+	    errorMessage.style.display = 'inline';
+	    setTimeout(function() {
+	      errorMessage.style.display = 'none';
+	      countInput.value = 30;
+	    }, 1000);
+	  } else {
+	    errorMessage.style.display = 'none'; // 수량이 30 이하일 때 에러 메시지를 숨깁니다.
+	  }
+	};
 
 // Check the input field every 100 milliseconds
 setInterval(checkCount, 100);
@@ -96,7 +90,16 @@ function addOption() {
   optionInput.type = "text";
   optionInput.id = "option_" + optionCounter;
   optionInput.name = "optionNames"; // 각 옵션 필드에 동일한 이름 부여
-//  optionInput.name = "option_name_" + optionCounter; // 각 옵션 필드에 고유한 이름 부여
+  
+  /* 수량 : 표시를 위한 라벨 추가  */
+  let countLabel = document.createElement("label");
+  countLabel.innerHTML = "수량 : &nbsp;";
+  
+  /* 옵션에 대한 수량 추가된 부분 */
+  let countInput  = document.createElement("input"); // 수량 입력 필드 생성
+  countInput.type = "number";
+  countInput.id = "optionCount_" + optionCounter;
+  countInput.name = "optionCounts"; // 각 수량 필드에 동일한 이름 부여
 
   let removeButton = document.createElement("button");
   removeButton.innerHTML = "X";
@@ -116,6 +119,8 @@ function addOption() {
   let addedOptionsContainer = document.getElementById("addedOptionsContainer");
   optionDiv.appendChild(optionLabel);
   optionDiv.appendChild(optionInput);
+  optionDiv.appendChild(countLabel);
+  optionDiv.appendChild(countInput); // 추가된 수량 입력 필드
   optionDiv.appendChild(removeButton);
   addedOptionsContainer.appendChild(optionDiv);
 }

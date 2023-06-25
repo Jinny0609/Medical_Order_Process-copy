@@ -52,18 +52,24 @@
 			  <input type="text" id="productPrice" name="product_price" oninput="formatPrice()">
 		  </div>
 			
-		  <div class="count_field">
-			  <label for="productCount">수량 : </label>
-			  <input type="number" id="productCount" name="product_count" min="0">
-			  <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
-		  </div>
+<!-- 		  <div class="count_field"> -->
+<!-- 			  <label for="productCount">수량 : </label> -->
+<!-- 			  <input type="number" id="productCount" name="product_count" min="0"> -->
+<!-- 			  <span id="countErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span> -->
+<!-- 		  </div> -->
 			
 		  <div class="optionContainer">
 			  <label class="option-label">옵션 : </label>
 			  <input type="text" id="option" name="optionNames" />
+			  
+			  <label for="optionCount">수량 : </label>
+			  <input type="number" id="optionCount" name="optionCounts" min="0">
+			  <span id="optionCountErrorMessage" style="display: none; color: red;">최대 수량은 30입니다.</span>
 			  <button type="button" onclick="addOption()" class="option-add">옵션 추가</button>
-			  <div id="addedOptionsContainer"></div> <!-- 추가된 옵션들을 위한 새로운 컨테이너 -->
+			  
+			  <div id="addedOptionsContainer"></div>
 		  </div>
+
           
           <div class="buttons">
             <input type="submit" value="등록" id="regi">
