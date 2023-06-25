@@ -60,11 +60,11 @@
 								<div class="Cart_modify">
 									<p>${cartItem.cart_option}</p>
 									<input type="number" min="1" max="40" step="1"
-										value="${cartItem.product_count}"
+										value="${cartItem.option_count}"
 										onchange="calculateTotalPrice()" /> <br />
 								</div>
 							</td>
-							<td><span class="SubTotal">${cartItem.product_count * cartItem.product_price}원</span><br></td>
+							<td><span class="SubTotal">${cartItem.option_count * cartItem.product_price}원</span><br></td>
 							<td>2,500원</td>
 							<td colspan="2"class="Cart_delete">
 								<a onclick="deleteCartItem(${cartItem.product_id})"><input type="button" value="상품삭제"class="Button Login"></a>

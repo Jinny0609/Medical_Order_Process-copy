@@ -77,7 +77,7 @@
 							</div>
 							<div>${item.product_name}</div>
 							<div>${item.cart_option}</div>
-							<div>수량 ${item.product_count}개</div>
+							<div>수량 ${item.option_count}개</div>
 							<input type="hidden" name="product_id" value="${item.product_id}">
 							<input type="hidden" name="product_name"
 								value="${item.product_name}"> <input type="hidden"
@@ -94,15 +94,15 @@
 								<td><c:set var="totalPrice" value="0" /> <c:set
 										var="totalQuantity" value="0" /> <c:forEach
 										items="${OtherControllerCartList}" var="cartItem">
-										<input type="hidden" name="product_count"
-											value="${cartItem.product_count}">
+										<input type="hidden" name="option_count"
+											value="${cartItem.option_count}">
 										<input type="hidden" name="product_price"
 											value="${cartItem.product_price}">
 										<c:set var="itemPrice"
-											value="${cartItem.product_count * cartItem.product_price}" />
+											value="${cartItem.option_count * cartItem.product_price}" />
 										<c:set var="totalPrice" value="${totalPrice + itemPrice}" />
 										<c:set var="totalQuantity"
-											value="${totalQuantity + cartItem.product_count}" />
+											value="${totalQuantity + cartItem.option_count}" />
 									</c:forEach>${totalPrice}원</td>
 							</tr>
 							<tr>

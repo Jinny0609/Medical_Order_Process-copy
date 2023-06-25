@@ -72,7 +72,7 @@ a{
 .Products {
 	float: left;
 	border-bottom: 1px solid #ddd;
-	width: 25%; /* 4개의 상품이 한 줄에 배치되도록 25%로 설정 */
+	width: 30%; /* 4개의 상품이 한 줄에 배치되도록 30%로 설정 */
 	padding: 20px;
 	overflow: hidden;
 	box-sizing: border-box;
