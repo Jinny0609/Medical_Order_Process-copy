@@ -18,9 +18,9 @@
 			<i class="bi bi-justify fs-2"></i><br> 카테고리
 		</button>
 		<div class="dropdown-content">
-		<c:forEach items="${sessionScope.Category}" var="category">
-			<a onclick="redirectMYCategory('${category.category_id}')">${category.category_name}</a>
-		</c:forEach>
+			<c:forEach items="${sessionScope.Category}" var="category">
+				<a onclick="redirectMYCategory('${category.category_id}')">${category.category_name}</a>
+			</c:forEach>
 		</div>
 	</div>
 	<section>
@@ -50,11 +50,21 @@
 			<li>즐겨찾기</li>
 			<li>입점신청</li>
 		</ul>
+		<%
+			String hcode = (String) session.getAttribute("hcode");
+		%>
 		<ul class="M_login">
 			<li id="login_btn" onclick="redirectMYLogin()">로그인</li>
 			<li id="signup_btn" onclick="redirectMYSign_up()">회원가입</li>
 			<li id="user_info" style="display: none;"><span id="name"></span></li>
 			<li id="user_info2" onclick="logout()">로그아웃</li>
+			<%
+				if ("777".equals(hcode)) {
+			%>
+			<li id="admin_page" onclick="admin_page()">관리자 페이지</li>
+			<%
+				}
+			%>
 		</ul>
 	</div>
 </article>

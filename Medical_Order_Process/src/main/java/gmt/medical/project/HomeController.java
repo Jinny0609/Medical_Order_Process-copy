@@ -100,4 +100,10 @@ public class HomeController {
 	    
 	    return "Order_complete";
 	}
+	
+	@RequestMapping(value = "/admin_page", method = RequestMethod.GET)
+	public String admin() {
+		// 관리자페이지 이동
+		return "admin_page";
+	}
 }

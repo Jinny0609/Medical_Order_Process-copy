@@ -292,3 +292,10 @@ function redirectMYpage() {
 	    alert("로그인하세요.");
 	  }
 	}
+
+	  // admin_page() 함수는 "관리자 페이지" 리스트 항목의 클릭 이벤트를 처리합니다.
+	  function admin_page() {
+	    // 관리자 페이지의 기능을 구현하기 위해 여기에 코드를 추가하세요.
+	    // 예를 들어, 사용자를 관리자 페이지로 리디렉션할 수 있습니다.
+	    window.location.href = "admin_page";
+	  }
