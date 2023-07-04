@@ -1,4 +1,4 @@
-![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/cf81dd70-e597-43fd-b1c9-598536ca6b2b)![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/a4f57aca-0190-479f-896f-91cdac996164)Green marsh tit_team final project : Medical_Order_Process(Supplier Perspective) 
+Green marsh tit_team final project : Medical_Order_Process(Supplier Perspective) 
 
 IOT 기반 정보 대시보드 구현 프로젝트 (환자 생체 데이터 24시간 모니터링 대시보드)
 
