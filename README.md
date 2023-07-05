@@ -1,8 +1,9 @@
 Green marsh tit_team final project : Medical_Order_Process(Supplier Perspective) 
+의료용품 수주 프로젝트 (공급사 관점)
 
-IOT 기반 정보 대시보드 구현 프로젝트 (환자 생체 데이터 24시간 모니터링 대시보드)
-
-[프로젝트 주제 선정 이유] : 
+[프로젝트 주제 선정 이유]
+개인적으로 쇼핑몰을 만드려고 했었는데 의료용품 수주 프로젝트를 통해서 우리가 자주 사용하는 쿠팡 사이트와 비슷하게 만들어 보고,
+공급자 관점에서의 기능을 추가해서 만들면 괜찮을것 같아서 위와 같은 주제를 정하게 되었습니다.
 
 [개발 소요 시간] 5.26 ~ 6.27
 
@@ -13,8 +14,13 @@ Eclipse, Java 1.8, Mysql(Mybatis & HikariCP)
 Notion, Github
 
 [개발 순서]
-프로젝트 계획 : 수행 계획, 일정 계획, 요구사항 정의 및 역할 분배
-프로젝트 실행 : 
+프로젝트 계획 → 설계 → 구현 → 평가(테스트) → 완료
+
+프로젝트 계획 단계에서는 프로젝트 수행 계획, 일정 계획, 요구사항 정의 및 역할 분배를 실시하였습니다.
+설계단계에서는 전체적인 디자인과 Database 설계를 진행하였고 이를 노션으로 문서로 만들어서 팀과 공유했습니다.
+구현단계에서는 작업이 완료된 결과물에 대해서 문서화하면서 개발을 진행하였습니다.
+평가 단계에서는 개인이 작업한 결과에 대해 코드의 기능을 검증하고 테스트하였습니다.
+완료 단계에서는 프로젝트를 종료하며 결과물에 대한 회고를 팀에서 진행하였습니다.
 
 [프로젝트 결과]
 **메인페이지**
@@ -27,7 +33,7 @@ Cart, Category ,이동 기능 구현.
 관리자 로그인 시 관리자 페이지로 이동 버튼 표시하여 이동 기능 구현.
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/f63fe759-d7ca-4551-ac2a-bcac8ebc0e87)
 
-메인 (gif) 넣기
+![메인페이지](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/17a2692e-41bd-4188-8a83-4206649380bf)
 
 **로그인 페이지**
 쇼핑몰 사용을 위한 로그인 페이지
@@ -47,7 +53,8 @@ Cart, Category ,이동 기능 구현.
 
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/9a1c749a-bda8-4e69-a9b8-b00a3e1c0ea4)
 
-로그인, 회원가입(gif) 넣기
+![회원가입](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/62feb2ea-6f29-4c0f-afe8-259005dade75)
+
 
 **주문 목록 페이지**
 로그인 후 마이 페이지 이동 시 처음 보여지는 상품 리스트 페이지
@@ -74,7 +81,7 @@ Cart, Category ,이동 기능 구현.
 
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/9fceeb6f-e75d-4bbf-ac06-725d6324bbaf)
 
-(배송지 추가페이지 gif 추가)
+![배송지 정보, 장바구니](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/046abe40-0267-49e7-8d4c-666f5cf84f5d)
 
 **회원 정보 수정 페이지**
 개인정보 확인/수정 버튼을 클릭시 
@@ -93,7 +100,7 @@ nav 바의 카테고리 선택 시 상품 분류
 상품 선택 시 상품 데이터를 상세 페이지로 전달
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/44ce6983-c12a-4067-9347-7cf5e5c11039)
 
-(카테고리 gif 추가)
+![카테고리](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/66bee097-ac13-49fb-8309-d3550fe5b83a)
 
 **상품 상세보기**
 카테고리 페이지에서 상품을 클릭했을때이동되는 페이지
@@ -130,7 +137,8 @@ nav 바의 카테고리 선택 시 상품 분류
  3. 쇼핑 홈 돌아가기
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/efa2e2ca-9805-4d03-b221-fa870518b92c)
 
-구매확정까지 gif 추가
+![바로 주문 하기](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/6ed41d0e-28ee-4f29-8bbb-c8ece8bd96a7)
+
 
 **관리자 리스트 페이지**
 관리자 리스트 페이지(관리자 로그인 필요)
@@ -158,12 +166,12 @@ nav 바의 카테고리 선택 시 상품 분류
 관리자(공급자)가 직접 상품을 추가 하여 쇼핑몰에 등록 기능 구현
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/c9e9141a-0e28-4ae9-854c-03ef0b76b1b3)
 
-마무리한거 gif 추가
-
 [ERD]
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/c0eb6fac-6d01-4e83-a4e8-d80dd4a743cf)
 
-
-
-[개발 후기] 
-진호준 : 
+[프로젝트를 마치며] 
+진호준 : 팀으로 작업하는 마지막 프로젝트였는데 팀원 모두 열심히 노력해서 잘 만들어진것 같습니다.
+다들 주말까지 필요한 기능을 추가 작업하느라 정말 고생많았습니다. 하지만 발표 준비로 인해 작업 시간이 부족하다고 느끼는 점이 조금 아쉬웠습니다. 그래도 여전히 우리 프로젝트는 훌륭한 완성도를 갖추고 있습니다.
+팀원들의 열정과 기여에 진심으로 감사드립니다. 팀원으로서의 역할을 충실히 수행하고, 팀의 목표를 위해 최선을 다한 모습이 정말 멋졌습니다. 
+우리가 이룬 성과에 대해 자부심을 가지고, 함께 힘들고 즐거운 순간을 나누었습니다.
+앞으로도 함께 다른 프로젝트를 수행하게 된다면, 더욱 훌륭한 결과물을 만들어내기를 기대합니다. 팀원분과 함께 일하게 되어 영광이었고, 앞으로의 모든 도전에 항상 응원하겠습니다. 다시 한번 감사의 말씀을 전하며, 앞으로도 좋은 개발자로 남기를 바랍니다. 감사합니다.
