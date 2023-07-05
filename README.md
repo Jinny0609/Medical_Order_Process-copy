@@ -35,6 +35,8 @@ Cart, Category ,이동 기능 구현.
 
 ![메인페이지](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/17a2692e-41bd-4188-8a83-4206649380bf)
 
+<hr>
+
 **로그인 페이지**
 쇼핑몰 사용을 위한 로그인 페이지
 
@@ -55,6 +57,7 @@ Cart, Category ,이동 기능 구현.
 
 ![회원가입](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/62feb2ea-6f29-4c0f-afe8-259005dade75)
 
+<hr>
 
 **주문 목록 페이지**
 로그인 후 마이 페이지 이동 시 처음 보여지는 상품 리스트 페이지
@@ -62,6 +65,8 @@ Cart, Category ,이동 기능 구현.
 주요 기능 : 
 구매 상품 리스트 확인
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/be45975f-a2b2-4399-bd69-cfb536872584)
+
+<hr>
 
 **배송지 관리 페이지**
 회원의 배송지를 관리하는 페이지
@@ -71,6 +76,8 @@ Cart, Category ,이동 기능 구현.
 저장한 배송지 리스트 출력
 
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/403c6356-9381-4b10-a629-87f3fcf3b4b0)
+
+<hr>
 
 **배송지 추가 페이지**
 배송지 추가 버튼 클릭 시 이동되는 페이지
@@ -83,6 +90,8 @@ Cart, Category ,이동 기능 구현.
 
 ![배송지 정보, 장바구니](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/046abe40-0267-49e7-8d4c-666f5cf84f5d)
 
+<hr>
+
 **회원 정보 수정 페이지**
 개인정보 확인/수정 버튼을 클릭시 
 이동되는 페이지
@@ -91,6 +100,8 @@ Cart, Category ,이동 기능 구현.
 회원정보 수정 전 비밀번호 검증을 통해 
 유저의 정보를 변경
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/0e34d16c-0112-45a6-bb91-13639331eb7e)
+
+<hr>
 
 **카테고리 페이지**
 카테고리별로 분류한 상품 페이지
@@ -102,6 +113,8 @@ nav 바의 카테고리 선택 시 상품 분류
 
 ![카테고리](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/66bee097-ac13-49fb-8309-d3550fe5b83a)
 
+<hr>
+
 **상품 상세보기**
 카테고리 페이지에서 상품을 클릭했을때이동되는 페이지
 
@@ -110,6 +123,8 @@ nav 바의 카테고리 선택 시 상품 분류
 바로 구매 할 수 있도록 구현
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/8ec3f491-b5fe-4907-a66e-6627af3a16db)
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/c91d030a-ef7f-41c3-82e0-de2fca05e5f5)
+
+<hr>
 
 **장바구니 페이지**
 장바구니에 저장한 상품을 볼 수 있는 페이지
@@ -120,6 +135,8 @@ nav 바의 카테고리 선택 시 상품 분류
  3. 장바구니 상품 주문
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/f0994f88-dfb5-4052-8a7a-53404a0f274b)
 
+<hr>
+
 **체크아웃 페이지**
 장바구니에서 물건을 구매 시 or 제품 페이지에서 바로 구매 시 이동되는 페이지
 
@@ -127,6 +144,8 @@ nav 바의 카테고리 선택 시 상품 분류
  1.구매 요청한 상품과 구매자의 정보를 확인한 후 최종 구매 요청
  2. 배송지 변경 (예정)
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/2829bd82-52b2-4bf8-80a7-2ef9cc0f70b3)
+
+<hr>
 
 **구매 확인 페이지**
 상품 구매 확정 시 보여지는 페이지
@@ -139,6 +158,7 @@ nav 바의 카테고리 선택 시 상품 분류
 
 ![바로 주문 하기](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/6ed41d0e-28ee-4f29-8bbb-c8ece8bd96a7)
 
+<hr>
 
 **관리자 리스트 페이지**
 관리자 리스트 페이지(관리자 로그인 필요)
@@ -147,6 +167,9 @@ nav 바의 카테고리 선택 시 상품 분류
 상품 관리 리스트 페이지 이동
 쇼핑몰 물품 등록 페이지 이동
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/5d8334b3-4d47-43db-8dac-25feb8760815)
+
+<hr>
+
 
 **관리자 리스트 페이지**
 관리자 상품 관리 페이지 
@@ -159,6 +182,8 @@ nav 바의 카테고리 선택 시 상품 분류
 
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/7d33de42-6678-4e73-8369-5898d6dcb5f3)
 
+<hr>
+
 **관리자 상품 등록 페이지**
 관리자 상품 관리 페이지 
 
@@ -166,8 +191,12 @@ nav 바의 카테고리 선택 시 상품 분류
 관리자(공급자)가 직접 상품을 추가 하여 쇼핑몰에 등록 기능 구현
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/c9e9141a-0e28-4ae9-854c-03ef0b76b1b3)
 
+<hr>
+
 [ERD]
 ![image](https://github.com/Jinny0609/Medical_Order_Process-copy/assets/71204918/c0eb6fac-6d01-4e83-a4e8-d80dd4a743cf)
+
+<hr>
 
 [프로젝트를 마치며] 
 진호준 : 팀으로 작업하는 마지막 프로젝트였는데 팀원 모두 열심히 노력해서 잘 만들어진것 같습니다.
